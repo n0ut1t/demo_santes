@@ -86,3 +86,82 @@ body {
 .cartel {
   width: 100%;
 }
+
+.results-grid {
+    display: grid;
+    /* Creamos 3 columnas de igual tamaño */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    /* Opcional: Si quieres que las filas tengan una altura fija */
+    /* grid-template-rows: repeat(2, 400px); */
+    
+    gap: 25px; /* Espacio entre las tarjetas */
+    padding: 40px;
+    max-width: 1200px; /* Centramos el grid para que no sea infinito */
+    margin: 0 auto;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-info p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* Esto ya lo tenías, se aplica a todos los items de la lista */
+.checkbox-item input {
+    display: none;
+}
+
+.checkbox-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 5px; /* Separación entre filas */
+}
+
+.img-box {
+    width: 25px;
+    height: 25px;
+    background-image: url('public/diable_uncheck.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease;
+    margin-left: 10px;
+}
+
+/* El selector "+" busca al label que está justo después del input que ha sido clickeado */
+.checkbox-item input:checked + label .img-box {
+    background-image: url('public/diable_check.svg');
+    transform: scale(1.1);
+}
