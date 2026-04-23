@@ -280,6 +280,8 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(138, 154, 255, 0.4);
     transition: background 0.3s;
+    text-decoration: none;
+
 }
 
 .btn-juga:hover {
