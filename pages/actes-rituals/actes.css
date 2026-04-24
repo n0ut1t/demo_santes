@@ -1,0 +1,231 @@
+/* Basic reset to remove default browser margins */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 1200px;
+}
+
+        /* Navbar container */
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Spaces out logo, links, and search */
+        align-items: center; /* Vertically centers the content */
+        background-color: #414040; /* Dark blue/gray background */
+        padding: 15px 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        position: sticky;
+    }
+
+    /* Brand/Logo styling */
+    .navbar-brand a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .nav-logo {
+        width: 120px;   /* Change this value to whatever looks best */
+        height: auto;    /* This keeps the proportions correct so it doesn't look squished */
+        display: block;  /* Removes extra space at the bottom of the image */
+    }
+
+    /* Links container */
+    .navbar-links {
+        display: flex;
+        list-style: none;
+        gap: 25px; /* Space between each link */
+    }
+
+    /* Individual links */
+    .navbar-links a {
+        color: #bdc3c7;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover effect for links */
+    .navbar-links a:hover {
+        color: #ffffff;
+    }
+
+    /* Search container */
+    .navbar-search {
+        display: flex;
+        gap: 8px; /* Space between input and button */
+    }
+
+    /* Search input field */
+    .navbar-search input {
+        padding: 8px 12px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        outline: none;
+        background-color: #414040;
+        color: #ffffff;
+    }
+
+    .navbar-search input:focus {
+        border-color: #3498db;
+    }
+
+    .search-container {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 250px para filtros, 1 fracción para el resto */
+    gap: 30px;
+    }
+
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+        top: 20px;
+        margin-bottom: 10px !important;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 400px;
+        background: url('../../public/actes-banner.png') center/cover no-repeat;
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        color: white;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        margin-top: -170px !important;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    .hero p {
+        margin-top: 10px;
+        font-size: 16px;
+        max-width: 600px;
+    }
+
+ /* CONTENEDOR */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* GRID */
+.grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+/* CARD */
+.card {
+    display: flex;
+    align-items: stretch;
+    background: #efefef;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2.5px solid;
+    height: 200px;
+}
+
+/* alternar */
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGEN */
+.card img {
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO */
+.card-content {
+    width: 55%;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* TITULO */
+.card h3 {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+/* TEXTO */
+.card p {
+    font-size: 12px;
+    line-height: 1.35;
+    color: #222;
+}
+
+/* BOTÓN */
+.btn {
+    margin-top: 6px;
+    align-self: center;
+    padding: 5px 16px;
+    background: #7d8df1;
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+/* COLORES EXACTOS */
+.red { border-color: #e74c3c; }
+.orange { border-color: #f39c12; }
+.green { border-color: #1abc9c; }
+.gray { border-color: #7f8c8d; }
+/* HERO FIX */
+.hero {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+    }
