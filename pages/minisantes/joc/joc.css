@@ -236,7 +236,8 @@ hr {
 }
 
 .info-img img {
-    width: 100%;
+    width: 260px;
+    height: 170px;
     border-radius: 12px;
 }
 
