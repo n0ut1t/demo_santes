@@ -31,6 +31,41 @@
     overflow: hidden;
 }
 
+/* Franja decorativa superior — colors de la bandera catalana i els gegants */
+#screen-title::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        #c8a84b 0px,   #c8a84b 16px,
+        #8b0000 16px,  #8b0000 32px,
+        #c8a84b 32px,  #c8a84b 48px,
+        #1a3a6e 48px,  #1a3a6e 64px,
+        #c8a84b 64px,  #c8a84b 80px,
+        #006633 80px,  #006633 96px
+    );
+    z-index: 10;
+}
+
+/* Franja decorativa inferior */
+#screen-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        #006633 0px,   #006633 16px,
+        #c8a84b 16px,  #c8a84b 32px,
+        #1a3a6e 32px,  #1a3a6e 48px,
+        #c8a84b 48px,  #c8a84b 64px,
+        #8b0000 64px,  #8b0000 80px,
+        #c8a84b 80px,  #c8a84b 96px
+    );
+    z-index: 10;
+}
 
 #title-bg {
     position: absolute;
@@ -202,7 +237,8 @@
 #screen-select {
     flex-direction: column;
     background: #080605;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .select-header {
@@ -686,3 +722,76 @@
 .songs-grid::-webkit-scrollbar { width: 3px; }
 .songs-grid::-webkit-scrollbar-track { background: transparent; }
 .songs-grid::-webkit-scrollbar-thumb { background: rgba(200,168,75,0.3); border-radius: 2px; }
+
+/* ══════════ INSTRUCTIONS WRAPPER (within screen-select) ══════════ */
+.instructions-wrapper {
+    padding: 0 20px 20px;
+    flex-shrink: 0;
+}
+
+.instructions-header {
+    margin-bottom: 10px;
+    padding-top: 4px;
+}
+
+.instruccions-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+    font-size: 16px;
+    color: #c8a84b;
+    letter-spacing: 2px;
+}
+
+.instructions-body {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 6px;
+    padding: 14px 18px;
+    position: relative;
+}
+
+.instructions-body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b0000, #c8a84b, #1a3a6e, #c8a84b, #8b0000);
+    border-radius: 6px 6px 0 0;
+}
+
+.instructions-text {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.instructions-keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    margin-bottom: 10px;
+}
+
+.inst-key {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #c8a84b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inst-key span {
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+}
+
+.instructions-tip {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    letter-spacing: 1px;
+}
