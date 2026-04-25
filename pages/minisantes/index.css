@@ -229,8 +229,9 @@ body {
     text-align: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
     transition: transform 0.3s ease;
-    padding-bottom: 25px; /* Espacio extra al final */
+    padding-bottom: 25px !important; /* Espacio extra al final */
 }
+
 
 .mini-card:hover {
     transform: translateY(-8px);
@@ -245,7 +246,7 @@ body {
     width: 100%;
     height: 220px;
     object-fit: contain; /* Para que las ilustraciones se vean enteras y limpias */
-    border-radius: 25px; /* Bordes redondeados también en la imagen */
+    border-radius: 25px !important; /* Bordes redondeados también en la imagen */
 }
 
 /* Body */

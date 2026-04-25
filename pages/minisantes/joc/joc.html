@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minisantes - 7 diferències</title>
     <link rel="stylesheet" href="joc.css">
+    <link rel="stylesheet" href="nivell.css">
+
 </head>
 <body>
 
@@ -38,7 +40,7 @@
 
         <div class="title">
             <h1>MINISANTES</h1>
-            <h2>TROBA LES 7 DIFERENCIES</h2>
+            <h2>SANTES TILES</h2>
         </div>
 
         <div class="header-img">
@@ -66,10 +68,91 @@
 
     <!-- GAME BANNER -->
     <div class="game-banner">
-        <img src="/../../../public/joc1.png" alt="joc banner">
+
+        <div class="game-container">
+            <div id="screen-title" class="screen active">
+            <div id="title-bg"></div>
+            <canvas id="title-particles"></canvas>
+            <div class="title-content">
+                <div class="title-festa">Festes de Les Santes · Mataró</div>
+                <div class="title-main">LES<br><span>SANTES</span></div>
+                <div class="title-sub">Piano Tiles</div>
+                <div class="title-divider"></div>
+                <button class="btn-primary" id="btn-play">JUGAR</button>
+                <div class="title-keys">
+                <span class="key-pill">A ←</span>
+                <span class="key-pill">S ↓</span>
+                <span class="key-pill">D →</span>
+                <span class="key-pill">W ↑</span>
+                </div>
+            </div>
+            </div>
+            
+            <!-- ══════════ SELECT ══════════ -->
+            <div id="screen-select" class="screen">
+            <div class="select-header">
+                <button class="back-btn" id="btn-back-select">← TORNAR</button>
+                <div class="select-title">SELECCIONA CANÇÓ</div>
+            </div>
+            <div class="songs-grid" id="songs-grid"></div>
+            </div>
+            
+            <!-- ══════════ GAME ══════════ -->
+            <div id="screen-game" class="screen">
+            <video id="game-video-bg" autoplay loop muted playsinline></video>
+            <div id="game-overlay"></div>
+            <div class="game-ui">
+                <div id="game-hud">
+                <div class="hud-left">
+                    <div class="hud-song" id="hud-song-name">BEQUETERO</div>
+                    <div class="hud-score" id="hud-score">0</div>
+                </div>
+                <div class="hud-right">
+                    <div class="hud-lives" id="hud-lives">♥♥♥</div>
+                    <div class="hud-combo" id="hud-combo"></div>
+                    <div class="hud-accuracy" id="hud-acc"></div>
+                </div>
+                </div>
+                <div id="progress-bar"><div id="progress-fill"></div></div>
+                <div id="canvas-area">
+                <canvas id="game-canvas"></canvas>
+                <div id="speed-badge">2×</div>
+                </div>
+                <div id="lane-bar">
+                <div class="lane-tap" id="lt0" data-lane="0" ontouchstart="tapLane(0,event)" onmousedown="tapLane(0,event)"><span class="kt">A / ←</span></div>
+                <div class="lane-tap" id="lt1" data-lane="1" ontouchstart="tapLane(1,event)" onmousedown="tapLane(1,event)"><span class="kt">S / ↓</span></div>
+                <div class="lane-tap" id="lt2" data-lane="2" ontouchstart="tapLane(2,event)" onmousedown="tapLane(2,event)"><span class="kt">D / →</span></div>
+                <div class="lane-tap" id="lt3" data-lane="3" ontouchstart="tapLane(3,event)" onmousedown="tapLane(3,event)"><span class="kt">W / ↑</span></div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- ══════════ RESULT ══════════ -->
+            <div id="screen-result" class="screen">
+            <div class="result-content">
+                <div class="result-label">Resultat</div>
+                <div class="result-song" id="res-song"></div>
+                <div class="result-stars" id="res-stars"></div>
+                <div class="result-score" id="res-score"></div>
+                <div class="result-score-label">PUNTS</div>
+                <div class="result-stats">
+                <div class="rstat"><div class="rstat-val" id="res-perfect">0</div><div class="rstat-lbl">Perfect</div></div>
+                <div class="rstat"><div class="rstat-val" id="res-great">0</div><div class="rstat-lbl">Great</div></div>
+                <div class="rstat"><div class="rstat-val" id="res-miss">0</div><div class="rstat-lbl">Fallo</div></div>
+                </div>
+                <div class="unlock-banner" id="unlock-banner"></div>
+                <div class="result-btns">
+                <button class="btn-secondary" id="btn-res-menu">MENÚ</button>
+                <button class="btn-primary" id="btn-res-retry">TORNAR A JUGAR</button>
+                </div>
+            </div>
+            </div>
+ 
     </div>
 
 </section>
+
+<script src="joc.js"></script>
 
 </body>
 </html>
