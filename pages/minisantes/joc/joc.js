@@ -444,5 +444,4 @@ document.getElementById('lane-bar').addEventListener('touchstart', e=>e.preventD
 document.getElementById('btn-play').addEventListener('click', ()=>{ buildSongGrid(); showScreen('select'); });
 document.getElementById('btn-back-select').addEventListener('click', ()=>showScreen('title'));
 document.getElementById('btn-res-menu').addEventListener('click', ()=>{ buildSongGrid(); showScreen('select'); });
-document.getElementById('btn-res-retry').addEventListener('click', ()=>startSong(G.song,G.isEx));
 window.addEventListener('resize', ()=>{ if(document.getElementById('screen-game').classList.contains('active')) resizeCanvas(); });
