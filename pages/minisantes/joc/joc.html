@@ -28,11 +28,19 @@
 <section class="container">
 
     <div class="header">
-        <div class="header-img"><img src="/../../../public/figura1.png" alt="soldat blau"></div>
-        <div class="title"><h1>MINISANTES</h1><h2>SANTES TILES</h2></div>
-        <div class="header-img"><img src="/../../../public/figura2.png" alt="soldat vermell"></div>
+    <div class="header-img left">
+        <img src="/../../../public/figura1.png" alt="soldat blau">
     </div>
 
+    <div class="title">
+        <h1>MINISANTES</h1>
+        <h2>SANTES TILES</h2>
+    </div>
+
+    <div class="header-img right">
+        <img style="margin-left: -50px;" src="/../../../public/figura2.png" alt="soldat vermell">
+    </div>
+</div>
     <hr>
 
     <div class="info" style="margin-top: 50px;">
@@ -49,7 +57,7 @@
     <div class="game-banner">
         <div class="game-container">
 
-            <!-- TITLE SCREEN -->
+            <!-- ══ TITLE SCREEN ══ -->
             <div id="screen-title" class="screen active">
                 <div id="title-bg"></div>
                 <canvas id="title-particles"></canvas>
@@ -68,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- SELECT SCREEN -->
+            <!-- ══ SELECT SCREEN ══ -->
             <div id="screen-select" class="screen">
                 <div class="select-header">
                     <button class="back-btn" id="btn-back-select">← TORNAR</button>
@@ -80,44 +88,35 @@
                         <div class="instruccions-title">COM ES JUGA</div>
                     </div>
                     <div class="instructions-body">
-                    <div class="instructions-top">
-                        <div class="instructions-image">
-                            <img src="/../../../public/tutorial_game.png" alt="Com es juga">
+                        <div class="instructions-top">
+                            <div class="instructions-image">
+                                <img src="/../../../public/tutorial_game.png" alt="Com es juga">
+                            </div>
+                            <div class="instructions-explanation">
+                                <h4>Objectiu del joc</h4>
+                                <p>Prem les tecles quan les notes arriben a la zona inferior.
+                                Si encertes el timing, guanyes punts i combo.</p>
+                                <h4>Evita errors</h4>
+                                <p>Si falles massa notes, perdràs vides. Mantén el ritme!</p>
+                            </div>
                         </div>
-
-                        <div class="instructions-explanation">
-                            <h4>Objectiu del joc</h4>
-                            <p>
-                                Prem les tecles quan les notes arriben a la zona inferior.
-                                Si encertes el timing, guanyes punts i combo.
-                            </p>
-
-                            <h4>Evita errors</h4>
-                            <p>
-                                Si falles massa notes, perdràs vides. Mantén el ritme!
-                            </p>
+                        <div class="instructions-text">
+                            Prem les tecles o toca les columnes quan les notes arribin a la zona inferior.
                         </div>
-                    </div>
+                        <div class="instructions-keys">
+                            <div class="inst-key">A / ← <span>Columna esquerra</span></div>
+                            <div class="inst-key">S / ↓ <span>Segona columna</span></div>
+                            <div class="inst-key">D / → <span>Tercera columna</span></div>
+                            <div class="inst-key">W / ↑ <span>Columna dreta</span></div>
+                        </div>
+                        <div class="instructions-tip">
+                            Encerta seguides per augmentar el combo i sumar més punts!
+                        </div>
+                    </div><!-- /instructions-body -->
+                </div><!-- /instructions-wrapper -->
+            </div><!-- /screen-select -->
 
-                    <div class="instructions-text">
-                        Prem les tecles o toca les columnes quan les notes arribin a la zona inferior.
-                    </div>
-
-                    <div class="instructions-keys">
-                        <div class="inst-key">A / ← <span>Columna esquerra</span></div>
-                        <div class="inst-key">S / ↓ <span>Segona columna</span></div>
-                        <div class="inst-key">D / → <span>Tercera columna</span></div>
-                        <div class="inst-key">W / ↑ <span>Columna dreta</span></div>
-                    </div>
-
-                    <div class="instructions-tip">
-                        Encerta seguides per augmentar el combo i sumar més punts!
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- GAME SCREEN -->
+            <!-- ══ GAME SCREEN ══ -->
             <div id="screen-game" class="screen">
                 <video id="game-video-bg" autoplay loop muted playsinline></video>
                 <div id="game-overlay"></div>
@@ -145,9 +144,9 @@
                         <div class="lane-tap" id="lt3" ontouchstart="tapLane(3,event)" onmousedown="tapLane(3,event)"><span class="kt">W / ↑</span></div>
                     </div>
                 </div>
-            </div>
+            </div><!-- /screen-game -->
 
-            <!-- RESULT SCREEN -->
+            <!-- ══ RESULT SCREEN ══ -->
             <div id="screen-result" class="screen">
                 <div class="result-content">
                     <div class="result-label">Resultat</div>
@@ -166,7 +165,7 @@
                         <button class="btn-primary" id="btn-res-retry">TORNAR A JUGAR</button>
                     </div>
                 </div>
-            </div>
+            </div><!-- /screen-result -->
 
         </div><!-- /game-container -->
     </div><!-- /game-banner -->
