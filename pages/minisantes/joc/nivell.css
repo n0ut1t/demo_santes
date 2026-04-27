@@ -4,6 +4,7 @@
    GAME CONTAINER
 ══════════════════════════════════════ */
 .game-container {
+    font-family: 'Titillium Web', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
     width: 100%;
     height: 620px;

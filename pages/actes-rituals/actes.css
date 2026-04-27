@@ -4,12 +4,12 @@
     margin: 0;
     padding: 0;
 }
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Titillium Web', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
     min-height: 1340px !important;
+    line-height: 1.6;
 }
-
         /* Navbar container */
     .navbar {
         display: flex;
@@ -168,40 +168,40 @@ body {
     object-fit: cover;
 }
 
-/* TEXTO */
 .card-content {
     width: 55%;
-    padding: 14px 16px;
+    padding: 16px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
 }
 
-/* TITULO */
 .card h3 {
-    font-size: 14px;
+    font-size: 1.35rem; /* responsive i estable */
     font-weight: 900;
     letter-spacing: 0.5px;
+    margin-bottom: 6px;
 }
 
-/* TEXTO */
 .card p {
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 1rem;
+    line-height: 1.5;
     color: #222;
+    flex-grow: 1;
 }
 
-/* BOTÓN */
 .btn {
-    margin-top: 6px;
+    margin-top: 10px;
     align-self: center;
-    padding: 5px 16px;
+    padding: 8px 18px;
     background: #7d8df1;
     color: white;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
+    transition: 0.2s ease;
 }
 
 /* COLORES EXACTOS */
@@ -223,11 +223,11 @@ body {
  }
 .gray { 
     border-color: #7f8c8d;
-    height: 255px !important;
+    height: 266px !important;
     margin-top: -47px !important;
  }
  .red-reverse2 {
-    height: 210px;
+    height: 220px;
  }
 /* HERO FIX */
 .hero {
