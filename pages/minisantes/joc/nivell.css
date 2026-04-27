@@ -32,7 +32,6 @@
     overflow: hidden;
 }
 
-/* Franja decorativa superior — colors de la bandera catalana i els gegants */
 #screen-title::before {
     content: '';
     position: absolute;
@@ -41,7 +40,6 @@
     z-index: 10;
 }
 
-/* Franja decorativa inferior */
 #screen-title::after {
     content: '';
     position: absolute;
@@ -58,11 +56,9 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-color: #000;
-    /* Overlay fosc per llegibilitat del text */
     filter: brightness(0.55) saturate(1.1);
 }
 
-/* Gradient sobre la imatge per llegibilitat */
 #screen-title .title-content::before {
     content: '';
     position: absolute;
@@ -229,6 +225,7 @@
     align-items: center;
     gap: 16px;
     background: linear-gradient(to bottom, rgba(200,168,75,0.05), transparent);
+    flex-shrink: 0;
 }
 
 .back-btn {
@@ -386,6 +383,166 @@
 }
 
 /* ══════════════════════════════════════
+   CONFIG SCREEN
+══════════════════════════════════════ */
+#screen-config {
+    flex-direction: column;
+    background: #080605;
+    overflow: hidden;
+}
+
+.config-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.config-intro {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-align: center;
+    padding: 10px 16px;
+    background: rgba(200,168,75,0.04);
+    border: 1px solid rgba(200,168,75,0.1);
+    border-radius: 6px;
+}
+
+.config-intro kbd {
+    background: rgba(200,168,75,0.15);
+    border: 1px solid rgba(200,168,75,0.3);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: #c8a84b;
+}
+
+/* Mini preview of the lane bar */
+.config-lanes-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.config-lane-preview {
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+}
+
+.config-lane-preview span:first-child {
+    font-size: 8px;
+    flex-shrink: 0;
+}
+
+/* Table header */
+.config-table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 0 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(200,168,75,0.5);
+    text-transform: uppercase;
+}
+
+/* Config rows */
+#config-keys-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.config-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    align-items: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(200,168,75,0.08);
+    border-radius: 6px;
+    padding: 10px 14px;
+    transition: background 0.15s;
+}
+
+.config-row:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+.config-lane-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+}
+
+.config-keys {
+    display: contents; /* children participate in parent grid */
+}
+
+.config-key-btn {
+    background: rgba(200,168,75,0.07);
+    border: 1px solid rgba(200,168,75,0.2);
+    color: #c8a84b;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.config-key-btn:hover {
+    background: rgba(200,168,75,0.15);
+    border-color: #c8a84b;
+    transform: scale(1.04);
+}
+
+.config-key-btn:active {
+    transform: scale(0.97);
+}
+
+.config-key-btn.listening {
+    background: rgba(200,168,75,0.2);
+    border-color: #c8a84b;
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(200,168,75,0.35), 0 0 16px rgba(200,168,75,0.2);
+    animation: cfg-pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes cfg-pulse {
+    from { box-shadow: 0 0 0 2px rgba(200,168,75,0.35), 0 0 8px rgba(200,168,75,0.15); }
+    to   { box-shadow: 0 0 0 2px rgba(200,168,75,0.7), 0 0 20px rgba(200,168,75,0.35); }
+}
+
+.config-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+/* ══════════════════════════════════════
    GAME SCREEN
 ══════════════════════════════════════ */
 #screen-game {
@@ -399,13 +556,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.55;        /* visible però no distreu */
+    opacity: 0.55;
     pointer-events: none;
     z-index: 0;
     background: #000;
 }
 
-/* Si la cançó no té vídeo, el fons negre ja cobreix */
 #game-video-bg:not([src]),
 #game-video-bg[src=""] {
     display: none;
@@ -414,7 +570,6 @@
 #game-overlay {
     position: absolute;
     inset: 0;
-    /* Gradient: més fosc a dalt (HUD) i a baix (tecles), transparent al centre */
     background:
         linear-gradient(to bottom,
             rgba(0,0,0,0.70) 0%,
@@ -734,6 +889,9 @@
 .songs-grid::-webkit-scrollbar { width: 3px; }
 .songs-grid::-webkit-scrollbar-track { background: transparent; }
 .songs-grid::-webkit-scrollbar-thumb { background: rgba(200,168,75,0.3); border-radius: 2px; }
+.config-body::-webkit-scrollbar { width: 3px; }
+.config-body::-webkit-scrollbar-track { background: transparent; }
+.config-body::-webkit-scrollbar-thumb { background: rgba(200,168,75,0.3); border-radius: 2px; }
 
 /* ══════════ INSTRUCTIONS WRAPPER (within screen-select) ══════════ */
 .instructions-wrapper {
@@ -841,7 +999,6 @@
     transform: scale(1.05);
 }
 
-
 .inst-block {
     margin-bottom: 10px;
 }
@@ -858,3 +1015,128 @@
     line-height: 1.5;
 }
 
+/* ══════════════════════════════════════
+   MODE SELECT OVERLAY (EX / NORMAL)
+══════════════════════════════════════ */
+.mode-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.75), rgba(0,0,0,0.95));
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Caja principal */
+.mode-box {
+  background: linear-gradient(145deg, #0e0c0a, #060504);
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 10px;
+  padding: 28px 32px;
+  text-align: center;
+  box-shadow: 
+    0 0 40px rgba(0,0,0,0.8),
+    0 0 20px rgba(200,168,75,0.15);
+  position: relative;
+  animation: mode-pop 0.25s ease-out;
+}
+
+/* Línea dorada arriba */
+.mode-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b0000, #c8a84b, #1a3a6e);
+  border-radius: 10px 10px 0 0;
+}
+
+@keyframes mode-pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Título */
+.mode-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #c8a84b;
+  margin-bottom: 18px;
+  text-shadow: 0 0 12px rgba(200,168,75,0.5);
+}
+
+/* Botones */
+.mode-btn {
+  display: block;
+  width: 220px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border: 1px solid rgba(200,168,75,0.3);
+  background: rgba(200,168,75,0.08);
+  color: #c8a84b;
+  transition: all 0.18s;
+  position: relative;
+}
+
+/* efecto brillo suave */
+.mode-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mode-btn:hover {
+  background: rgba(200,168,75,0.2);
+  border-color: #c8a84b;
+  transform: scale(1.05);
+}
+
+.mode-btn:hover::before {
+  opacity: 1;
+}
+
+/* NORMAL */
+.mode-btn.normal {
+  color: #c8a84b;
+}
+
+/* EX (más agresivo) */
+.mode-btn.ex {
+  border-color: rgba(200,80,80,0.6);
+  color: #ff4d4d;
+  background: rgba(200,40,40,0.08);
+}
+
+.mode-btn.ex:hover {
+  background: rgba(200,40,40,0.2);
+  border-color: #ff4d4d;
+  box-shadow: 0 0 16px rgba(255,50,50,0.4);
+}
+
+/* Cancel */
+.mode-cancel {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.mode-cancel:hover {
+  color: #c8a84b;
+}

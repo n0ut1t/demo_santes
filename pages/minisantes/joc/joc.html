@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="joc.css">
     <link rel="stylesheet" href="nivell.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -27,7 +26,7 @@
         </div>
     </nav>
 
-<section class="container">
+<section class="container" style="max-width: 1250px;">
 
     <div class="header">
     <div class="header-img left">
@@ -69,6 +68,8 @@
                     <div class="title-sub">Piano Tiles</div>
                     <div class="title-divider"><span>✦</span></div>
                     <button class="btn-primary" id="btn-play">JUGAR</button>
+                    <button class="btn-primary" id="btn-config">CONFIGURA</button>
+
                     <div class="title-keys">
                         <span class="key-pill">A ←</span>
                         <span class="key-pill">S ↓</span>
@@ -127,6 +128,51 @@
                 </div>
                 </div><!-- /instructions-wrapper -->
             </div><!-- /screen-select -->
+
+            <!-- ══ CONFIG SCREEN ══ -->
+            <div id="screen-config" class="screen">
+                <div class="select-header">
+                    <button class="back-btn" id="btn-back-config">← TORNAR</button>
+                    <div class="select-title">CONFIGURACIÓ DE TECLES</div>
+                </div>
+
+                <div class="config-body">
+                    <div class="config-intro">
+                        Fes clic sobre una tecla i prem la nova tecla al teclat per canviar-la. Prem <kbd>Esc</kbd> per cancel·lar.
+                    </div>
+
+                    <div class="config-lanes-preview">
+                        <div class="config-lane-preview" id="cfg-lane-preview-0" style="border-color:#e8002d22; background:rgba(232,0,45,0.06)">
+                            <span style="color:#e8002d">●</span>
+                            <span id="cfg-lane-label-0">A / ← Fletxa</span>
+                        </div>
+                        <div class="config-lane-preview" id="cfg-lane-preview-1" style="border-color:#1a8fff22; background:rgba(26,143,255,0.06)">
+                            <span style="color:#1a8fff">●</span>
+                            <span id="cfg-lane-label-1">S / ↓ Fletxa</span>
+                        </div>
+                        <div class="config-lane-preview" id="cfg-lane-preview-2" style="border-color:#00cc5522; background:rgba(0,204,85,0.06)">
+                            <span style="color:#00cc55">●</span>
+                            <span id="cfg-lane-label-2">D / → Fletxa</span>
+                        </div>
+                        <div class="config-lane-preview" id="cfg-lane-preview-3" style="border-color:#ff880022; background:rgba(255,136,0,0.06)">
+                            <span style="color:#ff8800">●</span>
+                            <span id="cfg-lane-label-3">W / ↑ Fletxa</span>
+                        </div>
+                    </div>
+
+                    <div class="config-table-header">
+                        <span>Carril</span>
+                        <span>Tecla primària</span>
+                        <span>Tecla secundària</span>
+                    </div>
+
+                    <div id="config-keys-container"></div>
+
+                    <div class="config-footer">
+                        <button class="btn-secondary" id="btn-reset-keys">↺ RESTAURAR PREDETERMINADES</button>
+                    </div>
+                </div>
+            </div><!-- /screen-config -->
 
             <!-- ══ GAME SCREEN ══ -->
             <div id="screen-game" class="screen">

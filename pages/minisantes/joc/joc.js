@@ -51,9 +51,47 @@ const SONGS = [
 
 const LANE_COLORS   = ['#e8002d','#1a8fff','#00cc55','#ff8800'];
 const LANE_COLORS_A = ['rgba(232,0,45,0.14)','rgba(26,143,255,0.14)','rgba(0,204,85,0.14)','rgba(255,136,0,0.14)'];
-const KEY_MAP = { 'a':0,'s':1,'d':2,'w':3,'ArrowLeft':0,'ArrowDown':1,'ArrowRight':2,'ArrowUp':3 };
 
-// DESPUÉS
+// ═══════════════════════════════════
+// KEY CONFIG — persistent via localStorage
+// ═══════════════════════════════════
+const DEFAULT_KEYS = {
+  lane0: ['a', 'ArrowLeft'],
+  lane1: ['s', 'ArrowDown'],
+  lane2: ['d', 'ArrowRight'],
+  lane3: ['w', 'ArrowUp'],
+};
+
+function loadKeyConfig() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('santes_keys') || 'null');
+    if (saved && saved.lane0 && saved.lane1 && saved.lane2 && saved.lane3) return saved;
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_KEYS));
+}
+
+function saveKeyConfig(cfg) {
+  try { localStorage.setItem('santes_keys', JSON.stringify(cfg)); } catch(e) {}
+}
+
+let keyConfig = loadKeyConfig();
+
+// Build dynamic KEY_MAP from keyConfig
+function buildKeyMap() {
+  const map = {};
+  for (let lane = 0; lane < 4; lane++) {
+    const keys = keyConfig['lane' + lane];
+    if (Array.isArray(keys)) {
+      keys.forEach(k => { if (k) map[k] = lane; });
+    }
+  }
+  return map;
+}
+let KEY_MAP = buildKeyMap();
+
+// ═══════════════════════════════════
+// PROGRESS
+// ═══════════════════════════════════
 let _memProgress = {};
 function getProgress() {
   try { return JSON.parse(localStorage.getItem('santes_progress') || '{}'); } catch(e) { return _memProgress; }
@@ -62,7 +100,6 @@ function saveProgress(data) {
   _memProgress = data;
   try { localStorage.setItem('santes_progress', JSON.stringify(data)); } catch(e) {}
 }
-
 
 function getSongData(id) {
   const p = getProgress();
@@ -132,11 +169,124 @@ function showScreen(id) {
 })();
 
 // ═══════════════════════════════════
+// CONFIG SCREEN — KEY BINDING
+// ═══════════════════════════════════
+const LANE_LABELS = ['← (Esquerra)', '↓ (Centre)', '→ (Centre)', '↑ (Dreta)'];
+let listeningLane = null;
+let listeningSlot = null; // 0 or 1 (primary / secondary)
+
+function buildConfigScreen() {
+  const container = document.getElementById('config-keys-container');
+  container.innerHTML = '';
+  for (let lane = 0; lane < 4; lane++) {
+    const keys = keyConfig['lane' + lane];
+    const row = document.createElement('div');
+    row.className = 'config-row';
+    row.style.borderLeft = `3px solid ${LANE_COLORS[lane]}`;
+
+    const label = document.createElement('div');
+    label.className = 'config-lane-label';
+    label.textContent = LANE_LABELS[lane];
+
+    const keysDiv = document.createElement('div');
+    keysDiv.className = 'config-keys';
+
+    for (let slot = 0; slot < 2; slot++) {
+      const btn = document.createElement('button');
+      btn.className = 'config-key-btn';
+      btn.id = `cfg-btn-${lane}-${slot}`;
+      btn.textContent = formatKeyLabel(keys[slot] || '—');
+      btn.addEventListener('click', () => startListening(lane, slot));
+      keysDiv.appendChild(btn);
+    }
+
+    row.appendChild(label);
+    row.appendChild(keysDiv);
+    container.appendChild(row);
+  }
+  updateConfigLaneBar();
+}
+
+function formatKeyLabel(key) {
+  if (!key) return '—';
+  const map = {
+    'ArrowLeft': '← Fletxa', 'ArrowRight': '→ Fletxa',
+    'ArrowUp': '↑ Fletxa', 'ArrowDown': '↓ Fletxa',
+    ' ': 'Espai'
+  };
+  return map[key] || key.toUpperCase();
+}
+
+function updateConfigLaneBar() {
+  for (let lane = 0; lane < 4; lane++) {
+    const el = document.getElementById(`cfg-lane-label-${lane}`);
+    if (el) {
+      const keys = keyConfig['lane' + lane];
+      const parts = keys.filter(Boolean).map(k => formatKeyLabel(k));
+      el.textContent = parts.join(' / ');
+    }
+  }
+}
+
+function startListening(lane, slot) {
+  if (listeningLane !== null) {
+    // cancel previous
+    const prevBtn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
+    if (prevBtn) { prevBtn.classList.remove('listening'); prevBtn.textContent = formatKeyLabel(keyConfig['lane'+listeningLane][listeningSlot] || '—'); }
+  }
+  listeningLane = lane;
+  listeningSlot = slot;
+  const btn = document.getElementById(`cfg-btn-${lane}-${slot}`);
+  btn.classList.add('listening');
+  btn.textContent = '...';
+}
+
+function handleConfigKey(e) {
+  if (listeningLane === null) return;
+  e.preventDefault();
+  e.stopPropagation();
+
+  const key = e.key;
+  // Escape cancels
+  if (key === 'Escape') {
+    const btn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
+    if (btn) { btn.classList.remove('listening'); btn.textContent = formatKeyLabel(keyConfig['lane'+listeningLane][listeningSlot] || '—'); }
+    listeningLane = null; listeningSlot = null;
+    return;
+  }
+
+  // Remove this key from any other lane/slot to avoid conflicts
+  for (let l = 0; l < 4; l++) {
+    keyConfig['lane' + l] = keyConfig['lane' + l].map(k => (k === key && !(l === listeningLane && keyConfig['lane'+l].indexOf(k) === listeningSlot)) ? '' : k);
+  }
+
+  keyConfig['lane' + listeningLane][listeningSlot] = key;
+  saveKeyConfig(keyConfig);
+  KEY_MAP = buildKeyMap();
+
+  const btn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
+  if (btn) { btn.classList.remove('listening'); btn.textContent = formatKeyLabel(key); }
+
+  // Refresh all buttons to reflect cleared conflicts
+  buildConfigScreen();
+  listeningLane = null; listeningSlot = null;
+}
+
+document.addEventListener('keydown', e => {
+  if (document.getElementById('screen-config').classList.contains('active')) {
+    handleConfigKey(e);
+    return;
+  }
+  if (keysHeld.has(e.key)) return; keysHeld.add(e.key);
+  const lane = KEY_MAP[e.key];
+  if (lane !== undefined) { e.preventDefault(); tapLane(lane, null); }
+});
+
+// ═══════════════════════════════════
 // SONG SELECT
 // ═══════════════════════════════════
 function buildSongGrid() {
   const grid = document.getElementById('songs-grid');
-  
   grid.innerHTML = '';
   for (const song of SONGS) {
     const sd = getSongData(song.id);
@@ -175,28 +325,69 @@ function buildSongGrid() {
     if (song.locked) {
       const lock = document.createElement('div'); lock.className = 'badge-locked'; lock.textContent = '⚔'; card.appendChild(lock);
     } else {
-      card.addEventListener('click', () => startSong(song));
+      card.addEventListener('click', () => {
+      const sd = getSongData(song.id);
+
+      if (sd.exUnlocked) {
+        openModeSelector(song);
+      } else {
+        startSong(song, false);
+      }
+    });
     }
     grid.appendChild(card);
   }
+}
+
+
+function openModeSelector(song) {
+  const overlay = document.createElement('div');
+  overlay.className = 'mode-overlay';
+
+  overlay.innerHTML = `
+    <div class="mode-box">
+      <div class="mode-title">${song.title}</div>
+
+      <button class="mode-btn normal">▶ Modo Normal</button>
+      <button class="mode-btn ex">⚡ Modo 2× EX</button>
+
+      <button class="mode-cancel">Cancelar</button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelector('.normal').onclick = () => {
+    overlay.remove();
+    startSong(song, false);
+  };
+
+  overlay.querySelector('.ex').onclick = () => {
+    overlay.remove();
+    startSong(song, true);
+  };
+
+  overlay.querySelector('.mode-cancel').onclick = () => {
+    overlay.remove();
+  };
 }
 
 // ═══════════════════════════════════
 // AUDIO FADE-OUT HELPER
 // ═══════════════════════════════════
 function stopAudio(aud, fadeMs) {
-  if (!aud || typeof aud.pause !== 'function') return;
-  // fake timer object has no volume property
-  if (aud.volume === undefined) { try { aud.pause(); } catch(e) {} return; }
-  const vol0 = aud.volume;
-  const steps = 20;
-  const dt = (fadeMs || 500) / steps;
-  let i = 0;
-  const iv = setInterval(() => {
-    i++;
-    aud.volume = Math.max(0, vol0 * (1 - i/steps));
-    if (i >= steps) { clearInterval(iv); try { aud.pause(); aud.currentTime = 0; } catch(e) {} }
-  }, dt);
+  if (!aud) return;
+  // Handle the fake timer object (no volume property, has pause())
+  if (typeof aud.volume === 'undefined') {
+    try { aud.pause(); } catch(e) {}
+    return;
+  }
+  // Real HTMLAudioElement — immediate hard stop (most reliable)
+  try {
+    aud.volume = 0;
+    aud.pause();
+    aud.currentTime = 0;
+  } catch(e) {}
 }
 
 // ═══════════════════════════════════
@@ -212,13 +403,14 @@ function resizeCanvas() {
 }
 
 function startSong(song, exMode) {
+  // --- Clean up any running game first ---
+  if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+  if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
+  G.running = false;
+
   exMode = exMode || false;
   const sd   = getSongData(song.id);
   const isEx = exMode && sd.exUnlocked;
-
-  // Hard-stop any previous audio NOW (no fade, clean start)
-  if (G.audio) { try { G.audio.pause(); if (G.audio.currentTime !== undefined) G.audio.currentTime = 0; } catch(e) {} }
-  if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
 
   G = {
     song, isEx,
@@ -229,7 +421,7 @@ function startSong(song, exMode) {
     score: 0, combo: 0, maxCombo: 0, lives: song.vidas,
     totalNotes: 0, hitCount: 0, perfectCount: 0, greatCount: 0, missCount: 0,
     running: false, audio: null, animId: null, t0: null,
-    gameOverPending: false  // flag to avoid double-calling endGame
+    gameOverPending: false
   };
   G.totalNotes = G.notes.length;
 
@@ -239,6 +431,9 @@ function startSong(song, exMode) {
   document.getElementById('hud-lives').textContent = '♥'.repeat(song.vidas);
   document.getElementById('hud-acc').textContent       = '';
   document.getElementById('progress-fill').style.width = '0%';
+
+  // Update lane bar key labels based on current keyConfig
+  updateLaneBarLabels();
 
   // ── VÍDEO DE FONS ──────────────────────────────────────────
   const vid = document.getElementById('game-video-bg');
@@ -260,7 +455,7 @@ function startSong(song, exMode) {
   showScreen('game');
   resizeCanvas();
 
-  // ── AUDIO: must be created synchronously inside user-gesture chain ──
+  // ── AUDIO ──
   if (song.audioSrc) {
     const aud = new Audio(song.audioSrc);
     aud.preload = 'auto';
@@ -280,10 +475,28 @@ function startSong(song, exMode) {
   }
 }
 
+function updateLaneBarLabels() {
+  for (let lane = 0; lane < 4; lane++) {
+    const el = document.getElementById('lt' + lane);
+    if (!el) continue;
+    const kt = el.querySelector('.kt');
+    if (!kt) continue;
+    const keys = keyConfig['lane' + lane];
+    const parts = (keys || []).filter(Boolean).map(k => formatKeyLabel(k));
+    kt.textContent = parts.join(' / ');
+  }
+}
+
 function _startTimer(isEx) {
   G.t0 = performance.now();
-  G.audio = { get currentTime(){ return (performance.now()-G.t0)/1000*(isEx?2:1); }, pause(){} };
-  G.running = true; G.animId = requestAnimationFrame(gameLoop);
+
+  // NO reemplaces G.audio
+  G.timerMode = true;
+
+  G.getTime = () => (performance.now()-G.t0)/1000*(isEx?2:1);
+
+  G.running = true;
+  G.animId = requestAnimationFrame(gameLoop);
 }
 
 const SPEED = 340;
@@ -338,9 +551,17 @@ function drawGame(t) {
       updateHUD(); flashLane(n.lane,'miss');
       if (G.lives <= 0 && !G.gameOverPending) {
         G.gameOverPending = true;
-        G.running = false; cancelAnimationFrame(G.animId);
-        stopAudio(G.audio, 500);          // ← music fades out on fail
-        setTimeout(() => endGame(), 550);
+        G.running = false;
+        cancelAnimationFrame(G.animId);
+        G.animId = null;
+        // Stop audio immediately — covers both real Audio and fake timer objects
+        const audRef = G.audio;
+        G.audio = null; // nullify first so nothing else touches it
+        stopAudio(audRef, 0);
+        // Also stop video
+        const vid = document.getElementById('game-video-bg');
+        if (vid) { try { vid.pause(); } catch(e) {} }
+        setTimeout(() => endGame(), 400);
         return;
       }
     }
@@ -357,15 +578,22 @@ function roundRect(ctx,x,y,w,h,r) {
 
 function gameLoop() {
   if (!G.running) return;
-  const t = G.audio ? G.audio.currentTime : 0;
+  const t = G.timerMode ? G.getTime() : (G.audio ? G.audio.currentTime : 0);
   spawnNotes(t); drawGame(t);
+  if (!G.running) return; // drawGame may have set running=false on game over
   const dur = G.isEx ? G.song.duration*0.5 : G.song.duration;
   document.getElementById('progress-fill').style.width = Math.min(t/dur*100,100)+'%';
   // Level complete
   if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
-    G.running = false; cancelAnimationFrame(G.animId);
-    stopAudio(G.audio, 400);             // ← music fades out on win
-    setTimeout(() => endGame(), 450);
+    G.running = false;
+    cancelAnimationFrame(G.animId);
+    G.animId = null;
+    const audRef = G.audio;
+    G.audio = null;
+    stopAudio(audRef, 0);
+    const vid = document.getElementById('game-video-bg');
+    if (vid) { try { vid.pause(); } catch(e) {} }
+    setTimeout(() => endGame(), 300);
     return;
   }
   G.animId = requestAnimationFrame(gameLoop);
@@ -420,9 +648,9 @@ function updateHUD() {
 }
 
 function endGame() {
-  G.running = false; cancelAnimationFrame(G.animId);
-  // make absolutely sure audio is stopped
-  if (G.audio) { try { G.audio.pause(); if(G.audio.currentTime!==undefined) G.audio.currentTime=0; } catch(e) {} }
+  G.running = false;
+  if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+  if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
 
   const hitPct   = G.totalNotes > 0 ? G.hitCount/G.totalNotes : 0;
   const stars    = hitPct>=0.95?3:hitPct>=0.75?2:hitPct>=0.5?1:0;
@@ -464,11 +692,7 @@ function endGame() {
 // KEYBOARD
 // ═══════════════════════════════════
 const keysHeld = new Set();
-document.addEventListener('keydown', e => {
-  if (keysHeld.has(e.key)) return; keysHeld.add(e.key);
-  const lane = KEY_MAP[e.key];
-  if (lane !== undefined) { e.preventDefault(); tapLane(lane,null); }
-});
+// keydown is defined above (after CONFIG SCREEN section) to handle config first
 document.addEventListener('keyup', e => keysHeld.delete(e.key));
 document.getElementById('lane-bar').addEventListener('touchstart', e=>e.preventDefault(), {passive:false});
 
@@ -476,7 +700,18 @@ document.getElementById('lane-bar').addEventListener('touchstart', e=>e.preventD
 // NAVIGATION
 // ═══════════════════════════════════
 document.getElementById('btn-play').addEventListener('click', ()=>{ buildSongGrid(); showScreen('select'); });
+document.getElementById('btn-config').addEventListener('click', ()=>{ buildConfigScreen(); showScreen('config'); });
 document.getElementById('btn-back-select').addEventListener('click', ()=>showScreen('title'));
+document.getElementById('btn-back-config').addEventListener('click', ()=>showScreen('title'));
+document.getElementById('btn-reset-keys').addEventListener('click', ()=>{
+  keyConfig = JSON.parse(JSON.stringify(DEFAULT_KEYS));
+  saveKeyConfig(keyConfig);
+  KEY_MAP = buildKeyMap();
+  buildConfigScreen();
+});
 document.getElementById('btn-res-menu').addEventListener('click', ()=>{ buildSongGrid(); showScreen('select'); });
 document.getElementById('btn-res-retry').addEventListener('click', ()=>startSong(G.song,G.isEx));
 window.addEventListener('resize', ()=>{ if(document.getElementById('screen-game').classList.contains('active')) resizeCanvas(); });
+
+// Initialize lane bar labels on load
+updateLaneBarLabels();
