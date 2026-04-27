@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 1200px;
+    min-height: 1340px !important;
 }
 
         /* Navbar container */
@@ -86,9 +86,10 @@ body {
 
 
     .container {
-        max-width: 1100px;
-        margin: auto;
-    }
+    max-width: 1490px !important;
+    margin: 0;
+    padding: 0 30px;
+}
 
     /* HERO */
     .hero {
@@ -204,10 +205,30 @@ body {
 }
 
 /* COLORES EXACTOS */
-.red { border-color: #e74c3c; }
-.orange { border-color: #f39c12; }
-.green { border-color: #1abc9c; }
-.gray { border-color: #7f8c8d; }
+.red { 
+    border-color: #e74c3c;
+ }
+.orange { 
+    border-color: #f39c12;
+    height: 255px !important;
+
+ }
+ .red-reverse {
+    height: 300px !important;
+    margin-top: -65px !important;
+ }
+.green { 
+    border-color: #1abc9c;
+    height: 275px !important;
+ }
+.gray { 
+    border-color: #7f8c8d;
+    height: 255px !important;
+    margin-top: -47px !important;
+ }
+ .red-reverse2 {
+    height: 210px;
+ }
 /* HERO FIX */
 .hero {
     margin-top: 20px;
