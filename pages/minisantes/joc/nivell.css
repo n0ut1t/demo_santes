@@ -1140,3 +1140,35 @@
 .mode-cancel:hover {
   color: #c8a84b;
 }
+
+
+.banner-minisantes {
+    margin-top: -15px;
+    background-image: url('../../../public/banner-joc.png');
+    background-size: cover;        /* clau: omple tota la secció */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 400px;                /* pots ajustar o fer-lo responsive */
+    width: 100%;
+
+    display: flex;                /* per centrar el text fàcilment */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -50px;
+    color: #000;
+    position: relative;
+}
+.banner-minisantes h1 {
+    color: white;
+    font-size: 6rem;
+    font-weight: 800;
+}
+
+.banner-minisantes h2 {
+    color: white;
+    font-size: 2.0rem;
+    margin-top: 10px;
+}
