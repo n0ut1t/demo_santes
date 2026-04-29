@@ -1172,3 +1172,153 @@
     font-size: 2.0rem;
     margin-top: 10px;
 }
+
+.category-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cat-btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #222;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.cat-btn:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.cat-btn.active {
+  background: linear-gradient(135deg, #ff7a18, #af002d);
+  color: white;
+  box-shadow: 0 0 12px rgba(255,100,0,0.6);
+}
+
+.song-card {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.song-card:hover {
+  transform: scale(1.05);
+}
+
+.category-selector {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0 18px;
+}
+
+/* Botón base */
+.cat-btn {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 4px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(200,168,75,0.08),
+    rgba(0,0,0,0.4)
+  );
+
+  border: 1px solid rgba(200,168,75,0.25);
+
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.7);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.6),
+    0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* brillo animado */
+.cat-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+/* hover */
+.cat-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: #c8a84b;
+  color: #fff;
+  box-shadow:
+    0 0 0 1px rgba(200,168,75,0.4),
+    0 10px 30px rgba(200,168,75,0.15);
+}
+
+.cat-btn:hover::before {
+  left: 150%;
+}
+
+/* active (seleccionado) */
+.cat-btn.active {
+  background: linear-gradient(
+    135deg,
+    #c8a84b,
+    #e8c86a
+  );
+
+  color: #0a0805;
+  font-weight: 700;
+
+  border-color: #e8c86a;
+
+  box-shadow:
+    0 0 20px rgba(200,168,75,0.35),
+    0 0 0 1px rgba(200,168,75,0.6);
+
+  transform: scale(1.08);
+}
+
+/* pequeño icono opcional estilo RPG */
+.cat-btn::after {
+  content: '◆';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8px;
+  color: rgba(200,168,75,0.5);
+  transition: all 0.2s;
+}
+
+.cat-btn.active::after {
+  color: #000;
+  opacity: 0.6;
+}
+
+/* click feedback */
+.cat-btn:active {
+  transform: scale(0.96);
+}
