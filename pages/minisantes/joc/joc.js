@@ -490,7 +490,7 @@ function startSong(song, exMode) {
   G = {
     song, isEx,
     notes: (isEx ? song.notesHard : song.notesEasy).map(n => ({
-      time: isEx ? n[0] * 0.5 : n[0], lane: n[1], hit: false, missed: false, _y: -999
+      time: n[0], lane: n[1], hit: false, missed: false, _y: -999
     })),
     noteIdx: 0, activeNotes: [],
     score: 0, combo: 0, maxCombo: 0, lives: song.vidas,
@@ -500,7 +500,7 @@ function startSong(song, exMode) {
   };
   G.totalNotes = G.notes.length;
 
-  document.getElementById('hud-song-name').textContent = song.title.toUpperCase() + (isEx ? ' · 2×' : '');
+  document.getElementById('hud-song-name').textContent = song.title.toUpperCase() + (isEx ? ' · EX' : '');
   document.getElementById('hud-score').textContent     = '0';
   document.getElementById('hud-combo').textContent     = '';
   document.getElementById('hud-lives').textContent = '♥'.repeat(song.vidas);
@@ -521,7 +521,7 @@ function startSong(song, exMode) {
       vid.muted = true;
       vid.loop = true;
       vid.playsInline = true;
-      vid.playbackRate = isEx ? 2.0 : 1.0;
+      vid.playbackRate = 1.0;
       vid.load();
       vid.play().catch(() => {});
     }
@@ -535,7 +535,6 @@ function startSong(song, exMode) {
     const aud = new Audio(song.audioSrc);
     aud.preload = 'auto';
     aud.volume  = 1.0;
-    if (isEx) aud.playbackRate = 2.0;
     G.audio = aud;
 
     const p = aud.play();
@@ -568,7 +567,7 @@ function _startTimer(isEx) {
   // NO reemplaces G.audio
   G.timerMode = true;
 
-  G.getTime = () => (performance.now()-G.t0)/1000*(isEx?2:1);
+  G.getTime = () => (performance.now()-G.t0)/1000;
 
   G.running = true;
   G.animId = requestAnimationFrame(gameLoop);
@@ -656,7 +655,7 @@ function gameLoop() {
   const t = G.timerMode ? G.getTime() : (G.audio ? G.audio.currentTime : 0);
   spawnNotes(t); drawGame(t);
   if (!G.running) return; // drawGame may have set running=false on game over
-  const dur = G.isEx ? G.song.duration*0.5 : G.song.duration;
+  const dur = G.song.duration;
   document.getElementById('progress-fill').style.width = Math.min(t/dur*100,100)+'%';
   // Level complete
   if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
