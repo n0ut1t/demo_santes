@@ -5,22 +5,22 @@
 
 // ── Cançó de tutorial (Gegant del Pi, easy, notes manuals) ──
 const TUTORIAL_SONG = {
-    id: 'gener',
-    title: 'Gener',
-    artist: 'Tradicional',
-    audioSrc: '/../../../../audio/Gener.mp3',
-    audioSrcEx: '/../../../../audio/Gener.mp3',
-    videoSrc: '/../../../../video/Bequetero.mp4',
-    bgColor: '#2e1a0a',
-    bgGradient: 'linear-gradient(135deg,#2e1a0a,#0a1a2e)',
-    bgImage: '/../../../../public/Gener.png',
-    duration: 120,
-    dificultad: "Fàcil",
-    categoria: "Generals",
-    vidas: 5,
-    notesEasy: [[0.766,0],[1.091,2],[1.695,3],[4.574,0],[5.968,2],[6.455,3],[6.92,0],[8.266,2],[8.824,3],[11.54,0],[12.074,2],[14.211,3],[15.325,0],[16.277,2],[16.742,3],[17.043,0],[17.67,2],[19.574,3],[20.503,0],[22.291,2],[23.661,3],[24.102,0],[26.935,2],[29.814,3],[30.232,0],[30.79,2],[31.254,3],[31.742,0],[34.551,2],[35.898,3],[36.362,0],[38.731,2],[42.005,3],[44.791,0],[45.209,2],[45.627,3],[46.184,0],[47.578,2],[48.53,3],[49.459,0],[50.387,2],[52.175,3],[54.149,0],[56.471,2],[56.819,3],[57.446,0],[57.911,2],[58.77,3],[59.722,0],[60.163,2]],
-    notesHard: [[0.766,0],[1.111,2],[1.252,3],[1.699,0],[2.235,2],[2.618,3],[2.733,0],[3.014,2],[3.206,3],[3.665,0],[4.125,2],[4.636,3],[4.942,0],[5.083,2],[5.543,3],[5.849,0],[5.99,2],[6.462,3],[6.769,0],[6.909,2],[7.177,3],[7.369,0],[7.535,2],[7.65,3],[8.263,0],[8.838,2],[9.336,3],[9.489,0],[9.617,2],[9.731,3],[10.217,0],[10.689,2],[10.97,3],[11.111,0],[11.29,2],[11.609,3],[11.749,0],[11.928,2],[12.081,3],[12.401,0],[12.541,2],[12.975,3],[13.333,0],[13.435,2],[13.857,3],[14.252,0],[14.393,2],[14.533,3],[14.674,0],[14.853,2],[15.019,3],[15.146,0],[15.338,2],[15.747,3],[16.296,0],[16.628,2],[16.794,3],[16.934,0],[17.062,2],[17.202,3],[17.573,0],[17.726,2],[18.033,3],[18.186,0],[18.48,2],[18.646,3],[19.093,0],[19.399,2],[19.578,3],[19.757,0],[19.884,2],[20.038,3],[20.485,0],[20.817,2],[20.944,3],[21.43,0],[21.762,2],[21.902,3],[22.068,0],[22.183,2],[22.336,3],[22.515,0],[22.681,2],[22.822,3],[22.898,0],[23.32,2],[23.69,3],[23.792,0],[24.112,2],[24.303,3],[24.559,0],[24.686,2],[25.197,3],[25.453,0],[25.695,2],[25.963,3],[26.155,0],[26.564,2],[26.768,3],[26.96,0],[27.1,2],[27.317,3],[27.534,0],[28.007,2],[28.466,3],[28.965,0],[29.233,2],[29.424,3],[29.552,0],[29.68,2],[29.859,3],[29.999,0],[30.152,2],[30.28,3],[30.791,0],[31.289,2],[31.634,3],[31.774,0],[31.927,2],[32.055,3],[32.208,0],[32.489,2],[32.668,3],[33.013,0],[33.205,2],[33.473,3],[33.639,0],[34.098,2],[34.405,3],[34.558,0],[34.878,2],[34.98,3],[35.439,0],[35.797,2],[35.938,3],[36.18,0],[36.372,2],[36.717,3],[36.883,0],[37.151,2],[37.33,3],[37.611,0],[37.777,2],[38.224,3],[38.747,0],[39.003,2],[39.105,3],[39.232,0],[39.526,2],[39.667,3],[39.999,0],[40.126,2],[40.458,3],[40.612,0],[41.046,2],[41.57,3],[41.736,0],[41.876,2],[42.016,3],[42.476,0],[42.936,2],[43.268,3],[43.421,0],[43.894,2],[44.175,3],[44.315,0],[44.481,2],[44.647,3],[44.801,0],[44.941,2],[45.069,3],[45.222,0],[45.695,2],[46.065,3],[46.205,0],[46.55,2],[46.652,3],[46.818,0],[46.972,2],[47.099,3],[47.393,0],[47.585,2],[47.955,3],[48.044,0],[48.542,2],[49.002,3],[49.194,0],[49.321,2],[49.475,3],[49.934,0],[50.407,2],[50.624,3],[50.88,0],[51.288,2],[51.774,3],[51.914,0],[52.067,2],[52.246,3],[52.399,0],[52.667,2],[53.191,3],[53.536,0],[53.689,2],[53.97,3],[54.162,0],[54.43,2],[54.609,3],[55.107,0],[55.413,2],[55.579,3],[55.873,0],[56.013,2],[56.512,3],[56.703,0],[56.831,2],[56.984,3],[57.457,0],[57.738,2],[57.916,3],[58.223,0],[58.376,2],[58.772,3],[59.13,0],[59.308,2],[59.436,3],[59.589,0],[59.73,2],[59.921,3],[60.024,0],[60.177,2]]
-  };
+  id: 'tutorial',
+  title: 'Tutorial',
+  artist: 'Gegant del Pi',
+  audioSrc: '/../../../audio/Gener.mp3',
+  audioSrcEx: null,
+  videoSrc: null,
+  bgColor: '#0d1a2e',
+  bgGradient: 'linear-gradient(135deg,#0d1a2e,#1a0a2e)',
+  bgImage: '/../../../public/Gener.jpeg',
+  duration: 64.04,
+  dificultad: 'Fàcil',
+  categoria: 'Tutorial',
+  vidas: 99,
+  notesEasy: [[0.813,0],[1.324,1],[1.788,2],[2.299,3],[2.81,0],[3.274,2],[3.738,1],[4.18,3],[4.667,2],[5.108,1],[5.573,2],[6.037,0],[6.502,1],[6.966,3],[7.43,1],[7.895,2],[8.359,1],[8.87,0],[9.358,3],[9.799,1],[10.263,3],[10.728,0],[11.192,2],[11.633,3],[12.121,0],[12.585,1],[13.05,2],[13.514,3],[13.978,0],[14.443,2],[14.907,1],[15.372,3],[15.836,2],[16.347,1],[16.834,2],[17.299,0],[17.763,1],[18.228,3],[18.669,1],[19.133,2],[19.598,1],[20.085,0],[20.55,3],[21.014,1],[21.478,3],[21.966,0],[22.43,2],[22.895,3],[23.359,0],[23.87,1],[24.358,2],[24.822,3],[25.263,0],[25.728,2],[26.192,1],[26.657,3],[27.121,2],[27.585,1],[28.05,2],[28.514,0],[28.979,1],[29.443,3],[29.884,1],[30.325,2],[30.836,1],[31.324,0],[31.811,3],[32.276,1],[32.74,3],[33.228,0],[33.692,2],[34.133,3],[34.598,0],[35.062,1],[35.527,2],[35.991,3],[36.455,0],[36.92,2],[37.384,1],[37.849,3],[38.313,2],[38.801,1],[39.288,2],[39.729,0],[40.194,1],[40.681,3],[41.123,1],[41.587,2],[42.051,1],[42.516,0],[42.98,3],[43.445,1],[43.909,3],[44.373,0],[44.838,2],[45.302,3],[45.767,0],[46.254,1],[46.742,2],[47.183,3],[47.671,0],[48.112,2],[48.576,1],[49.041,3],[49.505,2],[49.969,1],[50.457,2],[50.898,0],[51.363,1],[51.827,3],[52.291,1],[52.756,2],[53.22,1],[53.731,0],[54.195,3],[54.683,1],[55.147,3],[55.612,0],[56.076,2],[56.541,3],[57.005,0],[57.493,1],[57.957,2],[58.421,3],[58.886,0],[59.35,2],[59.815,1],[60.256,3]],
+  notesHard: []
+};
 
 // ═══════════════════════════════════════════════════════════════
 // DEFINICIÓ DELS PASSOS
@@ -276,6 +276,7 @@ let TUT = {
       50%{box-shadow:0 0 32px rgba(200,168,75,0.8)}
     }
 
+
     /* ── Overlay petit "jugant" durant joc ── */
     #tut-live-hint {
       display: none;
@@ -443,7 +444,7 @@ let TUT = {
   // Botó TUTORIAL a la pantalla títol ja existeix a l'HTML, només li posem el listener
   const btnTut = document.getElementById('btn-tutorial');
   if (btnTut) {
-    btnTut.onclick = startTutorial;
+    btnTut.addEventListener('click', startTutorial);
   }
 })();
 
@@ -452,74 +453,32 @@ let TUT = {
 // ═══════════════════════════════════════════════════════════════
 
 function startTutorial() {
-  resetTutorial();   // 🔥 IMPORTANT
+  TUT.active   = true;
+  TUT.stepIdx  = 0;
+  TUT.pausedTime = 0;
+  TUT.audioOffset = 0;
 
-  TUT.active = true;
-  TUT.stepIdx = 0;
-  TUT.pauseAt = null;
-  TUT.currentPlayStep = null;
-
+  // Mostra el botó de sortir
   const exitBtn = document.getElementById('tut-exit-btn');
   if (exitBtn) exitBtn.style.display = 'flex';
 
-if (typeof startSong === 'function') {
-  startSong(TUTORIAL_SONG, false);
-}
-
-setTimeout(() => {
-  if (typeof G !== 'undefined') {
-    G.running = false;
-    if (G.animId) cancelAnimationFrame(G.animId);
-    G.animId = null;
-
-    if (G.audio) {
-      try {
-        // ❌ ELIMINAT: G.audio.pause();
-        G.audio.currentTime = 0;
-      } catch(e){}
-    }
+  // Inicia el joc real amb la cançó tutorial (sense àudio per ara)
+  if (typeof startSong === 'function') {
+    startSong(TUTORIAL_SONG, false);
   }
 
-  showTutorialStep(0);
-}, 80);
-}
-
-function resetTutorial() {
-  TUT.active = false;
-  TUT.stepIdx = 0;
-  TUT.overlayVisible = false;
-  TUT.pausedTime = 0;
-  TUT.pausedByStep = false;
-  TUT.audioOffset = 0;
-  TUT.pauseAt = null;
-  TUT.currentPlayStep = null;
-
-  hideOverlay();
-  hideHighlight();
-  hidePlayHint();
-
-  const liveHint = document.getElementById('tut-live-hint');
-  if (liveHint) liveHint.classList.remove('visible');
-
-  const exitBtn = document.getElementById('tut-exit-btn');
-  if (exitBtn) exitBtn.style.display = 'none';
-
-  // 🔥 IMPORTANTE: reset del juego REAL
-  if (typeof G !== 'undefined') {
-    G.running = false;
-
-    if (G.animId) {
-      cancelAnimationFrame(G.animId);
-      G.animId = null;
+  // Esperem que startSong hagi iniciat l'àudio i llavors pausem
+  // startSong fa play() asíncron, cal esperar una mica més
+  setTimeout(() => {
+    if (typeof G !== 'undefined') {
+      G.running = false;
+      if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+      if (G.audio) {
+        try { G.audio.pause(); G.audio.currentTime = 0; } catch(e){}
+      }
     }
-
-    if (G.audio) {
-      try {
-        G.audio.pause();
-        G.audio.currentTime = 0;
-      } catch(e){}
-    }
-  }
+    showTutorialStep(0);
+  }, 400);
 }
 
 function showTutorialStep(idx) {
@@ -585,73 +544,107 @@ function onTutorialBtn(idx) {
 function startTutorialPlay(idx) {
   const step = TUTORIAL_STEPS[idx];
 
-  // Mostra el hint petit
+  TUT.pauseAt        = (step.pauseAt !== undefined && step.pauseAt !== null) ? step.pauseAt : null;
+  TUT.currentPlayStep = idx;
+
+  // Hint petit
   const liveHint = document.getElementById('tut-live-hint');
   if (liveHint) liveHint.classList.add('visible');
+  if (step.body && step.btnText === null) showPlayHint(step.title, step.body);
 
-  // Mostra caixa petita si té body (mode play semi-overlay)
-  if (step.body && step.btnText === null) {
-    showPlayHint(step.title, step.body);
+  if (typeof G === 'undefined') return;
+
+  // ── Reset complet de l'estat de joc per a aquest segment ──
+  // Reconstruïm les notes filtrades al rang temporal del pas
+  const allNotes = TUTORIAL_SONG.notesEasy;
+  const startT   = (step.gameTime !== null && step.gameTime !== undefined) ? step.gameTime : 0;
+  const endT     = TUT.pauseAt !== null ? TUT.pauseAt + 5 : 9999; // +5s marge
+
+  G.notes = allNotes
+    .filter(n => n[0] >= startT - 0.1)   // notes a partir del temps del pas
+    .map(n => ({ time: n[0], lane: n[1], hit: false, missed: false, _y: -999 }));
+  G.noteIdx    = 0;
+  G.activeNotes = [];
+
+  // ── Àudio: mode timer (sense dependre de currentTime) ──
+  // Usem un timer propi per evitar problemes de seek asíncron
+  const t0 = performance.now() - startT * 1000;
+  G.timerMode = true;
+  G.getTime   = () => (performance.now() - t0) / 1000;
+
+  // Intentem reproduir l'àudio en paral·lel (pot fallar, no és crític)
+  if (G.audio) {
+    try {
+      G.audio.currentTime = startT;
+      G.audio.play().catch(() => {});
+    } catch(e) {}
   }
 
-  // Reprèn/arrenca el joc
-  if (typeof G !== 'undefined') {
-    G.running = true;
+  // ── Loop de render del tutorial ──
+  G.running = true;
+  if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
 
-    // Si hi ha àudio i estava pausat, reprenem
-    if (G.audio && G.audio.paused) {
-      G.audio.currentTime = step.gameTime || TUT.audioOffset;
-      G.audio.play().catch(()=>{});
+  G.animId = requestAnimationFrame(function tutLoop() {
+    if (!G || !G.running || !TUT.active) return;
+
+    const t = G.getTime();
+
+    // Comprovació de pausa automàtica
+    if (TUT.pauseAt !== null && t >= TUT.pauseAt) {
+      G.running = false;
+      cancelAnimationFrame(G.animId);
+      G.animId = null;
+      if (G.audio) { try { G.audio.pause(); } catch(e){} }
+
+      const lh = document.getElementById('tut-live-hint');
+      if (lh) lh.classList.remove('visible');
+      hidePlayHint();
+
+      const nextIdx = TUT.currentPlayStep + 1;
+      TUT.pauseAt = null;
+      setTimeout(() => showTutorialStep(nextIdx), 400);
+      return;
     }
 
-    // Reinicia el loop
-    if (!G.animId) {
-      G.animId = requestAnimationFrame(tutGameLoop);
+    // Dibuix
+    if (typeof spawnNotes === 'function') spawnNotes(t);
+    if (typeof drawGame   === 'function') drawGame(t);
+    if (!G.running) return;
+
+    // Barra progrés
+    const pf = document.getElementById('progress-fill');
+    if (pf) {
+      const dur = G.song ? G.song.duration : 64.04;
+      pf.style.width = Math.min(t / dur * 100, 100) + '%';
     }
-  }
 
-  // Registra quan s'ha de pausar
-  TUT.pauseAt = step.pauseAt;
-  TUT.currentPlayStep = idx;
+    // Fi de les notes d'aquest segment → pas completat
+    if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
+      G.running = false;
+      cancelAnimationFrame(G.animId);
+      G.animId = null;
+      if (G.audio) { try { G.audio.pause(); } catch(e){} }
+      const lh2 = document.getElementById('tut-live-hint');
+      if (lh2) lh2.classList.remove('visible');
+      hidePlayHint();
+      setTimeout(() => {
+        if (TUT.active) showTutorialComplete();
+      }, 400);
+      return;
+    }
+
+    G.animId = requestAnimationFrame(tutLoop);
+  });
 }
 
-// ── Loop de joc del tutorial (amb detecció de pausa automàtica) ──
-function tutGameLoop() {
-  if (!TUT.active || !G || !G.running) return;
-
-  // Crida al gameLoop original
-  if (typeof gameLoop === 'function') {
-    // Ja l'executem via requestAnimationFrame des del joc original
-  }
-
-  // Comprova si hem d'aturar
-  const t = G.audio?.currentTime ?? G.getTime?.() ?? 0;
-  if (TUT.pauseAt && t >= TUT.pauseAt) {
-    G.running = false;
-    if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
-    if (G.audio)  { try { G.audio.pause(); TUT.audioOffset = G.audio.currentTime; } catch(e){} }
-
-    const liveHint = document.getElementById('tut-live-hint');
-    if (liveHint) liveHint.classList.remove('visible');
-
-    hidePlayHint();
-    TUT.pauseAt = null;
-
-    // Avança al proper pas (pause/explicació)
-    const nextIdx = TUT.currentPlayStep + 1;
-    setTimeout(() => showTutorialStep(nextIdx), 350);
-    return;
-  }
-
-  G.animId = requestAnimationFrame(tutGameLoop);
-}
+// tutGameLoop conservat com a no-op per compatibilitat
+function tutGameLoop() {}
 
 // ── Injecta el hook al gameLoop original per detecció de fi ──
 const _origEndGame = typeof endGame === 'function' ? endGame : null;
 if (_origEndGame) {
   window.endGame = function() {
     if (TUT.active) {
-      endTutorial();
       const liveHint = document.getElementById('tut-live-hint');
       if (liveHint) liveHint.classList.remove('visible');
       hidePlayHint();
@@ -711,35 +704,14 @@ function hideExitConfirm() {
 }
 
 function forceTutorialExit() {
-  TUT.active = false;
   hideExitConfirm();
-
-  // 🔁 RESET TOTAL DEL TUTORIAL
-  TUT = {
-    active: false,
-    stepIdx: 0,
-    overlayVisible: false,
-    pausedTime: 0,
-    pausedByStep: false,
-    audioOffset: 0,
-    pauseAt: null,
-    currentPlayStep: null
-  };
+  TUT.active = false;
 
   // Atura el joc
   if (typeof G !== 'undefined') {
     G.running = false;
-    if (G.animId) {
-      cancelAnimationFrame(G.animId);
-      G.animId = null;
-    }
-    if (G.audio) {
-      try {
-        G.audio.pause();
-        G.audio.currentTime = 0;
-      } catch(e){}
-      G.audio = null;
-    }
+    if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+    if (G.audio)  { try { G.audio.pause(); G.audio.currentTime = 0; } catch(e){} G.audio = null; }
   }
 
   // Amaga tots els elements del tutorial
@@ -760,26 +732,13 @@ function forceTutorialExit() {
 
 function endTutorial() {
   TUT.active = false;
-
   hideOverlay();
   hideHighlight();
-  hidePlayHint();
-
   const liveHint = document.getElementById('tut-live-hint');
   if (liveHint) liveHint.classList.remove('visible');
-
-  if (typeof G !== 'undefined') {
-    G.running = false;
-    if (G.audio) {
-      try {
-        G.audio.pause();
-        G.audio.currentTime = 0;
-      } catch (e) {}
-    }
-  }
-
-  // ❌ NO cridar showTutorialComplete aquí
+  showTutorialComplete();
 }
+
 // ═══════════════════════════════════════════════════════════════
 // UTILITATS UI
 // ═══════════════════════════════════════════════════════════════
