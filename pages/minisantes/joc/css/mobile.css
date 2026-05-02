@@ -257,6 +257,9 @@
    GAME SCREEN
 ══════════════════════════════════════ */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
   #game-hud {
     padding: 8px 14px 6px;
   }
