@@ -738,8 +738,8 @@ function _startTimer(isEx) {
 }
 
 
-function getHitY() { return canvas.height - 100; }
-const HIT_ZONE_HALF = 55;
+function getHitY() { return canvas.height - 40; }
+const HIT_ZONE_HALF = window.innerWidth <= 768 ? 75 : 55;
 
 function spawnNotes(t) {
   const hitY = getHitY();
@@ -755,62 +755,99 @@ function spawnNotes(t) {
 }
 
 function drawGame(t) {
-  const W = canvas.width, H = canvas.height;
-  const hitY = getHitY(), LANE_W = W/4, NOTE_H = 46;
-  ctx2.clearRect(0,0,W,H);
+  if (!G || !G.activeNotes) return;
 
-  for (let i=0; i<4; i++) {
-    ctx2.fillStyle = LANE_COLORS_A[i]; ctx2.fillRect(i*LANE_W,0,LANE_W-1,H);
-    ctx2.fillStyle = 'rgba(255,255,255,0.025)'; ctx2.fillRect(i*LANE_W+LANE_W-1,0,1,H);
-  }
-  for (let i=0; i<4; i++) {
-    ctx2.fillStyle = 'rgba(255,255,255,0.04)';
-    roundRect(ctx2, i*LANE_W+4, hitY-HIT_ZONE_HALF, LANE_W-8, HIT_ZONE_HALF*2, 6); ctx2.fill();
-    ctx2.strokeStyle = 'rgba(200,168,75,0.18)'; ctx2.lineWidth = 1;
-    roundRect(ctx2, i*LANE_W+4, hitY-HIT_ZONE_HALF, LANE_W-8, HIT_ZONE_HALF*2, 6); ctx2.stroke();
-  }
-  ctx2.fillStyle = 'rgba(200,168,75,0.25)'; ctx2.fillRect(0,hitY-1,W,2);
+  const W = canvas.width || 800;
+  const H = canvas.height || 600;
 
-  for (const n of G.activeNotes) {
-    if (n.hit||n.missed) continue;
-    const speed = G.speed || 340;
-    const y = hitY - (n.time - t) * speed - NOTE_H / 2;
-    n._y = y + NOTE_H/2;
-    const nx = n.lane*LANE_W+5, nW = LANE_W-10;
-    ctx2.shadowColor = LANE_COLORS[n.lane]; ctx2.shadowBlur = 18;
-    ctx2.fillStyle = LANE_COLORS[n.lane];
-    roundRect(ctx2,nx,y,nW,NOTE_H,7); ctx2.fill();
-    ctx2.shadowBlur = 0;
-    ctx2.fillStyle = 'rgba(255,255,255,0.2)';
-    roundRect(ctx2,nx+2,y+2,nW-4,NOTE_H*0.36,5); ctx2.fill();
-    ctx2.fillStyle='rgba(255,255,255,0.35)'; ctx2.save();
-    ctx2.translate(nx+nW/2, y+NOTE_H/2); ctx2.rotate(Math.PI/4);
-    ctx2.fillRect(-3.5,-3.5,7,7); ctx2.restore();
-  }
+  const hitY = getHitY();
+  const isMobile = window.innerWidth <= 768;
+const GAP = isMobile ? 8 : 8;
+const LANE_W = (W - GAP * 3) / 4;
+const NOTE_H = isMobile ? 180 : 50;
+const padding = 0;                 // padding mínim per veure el color de fons
 
-  // Auto-miss
-  for (const n of G.activeNotes) {
-    if (!n.hit && !n.missed && n._y > hitY+HIT_ZONE_HALF+30) {
-      n.missed = true; G.missCount++; G.combo = 0; G.lives--;
-      updateHUD(); flashLane(n.lane,'miss');
+  const speed = Number(G.speed) || 340;
+
+  ctx2.clearRect(0, 0, W, H);
+
+// LANES BACKGROUND — amb offset per gap
+for (let i = 0; i < 4; i++) {
+  const lx = i * (LANE_W + GAP);
+  ctx2.fillStyle = LANE_COLORS_A[i];
+  ctx2.fillRect(lx, 0, LANE_W, H);
+}
+
+// HIT ZONE
+for (let i = 0; i < 4; i++) {
+  const lx = i * (LANE_W + GAP);
+  ctx2.fillStyle = 'rgba(255,255,255,0.04)';
+  roundRect(ctx2, lx + padding, hitY - HIT_ZONE_HALF, LANE_W - padding*2, HIT_ZONE_HALF * 2, 6);
+  ctx2.fill();
+  ctx2.strokeStyle = 'rgba(200,168,75,0.18)';
+  ctx2.lineWidth = 1;
+  roundRect(ctx2, lx + padding, hitY - HIT_ZONE_HALF, LANE_W - padding*2, HIT_ZONE_HALF * 2, 6);
+  ctx2.stroke();
+}
+
+ctx2.fillStyle = 'rgba(200,168,75,0.25)';
+ctx2.fillRect(0, hitY - 1, W, 2);
+
+// NOTES
+const notes = G.activeNotes;
+for (let i = 0; i < notes.length; i++) {
+  const n = notes[i];
+  if (!n || n.hit || n.missed) continue;
+  const lane = n.lane ?? 0;
+  const lx = lane * (LANE_W + GAP);
+  const nx = lx + padding;
+  const nW = LANE_W - padding * 2;
+  const y = hitY - (n.time - t) * speed - NOTE_H / 2;
+  n._y = y + NOTE_H / 2;
+  ctx2.shadowColor = LANE_COLORS[lane];
+  ctx2.shadowBlur = 14;
+  ctx2.fillStyle = LANE_COLORS[lane];
+  roundRect(ctx2, nx, y, nW, NOTE_H, 6);
+  ctx2.fill();
+  ctx2.shadowBlur = 0;
+}
+  // ─────────────────────────
+  // AUTO MISS (SAFE LOOP)
+  // ─────────────────────────
+  for (let i = 0; i < notes.length; i++) {
+    const n = notes[i];
+    if (!n || n.hit || n.missed) continue;
+
+    if (n._y > hitY + HIT_ZONE_HALF + 30) {
+      n.missed = true;
+      G.missCount = (G.missCount || 0) + 1;
+      G.combo = 0;
+      G.lives = Math.max(0, (G.lives || 0) - 1);
+
+      updateHUD?.();
+      flashLane?.(n.lane, 'miss');
+
       if (G.lives <= 0 && !G.gameOverPending) {
         G.gameOverPending = true;
         G.running = false;
-        cancelAnimationFrame(G.animId);
+
+        if (G.animId) cancelAnimationFrame(G.animId);
         G.animId = null;
-        // Stop audio immediately — covers both real Audio and fake timer objects
+
         const audRef = G.audio;
-        G.audio = null; // nullify first so nothing else touches it
-        stopAudio(audRef, 0);
-        // Also stop video
+        G.audio = null;
+        stopAudio?.(audRef, 0);
+
         const vid = document.getElementById('game-video-bg');
-        if (vid) { try { vid.pause(); } catch(e) {} }
-        setTimeout(() => endGame(), 400);
+        if (vid) { try { vid.pause(); } catch (e) {} }
+
+        setTimeout(() => endGame?.(), 400);
         return;
       }
     }
   }
 }
+
 
 function roundRect(ctx,x,y,w,h,r) {
   ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
@@ -889,14 +926,18 @@ function flashLane(lane,type) {
   setTimeout(()=>el.classList.remove('hit','miss-flash'),130);
 }
 
-function showFeedback(lane,text,color) {
+function showFeedback(lane, text, color) {
   const area = document.getElementById('canvas-area');
-  const lW = canvas.width/4;
+  const isMobile = window.innerWidth <= 768;
+  const GAP = isMobile ? 4 : 3;
+  const LANE_W = (canvas.width - GAP * 3) / 4;
+  const lx = lane * (LANE_W + GAP);
   const el = document.createElement('div');
-  el.className='feedback'; el.style.color=color;
-  el.style.left=(lane*lW+lW/2-40)+'px'; el.style.top=(getHitY()-70)+'px';
-  el.textContent=text; area.appendChild(el);
-  setTimeout(()=>el.remove(),560);
+  el.className = 'feedback'; el.style.color = color;
+  el.style.left = (lx + LANE_W / 2 - 40) + 'px';
+  el.style.top = (getHitY() - 70) + 'px';
+  el.textContent = text; area.appendChild(el);
+  setTimeout(() => el.remove(), 560);
 }
 
 function updateHUD() {
