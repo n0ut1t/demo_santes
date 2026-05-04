@@ -1,0 +1,376 @@
+/* ══════════════════════════════════════
+   AGENDA — Les Santes 2026
+   MOBILE STYLES (max-width: 768px)
+   Inclou: 320px, 375px, 414px, 768px
+══════════════════════════════════════ */
+
+/* ─────────────────────────────────────
+   BASE MÒBIL (fins a 768px)
+───────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── HERO ── */
+  .hero {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 220px;
+    border-radius: 0;
+    padding: 16px;
+    margin-bottom: 0 !important;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-top: 0 !important;
+  }
+
+  .data-container {
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ── HEADER ── */
+  .agenda-header {
+    min-height: 140px;
+  }
+
+  .agenda-header-content {
+    padding: 20px 16px 18px;
+  }
+
+  .agenda-header h1 {
+    font-size: clamp(40px, 12vw, 60px);
+    letter-spacing: 1px;
+  }
+
+  .agenda-subtitle {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  /* ── DAY SELECTOR ── */
+  .days-wrapper {
+    padding: 18px 0 14px;
+    position: sticky;
+    top: 0;
+  }
+
+  #days {
+    gap: 8px;
+    padding: 0 12px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #days::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-btn {
+    min-width: 64px;
+    padding: 10px 12px;
+    border-width: 3px;
+    border-radius: 14px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .day-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .day-btn.active {
+    transform: none;
+    box-shadow: 0 4px 14px rgba(232, 0, 45, 0.4);
+  }
+
+  .day-label {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+
+  .day-num {
+    font-size: 30px;
+  }
+
+  .day-month {
+    font-size: 10px;
+    letter-spacing: 0.4px;
+  }
+
+  /* ── TIMELINE ── */
+  #timeline {
+    max-width: 100%;
+    margin: 24px auto 60px;
+    padding: 0 12px 0 16px;
+  }
+
+  /* Línia vertical — alineada amb el dot petit */
+  #timeline::before {
+    left: 27px; /* centre del dot 14px / 2 + 16px padding + 13px offset = 28px aprox */
+    width: 2px;
+  }
+
+  /* ── ITEM ── */
+  .timeline-item {
+    grid-template-columns: 56px 60px 1fr;
+    gap: 0 8px;
+    margin-bottom: 20px;
+    animation-duration: 0.3s;
+  }
+
+  /* ── DOT ── */
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+    box-shadow:
+      0 0 0 2px #645BC6,
+      0 2px 6px rgba(100, 91, 198, 0.2);
+    margin-top: 14px;
+  }
+
+  .timeline-dot::after {
+    inset: -3px;
+  }
+
+  .dot-icon-img {
+    display: none; /* massa petit per mostrar icona */
+  }
+
+  /* ── TIME ── */
+  .timeline-time {
+    padding-top: 8px;
+  }
+
+  .time-text {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .time-text::before {
+    display: none;
+  }
+
+  /* ── CARD ── */
+  .event-card {
+    flex-direction: column;
+    border-radius: 14px;
+    height: auto;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  }
+
+  .event-card:hover {
+    transform: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  }
+
+  .event-img {
+    flex: none;
+    width: 100%;
+    min-width: unset;
+    height: 160px;
+    margin: 10px 10px 0 10px;
+    width: calc(100% - 20px);
+    border-radius: 10px;
+  }
+
+  .event-body {
+    padding: 14px 16px 16px;
+    flex: 1;
+  }
+
+  .event-location {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .event-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .event-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── TAGS ── */
+  .event-tags {
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .location-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    margin-top: -3px;
+  }
+}
+
+/* ─────────────────────────────────────
+   PETIT (fins a 375px — iPhone SE, etc.)
+───────────────────────────────────── */
+@media (max-width: 375px) {
+
+  .hero {
+    height: 180px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .agenda-header h1 {
+    font-size: clamp(34px, 11vw, 50px);
+  }
+
+  .day-btn {
+    min-width: 56px;
+    padding: 8px 10px;
+  }
+
+  .day-num {
+    font-size: 26px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 46px 52px 1fr;
+    gap: 0 6px;
+  }
+
+  #timeline {
+    padding: 0 8px 0 12px;
+    margin-top: 16px;
+  }
+
+  .event-img {
+    height: 130px;
+  }
+
+  .event-title {
+    font-size: 16px;
+  }
+
+  .event-desc {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* ─────────────────────────────────────
+   TABLET (de 769px fins a 1024px)
+   Ajustos intermedis (opcional)
+───────────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .hero {
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 360px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    margin-top: -120px !important;
+  }
+
+  .data-container {
+    margin-left: 300px;
+    font-size: 17px;
+  }
+
+  #days {
+    gap: 14px;
+  }
+
+  .day-btn {
+    min-width: 90px;
+    padding: 16px 22px;
+    border-width: 4px;
+  }
+
+  .day-num {
+    font-size: 42px;
+  }
+
+  #timeline {
+    padding: 0 24px;
+    margin-top: 40px;
+  }
+
+  #timeline::before {
+    left: 42px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 84px 110px 1fr;
+    gap: 0 18px;
+    margin-bottom: 40px;
+  }
+
+  .timeline-dot {
+    width: 48px;
+    height: 48px;
+  }
+
+  .dot-icon-img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .event-card {
+    height: 220px;
+  }
+
+  .event-img {
+    flex: 0 0 260px;
+    min-width: 220px;
+  }
+
+  .event-title {
+    font-size: 22px;
+  }
+
+  .event-desc {
+    font-size: 15px;
+  }
+}
+
+/* ─────────────────────────────────────
+   ACCESSIBILITAT — prefers-reduced-motion
+───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .day-btn,
+  .event-card {
+    transition: none;
+  }
+}

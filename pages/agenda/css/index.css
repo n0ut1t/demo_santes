@@ -1,0 +1,150 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Spaces out logo, links, and search */
+    align-items: center; /* Vertically centers the content */
+    background-color: #414040; /* Dark blue/gray background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+}
+
+/* Brand/Logo styling */
+.navbar-brand a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-logo {
+    width: 120px;   /* Change this value to whatever looks best */
+    height: auto;    /* This keeps the proportions correct so it doesn't look squished */
+    display: block;  /* Removes extra space at the bottom of the image */
+}
+
+/* Links container */
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /* Space between each link */
+}
+
+/* Individual links */
+.navbar-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    color: #ffffff;
+}
+
+/* Search container */
+.navbar-search {
+    display: flex;
+    gap: 8px; /* Space between input and button */
+}
+
+/* Search input field */
+.navbar-search input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    background-color: #414040;
+    color: #ffffff;
+}
+
+.navbar-search input:focus {
+    border-color: #3498db;
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* 250px para filtros, 1 fracción para el resto */
+  gap: 30px;
+}
+
+.cartel {
+  width: 100%;
+}
+
+
+
+/* Footer */
+    .footer {
+        background-color: #414040;
+        padding: 60px 80px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-logo img {
+        width: 220px;
+        height: auto;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-nav a {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: #9795b5;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .footer-nav a:hover {
+        color: white;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 16px;
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-social img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #9795b5;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom p {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: #9795b5;
+    }
