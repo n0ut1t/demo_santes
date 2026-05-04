@@ -10,7 +10,7 @@ const TUTORIAL_SONG = {
   artist: 'Gegant del Pi',
   audioSrc: '/../../../audio/Gener.mp3',
   audioSrcEx: null,
-  videoSrc: null,
+  videoSrc: "/../../../video/Gener.mp4",
   bgColor: '#0d1a2e',
   bgGradient: 'linear-gradient(135deg,#0d1a2e,#1a0a2e)',
   bgImage: '/../../../public/Gener.jpeg',
@@ -43,7 +43,7 @@ const TUTORIAL_STEPS = [
     gameTime: null,
     pauseAt: null,
     title: '🎯 Els 4 Carrils',
-    body: `Hi ha <b>4 carrils de colors</b>. Cada carril té una tecla assignada:<br><br>
+    body: `Hi ha <b>4 carrils de colors</b>. Cada carril té una tecla assignada, pero al final son les tecles que tu configuris, les tecles predeterminades son les seguents. Pero tu les pots modificar a com mes comode s'et senti.<br><br>
            <div class="tut-keys-grid">
              <div class="tut-key-item" style="color:#e8002d"><span class="tut-key-pill">A / ←</span> Carril esquerra</div>
              <div class="tut-key-item" style="color:#1a8fff"><span class="tut-key-pill">S / ↓</span> Carril centre-esq.</div>
