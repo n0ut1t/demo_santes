@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Diada - Les Santes 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=DM+Sans:wght@400&family=Inter:wght@400&family=Titillium+Web:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── Diada-specific overrides ── */
+
+        /* Que es La Diada – full-width card */
+        .diada-que-es {
+            padding: 60px 300px;
+        }
+
+        .diada-que-es-card {
+            background: #fefefe;
+            border-radius: 30px;
+            box-shadow: 7px 7px 10px 4px rgba(0, 0, 0, 0.25);
+            padding: 60px;
+        }
+
+        .diada-que-es-card .section-title {
+            margin-bottom: 30px;
+        }
+
+        .diada-que-es-body {
+            display: flex;
+            gap: 30px;
+        }
+
+        .diada-que-es-text {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #000;
+            line-height: 1.65;
+        }
+
+        .diada-que-es-highlight {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 22px;
+            margin-bottom: 22px;
+            line-height: 1.5;
+        }
+
+        .diada-que-es-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        /* ── Bottom section: Que Passa + Horari + Figures ── */
+        .diada-bottom {
+            padding: 0px 0px 0px 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .diada-content-row {
+            display: flex;
+            align-items: flex-start;
+            padding: 0px 300px 300px 0px;
+
+        }
+
+        /* Left 1/3: cards + vertical title */
+        .que-passa-panel {
+            display: flex;
+            align-items: stretch;
+            gap: 14px;
+            flex: 0 0 33%;
+        }
+
+        .que-passa-cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+        }
+
+        .diada-event-card {
+            width: 215px;
+            height: 387px;
+            background: #fefefe;
+            border-radius: 20px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.18);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
+
+        /* Zigzag: even cards indented to the right */
+        .que-passa-cards-list .diada-event-card:nth-child(even) {
+            margin-left: 200px;
+            margin-top: -145px;
+        }
+
+        .diada-event-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: #ced3ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diada-event-icon img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .diada-event-info h3 {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+            line-height: 1.25;
+        }
+
+        .diada-event-info p {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #444;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .que-passa-vertical-title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #000;
+            white-space: nowrap;
+            align-self: center;
+            letter-spacing: 2px;
+        }
+
+        /* Full-width figures image at bottom, behind content */
+        .diada-content-row {
+            position: relative;
+            z-index: 1;
+        }
+
+        .diada-figure-bottom {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 0;
+        }
+
+        /* Right 2/3: horari card */
+        .horari-panel {
+            flex: 1;
+            padding: 300px 0px 0px 40px;
+        }
+
+        .horari-card-diada {
+            background: #fefefe;
+            border-radius: 30px;
+            box-shadow: 7px 7px 10px 4px rgba(0, 0, 0, 0.25);
+            padding: 45px;
+        }
+
+        .horari-card-diada .section-title {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .horari-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .horari-list-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .horari-time-badge {
+            background: #ced3ff;
+            color: #6158cc;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            min-width: 52px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .horari-list-content strong {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #000;
+            display: block;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .horari-list-content p {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #555;
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .horari-footer-note {
+            margin-top: 22px;
+            padding: 14px 18px;
+            background: #f0f2ff;
+            border-radius: 12px;
+            border-left: 4px solid #8a96fc;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="../index.html">
+                <img src="../public/looSANTES.png" class="nav-logo" alt="Les Santes">
+            </a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#">Les Santes 2026</a></li>
+            <li><a href="#">Fotos i videos</a></li>
+            <li><a href="#">Minisantes</a></li>
+            <li><a href="#">La Festa</a></li>
+        </ul>
+        <div class="navbar-search">
+            <input type="text" placeholder="Search">
+            <div class="search-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="language-selector">
+            <span>ES</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero-wrapper-1">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">La Diada</h1>
+                <div class="hero-subtitle">
+                    <p>El cor de la Festa Major</p>
+                    <p>Mataró vibra amb força.</p>
+                </div>
+                <div class="hero-tags">
+                    <span class="tag tag-primary">TRADICIO VIVA</span>
+                    <span class="tag tag-secondary">PARTICIPACIÓ</span>
+                    <span class="tag tag-secondary">FESTA POPULAR</span>
+                </div>
+            </div>
+            <div class="hero-image-1">
+                <img src="../public/diada.png" alt="La Diada">
+            </div>
+        </section>
+    </div>
+
+    <!-- Que es La Diada -->
+    <div class="diada-que-es">
+        <div class="diada-que-es-card">
+            <h2 class="section-title">Què es La Diada?</h2>
+            <div class="diada-que-es-body">
+                <div class="blue-bar"></div>
+                <div class="diada-que-es-text">
+                    <p>La Diada és el dia gran de Les Santes, l'apoteosi festiva on la ciutat es bolca al carrer. Des
+                        del matí fins a la matinada, Mataró es vesteix de gresca, foc i devoció. És la jornada que
+                        concentra els actes més emblemàtics: la cercavila de lluïment, el correfoc més electritzant i
+                        la multitudinària ballada de sardanes a la plaça de Santa Anna. Un tret diferencial de
+                        germanor i identitat.</p>
+                    <p class="diada-que-es-highlight">Esperit de colles, diables i gegants — La Diada honra la
+                        cultura popular catalana amb un programa farcit de simbolisme, emoció i ritme.</p>
+                    <div class="diada-que-es-tags">
+                        <span class="tag tag-primary">TRADICIO ARRELADA</span>
+                        <span class="tag tag-secondary">FAMILIAR</span>
+                        <span class="tag tag-secondary">RITME I FOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom: Que Passa + Horari + Full-width Figures -->
+    <div class="diada-bottom">
+
+        <div class="diada-content-row">
+
+            <!-- Left 1/3: event cards (zigzag) + vertical title -->
+            <div class="que-passa-panel">
+                <div class="que-passa-cards-list">
+                    <div class="diada-event-card">
+                        <div class="diada-event-icon">
+                            <img src="../public/megaphone-icon.png" alt="Megaphone">
+                        </div>
+                        <div class="diada-event-info">
+                            <h3>Matinada de Diada</h3>
+                            <p>Despertada amb tabal i gralladors pels carrers del centre.</p>
+                        </div>
+                    </div>
+                    <div class="diada-event-card">
+                        <div class="diada-event-icon">
+                            <img src="../public/people-icon.png" alt="Gent">
+                        </div>
+                        <div class="diada-event-info">
+                            <h3>Cercavila Major</h3>
+                            <p>Totes les comparses, dracs i aigues en cercavila espectacular.</p>
+                        </div>
+                    </div>
+                    <div class="diada-event-card">
+                        <div class="diada-event-icon">
+                            <img src="../public/music-notes-icon.png" alt="Música">
+                        </div>
+                        <div class="diada-event-info">
+                            <h3>Correfoc</h3>
+                            <p>Els diables prenen el carrer amb ritme de tambors i foc a la nit.</p>
+                        </div>
+                    </div>
+                    <div class="diada-event-card">
+                        <div class="diada-event-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#645bc6"
+                                stroke-width="2">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="diada-event-info">
+                            <h3>Vermut popular + concert de tarda</h3>
+                            <p>Música i animació fins a matinada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="que-passa-vertical-title">Que Passa?</div>
+            </div>
+
+            <!-- Right 2/3: horari card -->
+            <div class="horari-panel">
+                <div class="horari-card-diada">
+                    <h2 class="section-title">Horari de La Diada</h2>
+                    <div class="horari-list">
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">10:30</span>
+                            <div class="horari-list-content">
+                                <strong>Matí de Diada - Despertada festiva</strong>
+                                <p>Cercavila de tabalers i gralleres pels carrers del Casc Antic</p>
+                            </div>
+                        </div>
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">12:00</span>
+                            <div class="horari-list-content">
+                                <strong>Vermut de Diada i ball de gegants</strong>
+                                <p>Plaça de l'Ajuntament · xocolatada popular per a la mainada</p>
+                            </div>
+                        </div>
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">17:30</span>
+                            <div class="horari-list-content">
+                                <strong>Cercavila de Lluïment (La Gran Cercavila)</strong>
+                                <p>Actuació de les passes del passeig de Les Santes. Totes les colles i figures
+                                    festives.</p>
+                            </div>
+                        </div>
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">20:00</span>
+                            <div class="horari-list-content">
+                                <strong>Castell de Focs i Diada castellera</strong>
+                                <p>Actuació de les colles castellaneres de la ciutat · Plaça de toros</p>
+                            </div>
+                        </div>
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">22:30</span>
+                            <div class="horari-list-content">
+                                <strong>CORREFOC INFERNAL</strong>
+                                <p>Els diables de Mataró i les bèsties de foc recorren la Riera</p>
+                            </div>
+                        </div>
+                        <div class="horari-list-item">
+                            <span class="horari-time-badge">00:00</span>
+                            <div class="horari-list-content">
+                                <strong>Nit de Diada - Concert i ball popular</strong>
+                                <p>Ambient musical al Parc Central i a les places fins a la matinada</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horari-footer-note">
+                        Fi de la Diada: ambient musical i festa al Parc Central fins les 03:00h · Tancament amb traca
+                        final.
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end diada-content-row -->
+
+       
+
+    </div><!-- end diada-bottom -->
+ <!-- Full-width figures image at the bottom -->
+        <img src="../public/fiures.png" alt="Figures de La Diada" class="diada-figure-bottom">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../public/looSANTES.png" alt="Les Santes">
+            </div>
+            <div class="footer-nav">
+                <a href="#">Les Santes 2026</a>
+                <a href="#">Fotos i videos</a>
+                <a href="#">Minisantes</a>
+                <a href="#">La Festa</a>
+                <a href="#">Contacte</a>
+            </div>
+            <div class="footer-social">
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <rect width="36" height="36" rx="8" fill="#9795b5" />
+                        <path d="M22 12h-2a2 2 0 0 0-2 2v2h4l-.5 4H18v8h-4v-8h-2v-4h2v-2a6 6 0 0 1 6-6h2v4z"
+                            fill="white" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <rect width="36" height="36" rx="8" fill="#9795b5" />
+                        <path
+                            d="M20.5 13h2.8l-6.1 7 7.2 9.5H20l-4.4-5.8-5 5.8H8l6.5-7.6L7.7 13h4.6l4 5.3 4.2-5.3zm-1 14.6h1.6L15.6 14.7H14l5.5 12.9z"
+                            fill="white" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <rect width="36" height="36" rx="8" fill="#9795b5" />
+                        <rect x="10" y="10" width="16" height="16" rx="4" stroke="white" stroke-width="2" />
+                        <circle cx="18" cy="18" r="4" stroke="white" stroke-width="2" />
+                        <circle cx="23" cy="13" r="1" fill="white" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <rect width="36" height="36" rx="8" fill="#9795b5" />
+                        <path
+                            d="M13 14h-3v10h3V14zm-1.5-4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM26 18.5c0-2.5-1.5-4.5-4-4.5-1.2 0-2 .5-2.5 1.2V14h-3v10h3v-5.5c0-1 .7-1.8 1.7-1.8s1.8.8 1.8 1.8V24h3v-5.5z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p>Copyright © 2023 BRIX Templates | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
