@@ -1,167 +1,234 @@
-/* Basic reset to remove default browser margins */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    /* Basic reset to remove default browser margins */
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Navbar container */
-.navbar {
-    display: flex;
-    justify-content: space-between; /* Spaces out logo, links, and search */
-    align-items: center; /* Vertically centers the content */
-    background-color: #414040; /* Dark blue/gray background */
-    padding: 15px 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: sticky;
-}
+    /* Navbar container */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #414040;
+        padding: 15px 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+    }
 
-/* Brand/Logo styling */
-.navbar-brand a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+    .navbar-brand a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
-.nav-logo {
-    width: 120px;   /* Change this value to whatever looks best */
-    height: auto;    /* This keeps the proportions correct so it doesn't look squished */
-    display: block;  /* Removes extra space at the bottom of the image */
-}
+    .nav-logo {
+        width: 220px;
+        height: auto;
+        display: block;
+    }
 
-/* Links container */
-.navbar-links {
-    display: flex;
-    list-style: none;
-    gap: 25px; /* Space between each link */
-}
+    .navbar-links {
+        display: flex;
+        list-style: none;
+        gap: 120px;
+    }
 
-/* Individual links */
-.navbar-links a {
-    color: #bdc3c7;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
+    .navbar-links a {
+        color: #bdc3c7;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
 
-/* Hover effect for links */
-.navbar-links a:hover {
-    color: #ffffff;
-}
+    .navbar-links a:hover {
+        color: #ffffff;
+    }
 
-/* Search container */
-.navbar-search {
-    display: flex;
-    gap: 8px; /* Space between input and button */
-}
+    /* Navbar Search */
+    .navbar-search {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 8px 16px;
+    }
 
-/* Search input field */
-.navbar-search input {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-    background-color: #414040;
-    color: #ffffff;
-}
+    .navbar-search input {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 16px;
+        width: 200px;
+    }
 
-.navbar-search input:focus {
-    border-color: #3498db;
-}
+    .navbar-search input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
 
-.search-container {
-  display: grid;
-  grid-template-columns: 250px 1fr; /* 250px para filtros, 1 fracción para el resto */
-  gap: 30px;
-}
+    .navbar-search input:focus {
+        outline: none;
+        border: none;
+    }
 
-.cartel {
-  width: 100%;
-}
+    .search-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
 
-.results-grid {
-    display: grid;
-    /* Creamos 3 columnas de igual tamaño */
-    grid-template-columns: repeat(3, 1fr); 
+    .language-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 1.5px solid #e5e7ea;
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
     
-    /* Opcional: Si quieres que las filas tengan una altura fija */
-    /* grid-template-rows: repeat(2, 400px); */
-    
-    gap: 25px; /* Espacio entre las tarjetas */
-    padding: 40px;
-    max-width: 1200px; /* Centramos el grid para que no sea infinito */
-    margin: 0 auto;
-}
 
-.card {
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
+    /* Footer */
+    .footer {
+        background-color: #414040;
+        padding: 60px 80px;
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-}
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
 
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-}
+    .footer-logo img {
+        width: 220px;
+        height: auto;
+    }
 
-.card-info {
-    padding: 20px;
-}
+    .footer-nav {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-.card-info h3 {
-    margin-bottom: 10px;
-    color: #333;
-}
+    .footer-nav a {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: #9795b5;
+        text-decoration: none;
+        text-align: center;
+    }
 
-.card-info p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
+    .footer-nav a:hover {
+        color: white;
+    }
 
+    .footer-social {
+        display: flex;
+        gap: 16px;
+    }
 
-/* Esto ya lo tenías, se aplica a todos los items de la lista */
-.checkbox-item input {
-    display: none;
-}
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
 
-.checkbox-item label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    margin-bottom: 5px; /* Separación entre filas */
-}
+    .footer-social img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-.img-box {
-    width: 25px;
-    height: 25px;
-    background-image: url('public/diable_uncheck.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: transform 0.2s ease;
-    margin-left: 10px;
-}
+    .footer-bottom {
+        width: 100%;
+        text-align: center;
+    }
 
-/* El selector "+" busca al label que está justo después del input que ha sido clickeado */
-.checkbox-item input:checked + label .img-box {
-    background-image: url('public/diable_check.svg');
-    transform: scale(1.1);
-}
+    .footer-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #9795b5;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom p {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: #9795b5;
+    }
+
+    /* Responsive: en pantallas pequeñas apilamos */
+    @media (max-width: 900px) {
+        .hero {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-image {
+            height: 350px;
+        }
+
+        .info-bar {
+            max-width: 100%;
+            flex-wrap: wrap;
+            margin-top: -30px;
+        }
+    }
+
+    /* Que es + Mapa side by side */
+    .que-es-mapa-row {
+        margin-top: 60px;
+        display: flex;
+        align-items: flex-start;
+        gap: 115px;
+    }
+
+    .que-es-mapa-row .que-es {
+        flex: 1;
+        margin-top: 0;
+    }
+
+    .que-es-mapa-row .mapa-section {
+        flex: 1;
+    }
+
+    @media (max-width: 900px) {
+        .que-es-mapa-row {
+            flex-direction: column;
+        }
+    }
+
+    /* Que Passa + Horari side by side */
+    .que-passa-horari-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 0 300px;
+    }
+
+    .que-passa-horari-row .que-passa {
+        flex: 1;
+        padding: 80px 0 80px;
+    }
+
+    .que-passa-horari-row .horari-section {
+        flex: 1;
+        padding: 80px 0 80px;
+    }
+
+    @media (max-width: 900px) {
+        .que-passa-horari-row {
+            flex-direction: column;
+        }
+    }

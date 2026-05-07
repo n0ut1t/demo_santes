@@ -1,0 +1,681 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ececec;
+  font-family: 'Titillium Web', sans-serif;
+  color: #111;
+}
+
+/* LAYOUT */
+
+.festival-layout {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 40px 70px 100px;
+}
+
+/* HERO */
+
+.showcase-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.showcase-heading {
+  font-size: 95px;
+  font-weight: 700;
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.showcase-description {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.label-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-main,
+.pill-soft {
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 1px;
+}
+
+.pill-main {
+  background: #6559d7;
+}
+
+.pill-soft {
+  background: #9ba7ff;
+}
+
+.showcase-visual {
+  width: 100%;
+  height: 290px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+.showcase-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* INFO CARD */
+
+.history-wrapper {
+  margin-top: 35px;
+}
+
+.history-card {
+  background: white;
+  border-radius: 28px;
+  padding: 45px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.block-heading {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.history-flex {
+  display: flex;
+  gap: 24px;
+}
+
+.accent-line {
+  width: 10px;
+  border-radius: 20px;
+  background: #8fa0ff;
+}
+
+.history-text {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.history-text p {
+  margin-bottom: 18px;
+}
+
+.history-highlight {
+  font-weight: 700;
+}
+
+/* BOTTOM */
+
+.event-zone {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* LEFT SIDE */
+
+.activities-column {
+  position: relative;
+  padding-left: 80px;
+}
+
+.vertical-copy {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.activity-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mini-card {
+  width: 280px;
+  background: white;
+  border-radius: 24px;
+  padding: 18px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+.shifted {
+  margin-left: 40px;
+}
+
+.mini-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: #d8dcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.mini-copy h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.mini-copy p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* RIGHT SIDE */
+
+.schedule-box {
+  background: white;
+  border-radius: 30px;
+  padding: 45px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.14);
+}
+
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.agenda-hour {
+  min-width: 90px;
+  text-align: center;
+  background: #d9ddff;
+  color: #645bc6;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.agenda-copy strong {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.agenda-copy p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.schedule-note {
+  margin-top: 28px;
+  background: #ecebff;
+  border-radius: 18px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =========================================
+DIADA SCENE
+========================================= */
+
+.diada-scene {
+
+  position: relative;
+  width: 100%;
+  height: 1400px !important;
+
+  overflow: hidden;
+
+  padding-top: 120px;
+}
+
+.diada-scene img {
+    top: 50px;
+    width: 1300px !important;
+    height: 1200px;
+}
+
+/* FONDO */
+
+.diada-background {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: 1250px;
+
+  z-index: 1;
+}
+
+/* OVERLAY */
+
+.diada-overlay {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 1350px;
+
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* =========================================
+LEFT COLUMN EXACTO COMO LA IMAGEN
+========================================= */
+
+.diada-left {
+  position: relative;
+
+  width: 420px;
+
+  padding-left: 40px;
+
+  z-index: 5;
+}
+
+/* TEXTO VERTICAL */
+
+.vertical-title {
+  position: absolute;
+
+  top: -28px;
+  right: 20px;
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  font-size: 58px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  color: #111;
+
+  z-index: 20;
+}
+
+/* STACK */
+
+.events-column {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  width: 100%;
+}
+
+/* CARD */
+
+.event-card {
+  position: relative;
+
+  width: 250px;
+
+  background: #ffffff;
+
+  border-radius: 26px;
+
+  padding: 18px 18px 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+
+  z-index: 10;
+}
+
+/* EFECTO ESCALONADO */
+
+.shifted {
+  margin-left: 110px;
+}
+
+/* ICONO */
+
+.event-icon {
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+
+  background: #cfd0ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  flex-shrink: 0;
+}
+
+.event-icon img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: contain;
+}
+
+/* TEXTOS */
+
+.event-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  margin-bottom: 18px;
+
+  color: #111;
+}
+
+.event-text p {
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  color: #222;
+}
+
+/* ALTURAS DIFERENTES COMO LA IMAGEN */
+
+.event-card:nth-child(1) {
+  height: 265px;
+}
+
+.event-card:nth-child(2) {
+  height: 235px;
+}
+
+.event-card:nth-child(3) {
+  height: 250px;
+}
+
+.event-card:nth-child(4) {
+  height: 230px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .diada-left {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .vertical-title {
+    position: static;
+
+    writing-mode: horizontal-tb;
+
+    margin-bottom: 25px;
+
+    font-size: 42px;
+  }
+
+  .event-card,
+  .shifted {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+/* =========================================
+RIGHT CARD
+========================================= */
+
+.schedule-wrapper {
+  margin-top: 100px;
+}
+
+.schedule-card {
+  width: 760px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 42px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+/* TITLE */
+
+.schedule-title {
+  font-size: 44px;
+  margin-bottom: 28px;
+}
+
+/* LIST */
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ROW */
+
+.schedule-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* TIME */
+
+.schedule-time {
+  min-width: 90px;
+
+  text-align: center;
+
+  background: #d8d9ff;
+  color: #6559d7;
+
+  border-radius: 12px;
+
+  padding: 7px 10px;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* INFO */
+
+.schedule-info strong {
+  display: block;
+
+  font-size: 22px;
+
+  margin-bottom: 4px;
+}
+
+.schedule-info p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+
+.schedule-footer {
+  margin-top: 28px;
+
+  background: #d8d9ff;
+
+  border-radius: 18px;
+
+  padding: 16px 22px;
+
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .diada-overlay {
+    flex-direction: column;
+    gap: 50px;
+
+    align-items: center;
+  }
+
+  .schedule-wrapper {
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .diada-scene {
+    padding: 80px 20px;
+  }
+
+  .diada-background {
+    width: 900px;
+  }
+
+  .diada-left {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .vertical-title {
+    position: static;
+
+    writing-mode: horizontal-tb;
+
+    margin-bottom: 20px;
+  }
+
+  .event-card,
+  .shifted {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .schedule-card {
+    width: 100%;
+    padding: 30px 22px;
+  }
+
+  .schedule-row {
+    flex-direction: column;
+  }
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .showcase-section,
+  .event-zone {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-heading {
+    font-size: 70px;
+  }
+
+  .activities-column {
+    padding-left: 0;
+  }
+
+  .vertical-copy {
+    position: static;
+    writing-mode: horizontal-tb;
+    margin-bottom: 20px;
+  }
+
+  .mini-card,
+  .shifted {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .festival-layout {
+    padding: 30px 20px 70px;
+  }
+
+  .showcase-heading {
+    font-size: 58px;
+  }
+
+  .showcase-description {
+    font-size: 22px;
+  }
+
+  .block-heading {
+    font-size: 30px;
+  }
+
+  .history-text {
+    font-size: 18px;
+  }
+
+  .agenda-item {
+    flex-direction: column;
+  }
+
+}
