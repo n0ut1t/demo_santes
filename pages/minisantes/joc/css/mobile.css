@@ -56,6 +56,110 @@
     margin: 10px 0;
   }
 
+  
+  /* ── LANE BAR — el cor del joc en mòbil ── */
+  #lane-bar {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5px !important;
+    padding: 6px !important;
+    background: rgba(5, 3, 2, 0.97) !important;
+    border-top: 2px solid rgba(200, 168, 75, 0.4) !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    flex-shrink: 0;
+    touch-action: manipulation !important;
+  }
+
+  /* ── BOTONS DE CARRIL — visibles, grans, clicables ── */
+  .lane-tap {
+    height: 88px !important;
+    min-height: 88px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+
+    border-radius: 10px !important;
+    border: 2px solid rgba(200, 168, 75, 0.25) !important;
+    background: linear-gradient(
+      180deg,
+      rgba(200, 168, 75, 0.10) 0%,
+      rgba(200, 168, 75, 0.04) 100%
+    ) !important;
+
+    /* CRÍTIC: touch sense delay */
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    cursor: pointer !important;
+
+    /* Reset button styles */
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    transition: background 0.06s, transform 0.06s !important;
+    will-change: transform;
+  }
+
+  /* Colors per carril */
+  #lt0 { border-color: rgba(232, 0, 45, 0.4) !important; }
+  #lt1 { border-color: rgba(26, 143, 255, 0.4) !important; }
+  #lt2 { border-color: rgba(0, 204, 85, 0.4) !important; }
+  #lt3 { border-color: rgba(255, 136, 0, 0.4) !important; }
+
+  #lt0 .kt { color: rgba(232, 0, 45, 0.7) !important; }
+  #lt1 .kt { color: rgba(26, 143, 255, 0.7) !important; }
+  #lt2 .kt { color: rgba(0, 204, 85, 0.7) !important; }
+  #lt3 .kt { color: rgba(255, 136, 0, 0.7) !important; }
+
+  .lane-tap .kt {
+    font-family: 'Cinzel', serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Feedback visual en tocar */
+  .lane-tap:active {
+    transform: scale(0.93) !important;
+    background: rgba(200, 168, 75, 0.22) !important;
+  }
+
+  .lane-tap.hit {
+    background: rgba(200, 168, 75, 0.35) !important;
+    border-color: rgba(200, 168, 75, 0.8) !important;
+    transform: scale(0.95) !important;
+  }
+
+  .lane-tap.miss-flash {
+    background: rgba(180, 20, 20, 0.3) !important;
+  }
+
+  /* ── Feedback text ── */
+  .feedback { font-size: 14px; }
+
+  /* ── Speed badge ── */
+  #speed-badge { font-size: 42px; }
+
+  /* ── Safe area (notch / home bar iOS) ── */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    #lane-bar {
+      padding-bottom: calc(6px + env(safe-area-inset-bottom)) !important;
+    }
+  }
+
+
   .btn-primary {
     font-size: 14px;
     letter-spacing: 3px;

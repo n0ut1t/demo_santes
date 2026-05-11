@@ -28,7 +28,7 @@ const TUTORIAL_SONG = {
 const TUTORIAL_STEPS = [
   {
     id: 'welcome',
-    gameTime: null,      // null = pantalla estàtica (joc pausat)
+    gameTime: null,
     pauseAt: null,
     title: '👋 Benvingut al Tutorial!',
     body: `Aprendràs a jugar a <b>Santes Tiles</b> en menys de 2 minuts.<br><br>
@@ -73,18 +73,18 @@ const TUTORIAL_STEPS = [
   },
   {
     id: 'play1',
-    gameTime: 0,          // arrenca el joc aquí
-    pauseAt: 8.5,         // pausa automàtica en arribar a aquest temps
+    gameTime: 0,
+    pauseAt: 8.5,
     title: '▶ Prem les primeres 4 notes',
     body: `Arriben 4 rajoles, una per carril.<br>Prem <b>A → S → D → W</b> quan arribin a la línia daurada.`,
     highlight: null,
-    btnText: null,        // null = no mostra botó (mode play)
-    autoAt: 8.5,          // es presenta sol en pausar
+    btnText: null,
+    autoAt: 8.5,
     nextStep: 'pause1',
   },
   {
     id: 'pause1',
-    gameTime: null,       // no toca el joc, espera
+    gameTime: null,
     pauseAt: null,
     title: '⭐ Com ha anat?',
     body: `Has vist el <b>feedback de cop</b> sobre cada carril?<br><br>
@@ -132,7 +132,7 @@ const TUTORIAL_STEPS = [
   {
     id: 'play3',
     gameTime: 21.5,
-    pauseAt: null,        // null = juga fins al final
+    pauseAt: null,
     title: '🏁 Últimes notes!',
     body: `Ara ho saps tot. Acaba les últimes notes i completa el tutorial!`,
     highlight: null,
@@ -150,7 +150,7 @@ let TUT = {
   overlayVisible: false,
   pausedTime: 0,
   pausedByStep: false,
-  audioOffset: 0,  // temps de l'àudio quan es va pausar
+  audioOffset: 0,
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -159,7 +159,6 @@ let TUT = {
 (function injectTutorialCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* ── Overlay fosc ── */
     #tut-overlay {
       display: none;
       position: absolute;
@@ -171,7 +170,6 @@ let TUT = {
     }
     #tut-overlay.visible { display: flex; align-items: center; justify-content: center; }
 
-    /* ── Caixa de pas ── */
     .tut-box {
       background: linear-gradient(145deg, #0f1b2e, #1a0d2e);
       border: 1.5px solid rgba(200,168,75,0.45);
@@ -188,7 +186,6 @@ let TUT = {
       to   { opacity:1; transform: none; }
     }
 
-    /* ── Indicador de pas ── */
     .tut-step-dots {
       display: flex; gap: 6px; justify-content: center; margin-bottom: 16px;
     }
@@ -200,7 +197,6 @@ let TUT = {
     .tut-step-dot.active { background: #c8a84b; }
     .tut-step-dot.done   { background: rgba(200,168,75,0.55); }
 
-    /* ── Títol i cos ── */
     .tut-title {
       font-family: 'Titillium Web', sans-serif;
       font-size: 1.15rem; font-weight: 700;
@@ -217,7 +213,6 @@ let TUT = {
       border-radius: 4px; font-size:.88rem; color:#c8a84b;
     }
 
-    /* ── Grid tecles ── */
     .tut-keys-grid { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
     .tut-key-item  { display:flex; align-items:center; gap:10px; font-size:.88rem; }
     .tut-key-pill  {
@@ -227,10 +222,8 @@ let TUT = {
       white-space:nowrap;
     }
 
-    /* ── Llista puntuació ── */
     .tut-score-list { display:flex; flex-direction:column; gap:5px; font-size:.9rem; }
 
-    /* ── Botó continua ── */
     .tut-btn {
       display: block; width: 100%; margin-top: 22px;
       padding: 11px 0; border-radius: 8px;
@@ -244,7 +237,6 @@ let TUT = {
     .tut-btn:hover { transform:translateY(-2px); box-shadow:0 6px 28px rgba(200,168,75,0.45); }
     .tut-btn:active { transform:translateY(0); }
 
-    /* ── Badge "jugant" ── */
     .tut-playing-hint {
       position: absolute; bottom: 14px; left: 50%;
       transform: translateX(-50%);
@@ -260,7 +252,6 @@ let TUT = {
       0%,100%{opacity:.6} 50%{opacity:1}
     }
 
-    /* ── Ressaltat d'elements del joc ── */
     .tut-highlight-ring {
       position: absolute;
       border: 2.5px solid #c8a84b;
@@ -276,8 +267,6 @@ let TUT = {
       50%{box-shadow:0 0 32px rgba(200,168,75,0.8)}
     }
 
-
-    /* ── Overlay petit "jugant" durant joc ── */
     #tut-live-hint {
       display: none;
       position: absolute;
@@ -291,7 +280,6 @@ let TUT = {
     }
     #tut-live-hint.visible { display: block; }
 
-    /* ── Botó sortir tutorial ── */
     #tut-exit-btn {
       position: absolute;
       top: 12px; right: 12px;
@@ -316,7 +304,6 @@ let TUT = {
     }
     #tut-exit-btn:active { transform: scale(0.95); }
 
-    /* ── Confirm sortir (mini modal) ── */
     #tut-exit-confirm {
       display: none;
       position: absolute;
@@ -378,7 +365,6 @@ let TUT = {
 // CONSTRUCCIÓ DEL DOM DEL TUTORIAL
 // ═══════════════════════════════════════════════════════════════
 (function buildTutorialDOM() {
-  // Overlay principal
   const overlay = document.createElement('div');
   overlay.id = 'tut-overlay';
   overlay.innerHTML = `
@@ -390,15 +376,13 @@ let TUT = {
     </div>
   `;
 
-  // Botó × per sortir (sempre visible sobre el joc durant el tutorial)
   const exitBtn = document.createElement('button');
   exitBtn.id = 'tut-exit-btn';
   exitBtn.title = 'Sortir del tutorial';
   exitBtn.innerHTML = '✕';
-  exitBtn.style.display = 'none';  // ocult fins que arrenca el tutorial
+  exitBtn.style.display = 'none';
   exitBtn.addEventListener('click', showExitConfirm);
 
-  // Modal de confirmació de sortida
   const exitConfirm = document.createElement('div');
   exitConfirm.id = 'tut-exit-confirm';
   exitConfirm.innerHTML = `
@@ -412,18 +396,15 @@ let TUT = {
     </div>
   `;
 
-  // Ring de ressaltat
   const ring = document.createElement('div');
   ring.className = 'tut-highlight-ring';
   ring.id = 'tut-ring';
   ring.style.display = 'none';
 
-  // Hint "jugant" visible durant gameplay
   const liveHint = document.createElement('div');
   liveHint.id = 'tut-live-hint';
   liveHint.textContent = '🎵 Tutorial en curs — prem les tecles al ritme!';
 
-  // Afegim al game screen
   const gameScreen = document.getElementById('screen-game');
   if (gameScreen) {
     gameScreen.appendChild(overlay);
@@ -433,7 +414,6 @@ let TUT = {
     gameScreen.appendChild(exitConfirm);
   }
 
-  // Listeners confirm modal
   setTimeout(() => {
     const cancelEl = document.getElementById('tut-exit-cancel');
     const okEl     = document.getElementById('tut-exit-ok');
@@ -441,7 +421,6 @@ let TUT = {
     if (okEl)     okEl.addEventListener('click', forceTutorialExit);
   }, 100);
 
-  // Botó TUTORIAL a la pantalla títol ja existeix a l'HTML, només li posem el listener
   const btnTut = document.getElementById('btn-tutorial');
   if (btnTut) {
     btnTut.addEventListener('click', startTutorial);
@@ -449,32 +428,58 @@ let TUT = {
 })();
 
 // ═══════════════════════════════════════════════════════════════
+// HOOK endGame — s'instal·la quan el fitxer principal ja ha
+// definit la funció (600 ms de marge)
+// ═══════════════════════════════════════════════════════════════
+setTimeout(() => {
+  const _origEndGame = window.endGame;
+
+  if (typeof _origEndGame === 'function' && !window._tutEndGamePatched) {
+    window._tutEndGamePatched = true;
+
+    window.endGame = function () {
+      // ── Tutorial actiu → interceptem ──
+      if (TUT.active) {
+        TUT.active = false;
+
+        const liveHint = document.getElementById('tut-live-hint');
+        if (liveHint) liveHint.classList.remove('visible');
+        hidePlayHint();
+        hideHighlight();
+        showTutorialComplete();
+        return;
+      }
+
+      // ── Tutorial NO actiu → comportament 100 % original ──
+      return _origEndGame.apply(this, arguments);
+    };
+  }
+}, 600);
+
+// ═══════════════════════════════════════════════════════════════
 // FUNCIONS PRINCIPALS
 // ═══════════════════════════════════════════════════════════════
 
 function startTutorial() {
-  TUT.active   = true;
-  TUT.stepIdx  = 0;
-  TUT.pausedTime = 0;
+  TUT.active      = true;
+  TUT.stepIdx     = 0;
+  TUT.pausedTime  = 0;
   TUT.audioOffset = 0;
 
-  // Mostra el botó de sortir
   const exitBtn = document.getElementById('tut-exit-btn');
   if (exitBtn) exitBtn.style.display = 'flex';
 
-  // Inicia el joc real amb la cançó tutorial (sense àudio per ara)
   if (typeof startSong === 'function') {
     startSong(TUTORIAL_SONG, false);
   }
 
   // Esperem que startSong hagi iniciat l'àudio i llavors pausem
-  // startSong fa play() asíncron, cal esperar una mica més
   setTimeout(() => {
     if (typeof G !== 'undefined') {
       G.running = false;
       if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
       if (G.audio) {
-        try { G.audio.pause(); G.audio.currentTime = 0; } catch(e){}
+        try { G.audio.pause(); G.audio.currentTime = 0; } catch(e) {}
       }
     }
     showTutorialStep(0);
@@ -491,10 +496,8 @@ function showTutorialStep(idx) {
   TUT.stepIdx = idx;
   const step  = steps[idx];
 
-  // ── Punts de progrés ──
   buildDots(idx);
 
-  // ── Contingut ──
   document.getElementById('tut-title').textContent = step.title;
   document.getElementById('tut-body').innerHTML    = step.body;
 
@@ -507,24 +510,20 @@ function showTutorialStep(idx) {
     btn.style.display = 'none';
   }
 
-  // ── Mostra l'overlay ──
   const overlay = document.getElementById('tut-overlay');
   overlay.classList.add('visible');
   TUT.overlayVisible = true;
 
-  // ── Ressaltat ──
   if (step.highlight) {
     showHighlight(step.highlight);
   } else {
     hideHighlight();
   }
-
-  // Si el pas és de JOC, el gestionem a onTutorialBtn
 }
 
 function onTutorialBtn(idx) {
-  const step     = TUTORIAL_STEPS[idx];
-  const nextIdx  = idx + 1;
+  const step    = TUTORIAL_STEPS[idx];
+  const nextIdx = idx + 1;
   const nextStep = TUTORIAL_STEPS[nextIdx];
 
   hideOverlay();
@@ -532,7 +531,6 @@ function onTutorialBtn(idx) {
 
   if (!nextStep) { endTutorial(); return; }
 
-  // Si el proper pas té gameTime (arrenca joc), comencem a jugar
   if (nextStep.gameTime !== null) {
     startTutorialPlay(nextIdx);
   } else {
@@ -544,35 +542,28 @@ function onTutorialBtn(idx) {
 function startTutorialPlay(idx) {
   const step = TUTORIAL_STEPS[idx];
 
-  TUT.pauseAt        = (step.pauseAt !== undefined && step.pauseAt !== null) ? step.pauseAt : null;
+  TUT.pauseAt         = (step.pauseAt !== undefined && step.pauseAt !== null) ? step.pauseAt : null;
   TUT.currentPlayStep = idx;
 
-  // Hint petit
   const liveHint = document.getElementById('tut-live-hint');
   if (liveHint) liveHint.classList.add('visible');
   if (step.body && step.btnText === null) showPlayHint(step.title, step.body);
 
   if (typeof G === 'undefined') return;
 
-  // ── Reset complet de l'estat de joc per a aquest segment ──
-  // Reconstruïm les notes filtrades al rang temporal del pas
   const allNotes = TUTORIAL_SONG.notesEasy;
   const startT   = (step.gameTime !== null && step.gameTime !== undefined) ? step.gameTime : 0;
-  const endT     = TUT.pauseAt !== null ? TUT.pauseAt + 5 : 9999; // +5s marge
 
   G.notes = allNotes
-    .filter(n => n[0] >= startT - 0.1)   // notes a partir del temps del pas
+    .filter(n => n[0] >= startT - 0.1)
     .map(n => ({ time: n[0], lane: n[1], hit: false, missed: false, _y: -999 }));
-  G.noteIdx    = 0;
+  G.noteIdx     = 0;
   G.activeNotes = [];
 
-  // ── Àudio: mode timer (sense dependre de currentTime) ──
-  // Usem un timer propi per evitar problemes de seek asíncron
   const t0 = performance.now() - startT * 1000;
   G.timerMode = true;
   G.getTime   = () => (performance.now() - t0) / 1000;
 
-  // Intentem reproduir l'àudio en paral·lel (pot fallar, no és crític)
   if (G.audio) {
     try {
       G.audio.currentTime = startT;
@@ -580,7 +571,6 @@ function startTutorialPlay(idx) {
     } catch(e) {}
   }
 
-  // ── Loop de render del tutorial ──
   G.running = true;
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
 
@@ -594,7 +584,7 @@ function startTutorialPlay(idx) {
       G.running = false;
       cancelAnimationFrame(G.animId);
       G.animId = null;
-      if (G.audio) { try { G.audio.pause(); } catch(e){} }
+      if (G.audio) { try { G.audio.pause(); } catch(e) {} }
 
       const lh = document.getElementById('tut-live-hint');
       if (lh) lh.classList.remove('visible');
@@ -606,24 +596,22 @@ function startTutorialPlay(idx) {
       return;
     }
 
-    // Dibuix
     if (typeof spawnNotes === 'function') spawnNotes(t);
     if (typeof drawGame   === 'function') drawGame(t);
     if (!G.running) return;
 
-    // Barra progrés
     const pf = document.getElementById('progress-fill');
     if (pf) {
       const dur = G.song ? G.song.duration : 64.04;
       pf.style.width = Math.min(t / dur * 100, 100) + '%';
     }
 
-    // Fi de les notes d'aquest segment → pas completat
+    // Fi de les notes d'aquest segment
     if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
       G.running = false;
       cancelAnimationFrame(G.animId);
       G.animId = null;
-      if (G.audio) { try { G.audio.pause(); } catch(e){} }
+      if (G.audio) { try { G.audio.pause(); } catch(e) {} }
       const lh2 = document.getElementById('tut-live-hint');
       if (lh2) lh2.classList.remove('visible');
       hidePlayHint();
@@ -640,27 +628,8 @@ function startTutorialPlay(idx) {
 // tutGameLoop conservat com a no-op per compatibilitat
 function tutGameLoop() {}
 
-// ── Injecta el hook al gameLoop original per detecció de fi ──
-const _origEndGame = typeof endGame === 'function' ? endGame : null;
-if (_origEndGame) {
-  window.endGame = function() {
-    if (TUT.active) {
-      const liveHint = document.getElementById('tut-live-hint');
-      if (liveHint) liveHint.classList.remove('visible');
-      hidePlayHint();
-      hideHighlight();
-      // Amaga overlay joc i mostra pantalla de fi tutorial
-      TUT.active = false;
-      showTutorialComplete();
-      return;
-    }
-    _origEndGame.apply(this, arguments);
-  };
-}
-
 // ── Pantalla de fi del tutorial ──
 function showTutorialComplete() {
-  // Amaga el botó × (tutorial acabat)
   const exitBtnEl = document.getElementById('tut-exit-btn');
   if (exitBtnEl) exitBtnEl.style.display = 'none';
 
@@ -680,11 +649,12 @@ function showTutorialComplete() {
   btn.textContent = '🎵 Escull una cançó';
   btn.style.display = 'block';
   btn.onclick = () => {
+    TUT.active = false;   // ← assegura que el flag queda net
     hideOverlay();
     if (typeof buildSongGrid === 'function') buildSongGrid();
-    if (typeof showScreen === 'function') showScreen('select');
+    if (typeof showScreen    === 'function') showScreen('select');
   };
-  buildDots(TUTORIAL_STEPS.length); // tots plens
+  buildDots(TUTORIAL_STEPS.length);
   overlay.classList.add('visible');
   TUT.overlayVisible = true;
 }
@@ -707,14 +677,12 @@ function forceTutorialExit() {
   hideExitConfirm();
   TUT.active = false;
 
-  // Atura el joc
   if (typeof G !== 'undefined') {
     G.running = false;
     if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
-    if (G.audio)  { try { G.audio.pause(); G.audio.currentTime = 0; } catch(e){} G.audio = null; }
+    if (G.audio)  { try { G.audio.pause(); G.audio.currentTime = 0; } catch(e) {} G.audio = null; }
   }
 
-  // Amaga tots els elements del tutorial
   hideOverlay();
   hideHighlight();
   hidePlayHint();
@@ -722,11 +690,9 @@ function forceTutorialExit() {
   const liveHint = document.getElementById('tut-live-hint');
   if (liveHint) liveHint.classList.remove('visible');
 
-  // Amaga el botó ×
   const exitBtn = document.getElementById('tut-exit-btn');
   if (exitBtn) exitBtn.style.display = 'none';
 
-  // Torna a la pantalla títol
   if (typeof showScreen === 'function') showScreen('title');
 }
 
@@ -761,7 +727,6 @@ function buildDots(currentIdx) {
   }
 }
 
-// ── Ressaltat d'elements de la UI del joc ──
 function showHighlight(targetId) {
   const ring = document.getElementById('tut-ring');
   if (!ring) return;
@@ -771,10 +736,7 @@ function showHighlight(targetId) {
   if (targetId === 'hud-lives')    el = document.getElementById('hud-lives');
   if (targetId === 'hud-combo')    el = document.getElementById('hud-combo');
   if (targetId === 'progress-bar') el = document.getElementById('progress-bar');
-  if (targetId === 'hitzone-line') {
-    // Ressaltem el canvas area
-    el = document.getElementById('canvas-area');
-  }
+  if (targetId === 'hitzone-line') el = document.getElementById('canvas-area');
 
   if (!el) { ring.style.display = 'none'; return; }
 
@@ -830,16 +792,5 @@ window.addEventListener('resize', () => {
     if (h) showHighlight(h);
   }
 });
-
-// ── Override del gameLoop del joc principal per injectar la detecció de pausa ──
-// Apliquen el hook quan el joc es carrega
-setTimeout(() => {
-  // Guardamos referencia al startSong original para poder lanzar el tutorial
-  const _origStartSong = typeof startSong === 'function' ? startSong : null;
-  if (_origStartSong && !window._tutStartSongPatched) {
-    window._tutStartSongPatched = true;
-    // No cal sobreescriure startSong, el tutorial l'usa directament
-  }
-}, 200);
 
 console.log('[Tutorial] tutorial.js carregat correctament ✓');

@@ -6,12 +6,12 @@ const SONGS = [
     id: 'bequetero',
     title: 'El Bequetero',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Bequetero.mp3',
-    audioSrcEx: '/../../../audio/BequeteroX2.mp3',
-    videoSrc: '/../../../video/Bequetero.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Bequetero.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/BequeteroX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Bequetero.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Bequetero.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/bequetero.png',
     duration: 119.85,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -23,12 +23,12 @@ const SONGS = [
     id: 'drac',
     title: 'El Drac',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Drac.mp3',
-    audioSrcEx: '/../../../audio/DracX2.mp3',
-    videoSrc: '/../../../video/Drac.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Drac.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/DracX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Drac.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Drac.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/Drac.png',
     duration: 136.70,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -40,12 +40,12 @@ const SONGS = [
     id: 'dragalio',
     title: 'El Dragalio',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Dragalio.mp3',
-    audioSrcEx: '/../../../audio/DragalioX2.mp3',
-    videoSrc: '/../../../video/Dragalio.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Dragalio.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/DragalioX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Dragalio.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Dragalio.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Dragalio.jpg',
     duration: 111.34,
     dificultad: "Fàcil",
     categoria: "Les Santes",
@@ -57,12 +57,12 @@ const SONGS = [
     id: 'momerota',
     title: 'La Momerota',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Momerota.mp3',
-    audioSrcEx: '/../../../audio/MomerotaX2.mp3',
-    videoSrc: '/../../../video/Momerota.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Momerota.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/MomerotaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Momerota.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Momerota.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Momerota.jpg',
     duration: 93.53,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -74,12 +74,12 @@ const SONGS = [
     id: 'momeroteta',
     title: 'La Momeroteta',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Momeroteta.mp3',
-    audioSrcEx: '/../../../audio/MomerotetaX2.mp3',
-    videoSrc: '/../../../video/Momeroteta.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Momeroteta.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/MomerotetaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Momeroteta.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Momeroteta.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Momeroteta.jpg',
     duration: 103.82,
     dificultad: "Difícil",
     categoria: "Les Santes",
@@ -91,12 +91,12 @@ const SONGS = [
     id: 'aguila',
     title: 'L\'Àliga',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Àliga.mp3',
-    audioSrcEx: '/../../../audio/ÀligaX2.mp3',
-    videoSrc: '/../../../video/Àliga.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/%C3%80ligaX2.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/%C3%80ligaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Àliga.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Àliga.jpeg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Àliga.jpeg',
     duration: 151.86,
     dificultad: "Dificil",
     categoria: "Les Santes",
@@ -108,12 +108,12 @@ const SONGS = [
     id: 'no_hi_ha_prou',
     title: 'No Hi Ha Prou',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/No-hi-ha-prou.mp3',
-    audioSrcEx: '/../../../audio/No-hi-ha-prouX2.mp3',
-    videoSrc: '/../../../video/Prou.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/No-hi-ha-prou.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/No-hi-ha-prouX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Prou.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/No-hi-ha-prou.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/No-hi-ha-prou.png',
     duration: 174.52,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -125,12 +125,12 @@ const SONGS = [
     id: 'fogonades',
     title: 'Fogonades',
     artist: 'Sant Jordi de Mataró',
-    audioSrc: '/../../../audio/Fogonades.mp3',
-    audioSrcEx: '/../../../audio/FogonadesX2.mp3',
-    videoSrc: '/../../../video/Fogonada.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Fogonades.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/FogonadesX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Fogonada.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/fogonades.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/fogonades.png',
     duration: 276.82,
     dificultad: "Dificil",
     categoria: "Sant Jordi",
@@ -142,12 +142,12 @@ const SONGS = [
     id: 'gener',
     title: 'Gener',
     artist: 'Tradicional',
-    audioSrc: '/../../../audio/Gener.mp3',
-    audioSrcEx: '/../../../audio/Gener.mp3',
-    videoSrc: '/../../../video/Gener.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Gener.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/GenerX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Gener.mp4',
     bgColor: '#2e1a0a',
     bgGradient: 'linear-gradient(135deg,#2e1a0a,#0a1a2e)',
-    bgImage: '/../../../public/Gener.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/Gener.png',
     duration: 120,
     dificultad: "Fàcil",
     categoria: "Generals",
@@ -159,12 +159,12 @@ const SONGS = [
     id: 'amigo',
     title: 'L\'Amigó',
     artist: 'Tradicional',
-    audioSrc: '/../../../audio/Amigo.mp3',
-    audioSrcEx: '/../../../audio/AmigoX2.mp3',
-    videoSrc: '/../../../video/Amigo.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Amigo.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/AmigoX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Amigo.mp4',
     bgColor: '#0a2e1a',
     bgGradient: 'linear-gradient(135deg,#0a2e1a,#2e0a1a)',
-    bgImage: '/../../../public/Amigo.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Amigo.jpg',
     duration: 400,
     dificultad: "Mitjana",
     categoria: "Generals",
@@ -182,25 +182,10 @@ const SONGS = [
 [23.31,0],[23.47,3],[23.74,1],[23.89,2],[24.16,0],[24.31,3],[24.58,1],[24.74,2],[25.01,0],[25.16,3],
 [25.44,1],[25.6,2],[25.86,0],[26.02,3],[26.29,1],[26.45,2],[26.71,0],[26.87,3],[27.14,1],[27.29,2],
 [27.56,0],[27.72,3],[27.99,1],[28.15,2],[28.42,0],[28.58,3],[28.85,1],[29.01,2],[29.27,0],[29.43,3]]
-  },
-  {
-    id: 'polcadours',
-    title: 'Polca d\'Ours',
-    artist: 'Tradicional',
-    audioSrc: '/../../../audio/PolcaDOurs.mp3',
-    audioSrcEx: '/../../../audio/PolcaDOursX2.mp3',
-    videoSrc: '/../../../video/PolcaDOurs.mp4',
-    bgColor: '#1a2e0a',
-    bgGradient: 'linear-gradient(135deg,#1a2e0a,#2e0a2e)',
-    bgImage: '/../../../public/PolcaDOurs.png',
-    duration: 140,
-    dificultad: "Difícil",
-    categoria: "Generals",
-    vidas: 6,
-    notesEasy: [],
-    notesHard: []
   }
 ];
+
+
 const LANE_COLORS   = ['#e8002d','#1a8fff','#00cc55','#ff8800'];
 const LANE_COLORS_A = ['rgba(232,0,45,0.14)','rgba(26,143,255,0.14)','rgba(0,204,85,0.14)','rgba(255,136,0,0.14)'];
 let currentCategory = 'ALL';
@@ -950,44 +935,187 @@ function updateHUD() {
   document.getElementById('hud-acc').textContent = acc+'%';
 }
 
+// ═══════════════════════════════════════════════════════════════
+// SUBSTITUEIX la funció endGame() existent al fitxer principal
+// ═══════════════════════════════════════════════════════════════
+
 function endGame() {
   G.running = false;
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
-  if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
+  if (G.audio)  { stopAudio(G.audio, 0); G.audio = null; }
 
-  const hitPct   = G.totalNotes > 0 ? G.hitCount/G.totalNotes : 0;
-  const stars    = hitPct>=0.95?3:hitPct>=0.75?2:hitPct>=0.5?1:0;
+  const hitPct   = G.totalNotes > 0 ? G.hitCount / G.totalNotes : 0;
+  const stars    = hitPct >= 0.95 ? 3 : hitPct >= 0.75 ? 2 : hitPct >= 0.5 ? 1 : 0;
   const sd       = getSongData(G.song.id);
-  const unlockEx = !G.isEx && stars===3 && !sd.exUnlocked;
+  const unlockEx = !G.isEx && stars === 3 && !sd.exUnlocked;
 
   setSongData(G.song.id, {
-    stars: Math.max(sd.stars,stars), bestScore: Math.max(sd.bestScore,G.score),
-    exUnlocked: sd.exUnlocked||unlockEx
+    stars:      Math.max(sd.stars, stars),
+    bestScore:  Math.max(sd.bestScore, G.score),
+    exUnlocked: sd.exUnlocked || unlockEx,
   });
 
-  document.getElementById('res-song').textContent    = G.song.title.toUpperCase();
+  // ── Contingut bàsic ──
+  document.getElementById('res-song').textContent    = G.song.title.toUpperCase() + (G.isEx ? ' · EX 2×' : '');
   document.getElementById('res-score').textContent   = G.score.toLocaleString();
   document.getElementById('res-perfect').textContent = G.perfectCount;
   document.getElementById('res-great').textContent   = G.greatCount;
   document.getElementById('res-miss').textContent    = G.missCount;
 
-  const starsEl = document.getElementById('res-stars'); starsEl.textContent='';
-  for (let i=1;i<=3;i++) {
-    const s=document.createElement('span');
-    s.style.color=stars>=i?'#c8a84b':'#2a2a2a'; s.textContent='★'; starsEl.appendChild(s);
+  // ── Estrelles ──
+  const starsEl = document.getElementById('res-stars');
+  starsEl.textContent = '';
+  for (let i = 1; i <= 3; i++) {
+    const s = document.createElement('span');
+    s.style.color  = stars >= i ? '#c8a84b' : '#2a2a2a';
+    s.textContent  = '★';
+    starsEl.appendChild(s);
   }
 
+  // ── Banner desbloqueig mode normal ──
   const banner = document.getElementById('unlock-banner');
-  if (unlockEx) { banner.textContent='✦ Has desbloquejat el MODE EX 2×!'; banner.classList.add('show'); }
-  else banner.classList.remove('show');
-
-  const retryBtn = document.getElementById('btn-res-retry');
-  const newSd = getSongData(G.song.id);
-  if (newSd.exUnlocked && !G.isEx) {
-    retryBtn.textContent='MODE EX 2× ▶'; retryBtn.onclick=()=>startSong(G.song,true);
+  if (unlockEx) {
+    banner.textContent = '✦ Has desbloquejat el MODE EX 2×!';
+    banner.classList.add('show');
   } else {
-    retryBtn.textContent='TORNAR A JUGAR'; retryBtn.onclick=()=>startSong(G.song,G.isEx);
+    banner.classList.remove('show');
   }
+
+  // ── Banner especial MODE EX ──────────────────────────────────
+  // Obtenim o creem el banner EX (persisteix entre partides)
+  let exBanner = document.getElementById('ex-clear-banner');
+  if (!exBanner) {
+    exBanner = document.createElement('div');
+    exBanner.id = 'ex-clear-banner';
+
+    // Injectem l'estil si no existeix
+    if (!document.getElementById('ex-banner-style')) {
+      const style = document.createElement('style');
+      style.id = 'ex-banner-style';
+      style.textContent = `
+        #ex-clear-banner {
+          display: none;
+          margin: 14px auto 0;
+          max-width: 360px;
+          padding: 14px 20px 12px;
+          background: linear-gradient(135deg, rgba(200,168,75,0.12), rgba(255,200,50,0.06));
+          border: 1.5px solid rgba(200,168,75,0.55);
+          border-radius: 12px;
+          text-align: center;
+          animation: exBannerIn .45s cubic-bezier(.22,1,.36,1);
+        }
+        #ex-clear-banner.show { display: block; }
+        @keyframes exBannerIn {
+          from { opacity:0; transform: scale(.92) translateY(10px); }
+          to   { opacity:1; transform: none; }
+        }
+        #ex-clear-banner .ex-label {
+          font-family: 'Cinzel Decorative', 'Cinzel', serif;
+          font-size: .72rem;
+          letter-spacing: .18em;
+          color: #c8a84b;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+        }
+        #ex-clear-banner .ex-score-line {
+          font-family: 'Titillium Web', sans-serif;
+          font-size: 1.45rem;
+          font-weight: 700;
+          color: #fff;
+          letter-spacing: .04em;
+          line-height: 1.15;
+        }
+        #ex-clear-banner .ex-score-line span {
+          color: #f5d06a;
+        }
+        #ex-clear-banner .ex-sub {
+          font-family: 'Titillium Web', sans-serif;
+          font-size: .78rem;
+          color: rgba(255,255,255,0.55);
+          margin-top: 5px;
+        }
+        #ex-clear-banner .ex-acc {
+          display: inline-block;
+          margin-top: 8px;
+          padding: 3px 12px;
+          background: rgba(200,168,75,0.15);
+          border: 1px solid rgba(200,168,75,0.3);
+          border-radius: 20px;
+          font-family: 'Titillium Web', sans-serif;
+          font-size: .8rem;
+          color: #c8a84b;
+          letter-spacing: .06em;
+        }
+        /* Estrella EX daurada animada */
+        #ex-clear-banner .ex-stars {
+          font-size: 1.1rem;
+          margin-bottom: 4px;
+          animation: exStarsPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes exStarsPulse {
+          0%,100% { text-shadow: 0 0 8px rgba(200,168,75,0.4); }
+          50%      { text-shadow: 0 0 20px rgba(200,168,75,0.9); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Inserim el banner just sota el banner d'unlock existent
+    const unlockBanner = document.getElementById('unlock-banner');
+    if (unlockBanner && unlockBanner.parentNode) {
+      unlockBanner.parentNode.insertBefore(exBanner, unlockBanner.nextSibling);
+    } else {
+      // Fallback: afegim a la pantalla de resultat
+      const resScreen = document.getElementById('screen-result');
+      if (resScreen) resScreen.appendChild(exBanner);
+    }
+  }
+
+  if (G.isEx) {
+    const acc     = G.hitCount > 0 ? Math.round(G.hitCount / (G.hitCount + G.missCount) * 100) : 100;
+    const starsStr = '★'.repeat(stars) + '☆'.repeat(3 - stars);
+    const isRecord = G.score > (sd.bestScore || 0);
+
+    // Missatge personalitzat segons rendiment
+    let headline, sub;
+    if (acc === 100) {
+      headline = '⚡ FULL COMBO EX!';
+      sub      = 'Perfecció absoluta al doble de velocitat. Increïble.';
+    } else if (stars === 3) {
+      headline = '⚡ EX CLEARED — 3 ESTRELLES!';
+      sub      = isRecord ? '🏆 Nova puntuació rècord!' : 'Excel·lent execució en mode EX 2×.';
+    } else if (stars >= 1) {
+      headline = '⚡ EX COMPLETAT';
+      sub      = 'Has superat el mode al doble de velocitat. Bona feina!';
+    } else {
+      headline = '⚡ MODE EX 2× INTENTAT';
+      sub      = 'El doble de velocitat no perdona. Torna-ho a intentar!';
+    }
+
+    exBanner.innerHTML = `
+      <div class="ex-stars">${starsStr}</div>
+      <div class="ex-label">Mode EX · 2× Velocitat</div>
+      <div class="ex-score-line">${headline}</div>
+      <div class="ex-sub">${sub}</div>
+      <div class="ex-acc">Precisió: ${acc}% · ${G.hitCount}/${G.totalNotes} notes</div>
+    `;
+    exBanner.classList.add('show');
+  } else {
+    exBanner.classList.remove('show');
+  }
+  // ─────────────────────────────────────────────────────────────
+
+  // ── Botó de reintent ──
+  const retryBtn = document.getElementById('btn-res-retry');
+  const newSd    = getSongData(G.song.id);
+  if (newSd.exUnlocked && !G.isEx) {
+    retryBtn.textContent = 'MODE EX 2× ▶';
+    retryBtn.onclick     = () => startSong(G.song, true);
+  } else {
+    retryBtn.textContent = 'TORNAR A JUGAR';
+    retryBtn.onclick     = () => startSong(G.song, G.isEx);
+  }
+
   showScreen('result');
 }
 
@@ -997,8 +1125,15 @@ function endGame() {
 const keysHeld = new Set();
 // keydown is defined above (after CONFIG SCREEN section) to handle config first
 document.addEventListener('keyup', e => keysHeld.delete(e.key));
-document.getElementById('lane-bar').addEventListener('touchstart', e=>e.preventDefault(), {passive:false});
-
+document.getElementById('lane-bar').addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  var rect = e.currentTarget.getBoundingClientRect();
+  Array.from(e.changedTouches).forEach(function(t) {
+    var x = t.clientX - rect.left;
+    var lane = Math.min(3, Math.max(0, Math.floor(x / rect.width * 4)));
+    tapLane(lane, null);
+  });
+}, { passive: false });
 // ═══════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════
@@ -1030,3 +1165,4 @@ window.addEventListener('resize', ()=>{ if(document.getElementById('screen-game'
 
 // Initialize lane bar labels on load
 updateLaneBarLabels();
+
