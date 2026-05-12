@@ -154,7 +154,7 @@ body {
 .img-box {
     width: 25px;
     height: 25px;
-    background-image: url('/assets/diable_uncheck.svg');
+    background-image: url("/an/assets/diable_uncheck.svg");
     background-size: contain;
     background-repeat: no-repeat;
     transition: transform 0.2s ease;
@@ -163,7 +163,7 @@ body {
 
 /* El selector "+" busca al label que está justo después del input que ha sido clickeado */
 .checkbox-item input:checked + label .img-box {
-    background-image: url('/assets/diable_check.svg');
+    background-image: url("/an/assets/diable_check.svg");
     transform: scale(1.1);
 }
 

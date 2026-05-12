@@ -35,7 +35,7 @@ body {
     overflow: hidden;
     height: 600px;
     width: 85%;
-    background: url('/assets/agenda-banner.png') center/cover no-repeat;
+    background: url("/an/assets/agenda-banner.png") center/cover no-repeat;
     display: flex;
     align-items: flex-end;
     padding: 20px;
@@ -88,7 +88,7 @@ body {
 .agenda-header-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/agenda-banner.png');
+  background-image: url("/an/assets/agenda-banner.png");
   background-size: cover;
   background-position: center;
   opacity: 0.35;
