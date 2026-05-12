@@ -1,12 +1,3 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/ik/index.html" },
-    { "source": "/index.html", "destination": "/ik/index.html" },
-    { "source": "/style.css", "destination": "/ik/style.css" },
-    { "source": "/components.css", "destination": "/ik/components.css" },
-    { "source": "/components.js", "destination": "/ik/components.js" },
-    { "source": "/app.js", "destination": "/ik/app.js" },
-    { "source": "/public/:path*", "destination": "/ik/public/:path*" }
-  ]
+  "cleanUrls": true
 }
