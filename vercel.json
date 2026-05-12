@@ -1,11 +1,12 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true,
   "rewrites": [
-    { "source": "/an/:path*", "destination": "/codigo%20santas/an/:path*" },
-    { "source": "/ol/:path*", "destination": "/codigo%20santas/ol/:path*" },
-    { "source": "/ik/:path*", "destination": "/codigo%20santas/ik/:path*" },
-    { "source": "/index.html", "destination": "/codigo%20santas/ik/index.html" },
-    { "source": "/:path*", "destination": "/codigo%20santas/ik/:path*" }
+    { "source": "/", "destination": "/ik/index.html" },
+    { "source": "/index.html", "destination": "/ik/index.html" },
+    { "source": "/style.css", "destination": "/ik/style.css" },
+    { "source": "/components.css", "destination": "/ik/components.css" },
+    { "source": "/components.js", "destination": "/ik/components.js" },
+    { "source": "/app.js", "destination": "/ik/app.js" },
+    { "source": "/public/:path*", "destination": "/ik/public/:path*" }
   ]
 }
