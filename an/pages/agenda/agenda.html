@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda Festa Major · Les Santes 2026</title>
-  <link rel="stylesheet" href="css/agenda.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../components.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Festa Major · Les Santes 2026</title>
+    <link rel="stylesheet" href="css/agenda.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../components.css">
 </head>
 <body>
 
+    <!-- Components will be injected by components.js -->
     <script src="../../../components.js" data-base="../../../" data-tab="agenda"></script>
 
-
-   <div class="hero">
+    <div class="hero">
         <div class="hero-content">
             <h1>AGENDA<br>PER DIES</h1>
-            <h3>No et perdis cap acte de la Festa Major de Mataro 2026</h3>
+            <h3>No et perdis cap acte de la Festa Major de Mataró 2026</h3>
         </div>        
     </div>
 
+    <!-- DAY SELECTOR -->
+    <div class="days-wrapper" style="background-color: #F8F5F5 !important;">
+        <div id="days"></div>
+    </div>
 
-  <!-- DAY SELECTOR -->
-  <div class="days-wrapper" style="background-color: #F8F5F5 !important;">
-    <div id="days"></div>
-  </div>
+    <!-- TIMELINE -->
+    <div id="timeline"></div>
 
-  <!-- TIMELINE -->
-  <div id="timeline"></div>
-
-  <script src="js/agenda.js"></script>
-  <script src="../../../app.js"></script>
+    <script src="js/agenda.js"></script>
+    <script src="../../../app.js"></script>
 </body>
 </html>
