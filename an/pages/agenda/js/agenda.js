@@ -1,6 +1,6 @@
-/ ═══════════════════════════════════
-/ ICON MAP — png paths
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// ICON MAP — png paths
+// ═══════════════════════════════════
 const ICON_MAP = {
   "🔔": "/assets/icons/campana.png",
   "🎭": "/assets/icons/teatre.png",
@@ -8,12 +8,12 @@ const ICON_MAP = {
   "🎵": "/assets/icons/music.png"
 };
 
-/ ... inside AGENDA object, replace image paths ...
-/ (I will use AllowMultiple or just replace the whole block if needed)
+// ... inside AGENDA object, replace image paths ...
+// (I will use AllowMultiple or just replace the whole block if needed)
 
-/ ═══════════════════════════════════
-/ DADES DE L'AGENDA
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// DADES DE L'AGENDA
+// ═══════════════════════════════════
 const AGENDA = {
   "25": {
     label: "DJ",

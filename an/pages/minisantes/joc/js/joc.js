@@ -1,6 +1,6 @@
-/ ═══════════════════════════════════
-/ DATA
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// DATA
+// ═══════════════════════════════════
 const SONGS = [
   {
     id: 'bequetero',
@@ -189,9 +189,9 @@ const SONGS = [
 const LANE_COLORS   = ['#e8002d','#1a8fff','#00cc55','#ff8800'];
 const LANE_COLORS_A = ['rgba(232,0,45,0.14)','rgba(26,143,255,0.14)','rgba(0,204,85,0.14)','rgba(255,136,0,0.14)'];
 let currentCategory = 'ALL';
-/ ═══════════════════════════════════
-/ KEY CONFIG — persistent via localStorage
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// KEY CONFIG — persistent via localStorage
+// ═══════════════════════════════════
 const DEFAULT_KEYS = {
   lane0: ['a', 'ArrowLeft'],
   lane1: ['s', 'ArrowDown'],
@@ -236,7 +236,7 @@ function saveKeyConfig(cfg) {
 
 let keyConfig = loadKeyConfig();
 
-/ Build dynamic KEY_MAP from keyConfig
+// Build dynamic KEY_MAP from keyConfig
 function buildKeyMap() {
   const map = {};
   for (let lane = 0; lane < 4; lane++) {
@@ -249,9 +249,9 @@ function buildKeyMap() {
 }
 let KEY_MAP = buildKeyMap();
 
-/ ═══════════════════════════════════
-/ PROGRESS
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// PROGRESS
+// ═══════════════════════════════════
 let _memProgress = {};
 function getProgress() {
   try { return JSON.parse(localStorage.getItem('santes_progress') || '{}'); } catch(e) { return _memProgress; }
@@ -271,17 +271,17 @@ function setSongData(id, data) {
   saveProgress(p);
 }
 
-/ ═══════════════════════════════════
-/ SCREENS
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// SCREENS
+// ═══════════════════════════════════
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + id).classList.add('active');
 }
 
-/ ═══════════════════════════════════
-/ TITLE SCREEN — PARTICLES + CONFETTI
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// TITLE SCREEN — PARTICLES + CONFETTI
+// ═══════════════════════════════════
 (function initParticles() {
   const c = document.getElementById('title-particles');
   const ctx = c.getContext('2d');
@@ -319,7 +319,7 @@ function showScreen(id) {
     for (const piece of confetti) {
       piece.x += piece.vx; piece.y += piece.vy; piece.rot += piece.drot;
       if (piece.y > H + 20) { piece.y = -20; piece.x = Math.random() * W; }
-      ctx.save(); ctx.translate(piece.x, piece.y); ctx.rotate(piece.rot * Math.PI / 180);
+      ctx.save(); ctx.translate(piece.x, piece.y); ctx.rotate(piece.rot * Math.PI // 180);
       ctx.fillStyle = piece.col + 'bb';
       ctx.fillRect(-piece.w/2, -piece.h/2, piece.w, piece.h); ctx.restore();
     }
@@ -328,12 +328,12 @@ function showScreen(id) {
   frame();
 })();
 
-/ ═══════════════════════════════════
-/ CONFIG SCREEN — KEY BINDING
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// CONFIG SCREEN — KEY BINDING
+// ═══════════════════════════════════
 const LANE_LABELS = ['← (Esquerra)', '↓ (Centre)', '→ (Centre)', '↑ (Dreta)'];
 let listeningLane = null;
-let listeningSlot = null; / 0 or 1 (primary / secondary)
+let listeningSlot = null; // 0 or 1 (primary // secondary)
 
 function buildConfigScreen() {
   const container = document.getElementById('config-keys-container');
@@ -383,14 +383,14 @@ function updateConfigLaneBar() {
     if (el) {
       const keys = keyConfig['lane' + lane];
       const parts = keys.filter(Boolean).map(k => formatKeyLabel(k));
-      el.textContent = parts.join(' / ');
+      el.textContent = parts.join(' // ');
     }
   }
 }
 
 function startListening(lane, slot) {
   if (listeningLane !== null) {
-    / cancel previous
+    // cancel previous
     const prevBtn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
     if (prevBtn) { prevBtn.classList.remove('listening'); prevBtn.textContent = formatKeyLabel(keyConfig['lane'+listeningLane][listeningSlot] || '—'); }
   }
@@ -407,7 +407,7 @@ function handleConfigKey(e) {
   e.stopPropagation();
 
   const key = e.key;
-  / Escape cancels
+  // Escape cancels
   if (key === 'Escape') {
     const btn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
     if (btn) { btn.classList.remove('listening'); btn.textContent = formatKeyLabel(keyConfig['lane'+listeningLane][listeningSlot] || '—'); }
@@ -415,7 +415,7 @@ function handleConfigKey(e) {
     return;
   }
 
-  / Remove this key from any other lane/slot to avoid conflicts
+  // Remove this key from any other lane/slot to avoid conflicts
   for (let l = 0; l < 4; l++) {
     keyConfig['lane' + l] = keyConfig['lane' + l].map(k => (k === key && !(l === listeningLane && keyConfig['lane'+l].indexOf(k) === listeningSlot)) ? '' : k);
   }
@@ -427,7 +427,7 @@ function handleConfigKey(e) {
   const btn = document.getElementById(`cfg-btn-${listeningLane}-${listeningSlot}`);
   if (btn) { btn.classList.remove('listening'); btn.textContent = formatKeyLabel(key); }
 
-  / Refresh all buttons to reflect cleared conflicts
+  // Refresh all buttons to reflect cleared conflicts
   buildConfigScreen();
   listeningLane = null; listeningSlot = null;
 }
@@ -442,9 +442,9 @@ document.addEventListener('keydown', e => {
   if (lane !== undefined) { e.preventDefault(); tapLane(lane, null); }
 });
 
-/ ═══════════════════════════════════
-/ SONG SELECT
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// SONG SELECT
+// ═══════════════════════════════════
 function buildSongGrid() {
   const grid = document.getElementById('songs-grid');
   grid.innerHTML = '';
@@ -555,17 +555,17 @@ function openModeSelector(song) {
   };
 }
 
-/ ═══════════════════════════════════
-/ AUDIO FADE-OUT HELPER
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// AUDIO FADE-OUT HELPER
+// ═══════════════════════════════════
 function stopAudio(aud, fadeMs) {
   if (!aud) return;
-  / Handle the fake timer object (no volume property, has pause())
+  // Handle the fake timer object (no volume property, has pause())
   if (typeof aud.volume === 'undefined') {
     try { aud.pause(); } catch(e) {}
     return;
   }
-  / Real HTMLAudioElement — immediate hard stop (most reliable)
+  // Real HTMLAudioElement — immediate hard stop (most reliable)
   try {
     aud.volume = 0;
     aud.pause();
@@ -573,9 +573,9 @@ function stopAudio(aud, fadeMs) {
   } catch(e) {}
 }
 
-/ ═══════════════════════════════════
-/ GAME ENGINE
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// GAME ENGINE
+// ═══════════════════════════════════
 let G = {};
 const canvas = document.getElementById('game-canvas');
 const ctx2   = canvas.getContext('2d');
@@ -586,7 +586,7 @@ function resizeCanvas() {
 }
 
 function startSong(song, exMode) {
-  / --- Clean up any running game first ---
+  // --- Clean up any running game first ---
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
   if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
   G.running = false;
@@ -611,10 +611,10 @@ function startSong(song, exMode) {
   running: false, audio: null, animId: null, t0: null,
   gameOverPending: false
 };
-/ 🔥 SPEED SEGÚN DIFICULTAD + LOCALSTORAGE
+// 🔥 SPEED SEGÚN DIFICULTAD + LOCALSTORAGE
 const difficulty = document.getElementById('difficulty')?.value || 'normal';
 
-/ si no existe aún, usa fallback seguro
+// si no existe aún, usa fallback seguro
 G.speed = SPEEDS?.[difficulty] || 340;
 
 console.log('[START SONG] dificultad:', difficulty, 'speed:', G.speed);
@@ -627,10 +627,10 @@ console.log('[START SONG] dificultad:', difficulty, 'speed:', G.speed);
   document.getElementById('hud-acc').textContent       = '';
   document.getElementById('progress-fill').style.width = '0%';
 
-  / Update lane bar key labels based on current keyConfig
+  // Update lane bar key labels based on current keyConfig
   updateLaneBarLabels();
 
-  / ── VÍDEO DE FONS ──────────────────────────────────────────
+  // ── VÍDEO DE FONS ──────────────────────────────────────────
   const vid = document.getElementById('game-video-bg');
   if (vid) {
     vid.pause();
@@ -659,8 +659,8 @@ if (song.audioSrc) {
 
   G.audio = aud;
 
-  / 🔁 CONTROL DE REPETICIÓN MANUAL
-  const maxLoops = song.id === 'amigo' ? 1 : 0; / 0 = 1 vez, 1 = 2 veces
+  // 🔁 CONTROL DE REPETICIÓN MANUAL
+  const maxLoops = song.id === 'amigo' ? 1 : 0; // 0 = 1 vez, 1 = 2 veces
   G.loops = 0;
 
   function playAudio() {
@@ -706,14 +706,14 @@ function updateLaneBarLabels() {
     if (!kt) continue;
     const keys = keyConfig['lane' + lane];
     const parts = (keys || []).filter(Boolean).map(k => formatKeyLabel(k));
-    kt.textContent = parts.join(' / ');
+    kt.textContent = parts.join(' // ');
   }
 }
 
 function _startTimer(isEx) {
   G.t0 = performance.now();
 
-  / NO reemplaces G.audio
+  // NO reemplaces G.audio
   G.timerMode = true;
 
   G.getTime = () => (performance.now()-G.t0)/1000;
@@ -732,7 +732,7 @@ function spawnNotes(t) {
 
   while (G.noteIdx < G.notes.length) {
     const n = G.notes[G.noteIdx];
-    if (n.time - hitY / speed <= t) {
+    if (n.time - hitY // speed <= t) {
       G.activeNotes.push(n);
       G.noteIdx++;
     } else break;
@@ -748,22 +748,22 @@ function drawGame(t) {
   const hitY = getHitY();
   const isMobile = window.innerWidth <= 768;
 const GAP = isMobile ? 8 : 8;
-const LANE_W = (W - GAP * 3) / 4;
+const LANE_W = (W - GAP * 3) // 4;
 const NOTE_H = isMobile ? 180 : 50;
-const padding = 0;                 / padding mínim per veure el color de fons
+const padding = 0;                 // padding mínim per veure el color de fons
 
   const speed = Number(G.speed) || 340;
 
   ctx2.clearRect(0, 0, W, H);
 
-/ LANES BACKGROUND — amb offset per gap
+// LANES BACKGROUND — amb offset per gap
 for (let i = 0; i < 4; i++) {
   const lx = i * (LANE_W + GAP);
   ctx2.fillStyle = LANE_COLORS_A[i];
   ctx2.fillRect(lx, 0, LANE_W, H);
 }
 
-/ HIT ZONE
+// HIT ZONE
 for (let i = 0; i < 4; i++) {
   const lx = i * (LANE_W + GAP);
   ctx2.fillStyle = 'rgba(255,255,255,0.04)';
@@ -778,7 +778,7 @@ for (let i = 0; i < 4; i++) {
 ctx2.fillStyle = 'rgba(200,168,75,0.25)';
 ctx2.fillRect(0, hitY - 1, W, 2);
 
-/ NOTES
+// NOTES
 const notes = G.activeNotes;
 for (let i = 0; i < notes.length; i++) {
   const n = notes[i];
@@ -787,8 +787,8 @@ for (let i = 0; i < notes.length; i++) {
   const lx = lane * (LANE_W + GAP);
   const nx = lx + padding;
   const nW = LANE_W - padding * 2;
-  const y = hitY - (n.time - t) * speed - NOTE_H / 2;
-  n._y = y + NOTE_H / 2;
+  const y = hitY - (n.time - t) * speed - NOTE_H // 2;
+  n._y = y + NOTE_H // 2;
   ctx2.shadowColor = LANE_COLORS[lane];
   ctx2.shadowBlur = 14;
   ctx2.fillStyle = LANE_COLORS[lane];
@@ -796,9 +796,9 @@ for (let i = 0; i < notes.length; i++) {
   ctx2.fill();
   ctx2.shadowBlur = 0;
 }
-  / ─────────────────────────
-  / AUTO MISS (SAFE LOOP)
-  / ─────────────────────────
+  // ─────────────────────────
+  // AUTO MISS (SAFE LOOP)
+  // ─────────────────────────
   for (let i = 0; i < notes.length; i++) {
     const n = notes[i];
     if (!n || n.hit || n.missed) continue;
@@ -849,13 +849,13 @@ function gameLoop() {
   if (G.loops < G.maxLoops - 1) {
     G.loops++;
 
-    / reiniciar audio
+    // reiniciar audio
     if (G.audio) {
       G.audio.currentTime = 0;
       G.audio.play();
     }
 
-    / reiniciar timer si no usas audio
+    // reiniciar timer si no usas audio
     if (G.timerMode) {
       G.t0 = performance.now();
     }
@@ -864,10 +864,10 @@ function gameLoop() {
   }
 }
   spawnNotes(t); drawGame(t);
-  if (!G.running) return; / drawGame may have set running=false on game over
+  if (!G.running) return; // drawGame may have set running=false on game over
   const dur = G.song.duration;
   document.getElementById('progress-fill').style.width = Math.min(t/dur*100,100)+'%';
-  / Level complete
+  // Level complete
   if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
     G.running = false;
     cancelAnimationFrame(G.animId);
@@ -915,11 +915,11 @@ function showFeedback(lane, text, color) {
   const area = document.getElementById('canvas-area');
   const isMobile = window.innerWidth <= 768;
   const GAP = isMobile ? 4 : 3;
-  const LANE_W = (canvas.width - GAP * 3) / 4;
+  const LANE_W = (canvas.width - GAP * 3) // 4;
   const lx = lane * (LANE_W + GAP);
   const el = document.createElement('div');
   el.className = 'feedback'; el.style.color = color;
-  el.style.left = (lx + LANE_W / 2 - 40) + 'px';
+  el.style.left = (lx + LANE_W // 2 - 40) + 'px';
   el.style.top = (getHitY() - 70) + 'px';
   el.textContent = text; area.appendChild(el);
   setTimeout(() => el.remove(), 560);
@@ -935,16 +935,16 @@ function updateHUD() {
   document.getElementById('hud-acc').textContent = acc+'%';
 }
 
-/ ═══════════════════════════════════════════════════════════════
-/ SUBSTITUEIX la funció endGame() existent al fitxer principal
-/ ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+// SUBSTITUEIX la funció endGame() existent al fitxer principal
+// ═══════════════════════════════════════════════════════════════
 
 function endGame() {
   G.running = false;
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
   if (G.audio)  { stopAudio(G.audio, 0); G.audio = null; }
 
-  const hitPct   = G.totalNotes > 0 ? G.hitCount / G.totalNotes : 0;
+  const hitPct   = G.totalNotes > 0 ? G.hitCount // G.totalNotes : 0;
   const stars    = hitPct >= 0.95 ? 3 : hitPct >= 0.75 ? 2 : hitPct >= 0.5 ? 1 : 0;
   const sd       = getSongData(G.song.id);
   const unlockEx = !G.isEx && stars === 3 && !sd.exUnlocked;
@@ -955,14 +955,14 @@ function endGame() {
     exUnlocked: sd.exUnlocked || unlockEx,
   });
 
-  / ── Contingut bàsic ──
+  // ── Contingut bàsic ──
   document.getElementById('res-song').textContent    = G.song.title.toUpperCase() + (G.isEx ? ' · EX 2×' : '');
   document.getElementById('res-score').textContent   = G.score.toLocaleString();
   document.getElementById('res-perfect').textContent = G.perfectCount;
   document.getElementById('res-great').textContent   = G.greatCount;
   document.getElementById('res-miss').textContent    = G.missCount;
 
-  / ── Estrelles ──
+  // ── Estrelles ──
   const starsEl = document.getElementById('res-stars');
   starsEl.textContent = '';
   for (let i = 1; i <= 3; i++) {
@@ -972,7 +972,7 @@ function endGame() {
     starsEl.appendChild(s);
   }
 
-  / ── Banner desbloqueig mode normal ──
+  // ── Banner desbloqueig mode normal ──
   const banner = document.getElementById('unlock-banner');
   if (unlockEx) {
     banner.textContent = '✦ Has desbloquejat el MODE EX 2×!';
@@ -981,14 +981,14 @@ function endGame() {
     banner.classList.remove('show');
   }
 
-  / ── Banner especial MODE EX ──────────────────────────────────
-  / Obtenim o creem el banner EX (persisteix entre partides)
+  // ── Banner especial MODE EX ──────────────────────────────────
+  // Obtenim o creem el banner EX (persisteix entre partides)
   let exBanner = document.getElementById('ex-clear-banner');
   if (!exBanner) {
     exBanner = document.createElement('div');
     exBanner.id = 'ex-clear-banner';
 
-    / Injectem l'estil si no existeix
+    // Injectem l'estil si no existeix
     if (!document.getElementById('ex-banner-style')) {
       const style = document.createElement('style');
       style.id = 'ex-banner-style';
@@ -1060,23 +1060,23 @@ function endGame() {
       document.head.appendChild(style);
     }
 
-    / Inserim el banner just sota el banner d'unlock existent
+    // Inserim el banner just sota el banner d'unlock existent
     const unlockBanner = document.getElementById('unlock-banner');
     if (unlockBanner && unlockBanner.parentNode) {
       unlockBanner.parentNode.insertBefore(exBanner, unlockBanner.nextSibling);
     } else {
-      / Fallback: afegim a la pantalla de resultat
+      // Fallback: afegim a la pantalla de resultat
       const resScreen = document.getElementById('screen-result');
       if (resScreen) resScreen.appendChild(exBanner);
     }
   }
 
   if (G.isEx) {
-    const acc     = G.hitCount > 0 ? Math.round(G.hitCount / (G.hitCount + G.missCount) * 100) : 100;
+    const acc     = G.hitCount > 0 ? Math.round(G.hitCount // (G.hitCount + G.missCount) * 100) : 100;
     const starsStr = '★'.repeat(stars) + '☆'.repeat(3 - stars);
     const isRecord = G.score > (sd.bestScore || 0);
 
-    / Missatge personalitzat segons rendiment
+    // Missatge personalitzat segons rendiment
     let headline, sub;
     if (acc === 100) {
       headline = '⚡ FULL COMBO EX!';
@@ -1103,9 +1103,9 @@ function endGame() {
   } else {
     exBanner.classList.remove('show');
   }
-  / ─────────────────────────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────────
 
-  / ── Botó de reintent ──
+  // ── Botó de reintent ──
   const retryBtn = document.getElementById('btn-res-retry');
   const newSd    = getSongData(G.song.id);
   if (newSd.exUnlocked && !G.isEx) {
@@ -1119,24 +1119,24 @@ function endGame() {
   showScreen('result');
 }
 
-/ ═══════════════════════════════════
-/ KEYBOARD
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// KEYBOARD
+// ═══════════════════════════════════
 const keysHeld = new Set();
-/ keydown is defined above (after CONFIG SCREEN section) to handle config first
+// keydown is defined above (after CONFIG SCREEN section) to handle config first
 document.addEventListener('keyup', e => keysHeld.delete(e.key));
 document.getElementById('lane-bar').addEventListener('touchstart', function(e) {
   e.preventDefault();
   var rect = e.currentTarget.getBoundingClientRect();
   Array.from(e.changedTouches).forEach(function(t) {
     var x = t.clientX - rect.left;
-    var lane = Math.min(3, Math.max(0, Math.floor(x / rect.width * 4)));
+    var lane = Math.min(3, Math.max(0, Math.floor(x // rect.width * 4)));
     tapLane(lane, null);
   });
 }, { passive: false });
-/ ═══════════════════════════════════
-/ NAVIGATION
-/ ═══════════════════════════════════
+// ═══════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════
 document.getElementById('btn-play').addEventListener('click', ()=>{ buildSongGrid(); showScreen('select'); });
 document.getElementById('btn-config').addEventListener('click', ()=>{ buildConfigScreen(); showScreen('config'); });
 document.getElementById('btn-back-select').addEventListener('click', ()=>showScreen('title'));
@@ -1151,11 +1151,11 @@ document.querySelectorAll('.cat-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     currentCategory = btn.dataset.cat;
 
-    / UI active state
+    // UI active state
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    / rebuild grid
+    // rebuild grid
     buildSongGrid();
   });
 });
@@ -1163,6 +1163,6 @@ document.getElementById('btn-res-menu').addEventListener('click', ()=>{ buildSon
 document.getElementById('btn-res-retry').addEventListener('click', ()=>startSong(G.song,G.isEx));
 window.addEventListener('resize', ()=>{ if(document.getElementById('screen-game').classList.contains('active')) resizeCanvas(); });
 
-/ Initialize lane bar labels on load
+/// Initialize lane bar labels on load
 updateLaneBarLabels();
 

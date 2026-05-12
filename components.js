@@ -4,18 +4,18 @@
  */
 (function() {
     const script = document.currentScript;
-    const base = script.getAttribute('data-base') || ''; / e.g., "../../../" or ""
-    const currentTab = script.getAttribute('data-tab') || ''; / e.g., "agenda"
+    const base = script.getAttribute('data-base') || ''; /// e.g., "../../../" or ""
+    const currentTab = script.getAttribute('data-tab') || ''; /// e.g., "agenda"
 
-    / Helper to fix paths
+    /// Helper to fix paths
     const fixPath = (path) => {
         if (path.startsWith('http') || path.startsWith('#') || path.startsWith('javascript:')) return path;
-        / If path starts with ./ or an/ or ol/, and we are already providing a base, 
-        / we need to be careful. For simplicity, we assume links are relative to ./ root.
-        return base + path;
+        /// If path starts with ./ or an/ or ol/, and we are already providing a base, 
+        // we need to be careful. For simplicity, we assume links are relative to ./ root.
+        return (base + path).replace(/\/+/g, "/");
     };
 
-    / 1. NAVBAR HTML
+    // 1. NAVBAR HTML
     const navHTML = `
     <nav id="navbar-original" class="navbar">
         <div class="navbar-brand">
@@ -46,7 +46,7 @@
         </div>
     </nav>`;
 
-    / 2. SEARCH OVERLAY HTML
+    // 2. SEARCH OVERLAY HTML
     const overlayHTML = `
     <section id="search-overlay">
         <nav class="navbar navbar-clone">
@@ -123,7 +123,7 @@
         </div>
     </section>`;
 
-    / 3. FOOTER HTML
+    // 3. FOOTER HTML
     const footerHTML = `
     <footer class="footer">
         <div class="footer-content">
@@ -137,10 +137,10 @@
                 <a href="#">Contacte</a>
             </div>
             <div class="footer-social">
-                <a href="#"><img src="${fixPath('ol/ol/assets/facebook.png')}" alt="Facebook"></a>
-                <a href="#"><img src="${fixPath('ol/ol/assets/twitter.png')}" alt="Twitter"></a>
-                <a href="#"><img src="${fixPath('ol/ol/assets/instagram.png')}" alt="Instagram"></a>
-                <a href="#"><img src="${fixPath('ol/ol/assets/linkedin.png')}" alt="LinkedIn"></a>
+                <a href="#"><img src="${fixPath('ol/assets/facebook.png')}" alt="Facebook"></a>
+                <a href="#"><img src="${fixPath('ol/assets/twitter.png')}" alt="Twitter"></a>
+                <a href="#"><img src="${fixPath('ol/assets/instagram.png')}" alt="Instagram"></a>
+                <a href="#"><img src="${fixPath('ol/assets/linkedin.png')}" alt="LinkedIn"></a>
             </div>
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
@@ -149,18 +149,18 @@
         </div>
     </footer>`;
 
-    / INJECTION
+    /// INJECTION
     function inject() {
-        / Insert Navbar and Overlay at the start of body
+        /// Insert Navbar and Overlay at the start of body
         document.body.insertAdjacentHTML('afterbegin', navHTML + overlayHTML);
         
-        / Insert Footer at the end of body
+        /// Insert Footer at the end of body
         document.body.insertAdjacentHTML('beforeend', footerHTML);
 
-        / Initial search open/close logic will be handled by app.js
+        /// Initial search open/close logic will be handled by app.js
         window.LES_SANTES_BASE = base;
         
-        / Dispatch a custom event so app.js knows components are ready
+        /// Dispatch a custom event so app.js knows components are ready
         document.dispatchEvent(new CustomEvent('components-loaded'));
     }
 

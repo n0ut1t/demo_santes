@@ -1,13 +1,13 @@
-/ =============================================
-/ LES SANTES 2026 - Super Buscador (Shared Logic)
-/ =============================================
+// =============================================
+// LES SANTES 2026 - Super Buscador (Shared Logic)
+// =============================================
 
 (function() {
   let base = '';
   let DETAIL_URL = '';
   let JSON_URL = '';
 
-  / --- ELEMENTS DEL DOM ---
+  // --- ELEMENTS DEL DOM ---
   function getElements() {
     return {
       searchInput: document.getElementById('search-input'),
@@ -25,7 +25,7 @@
     };
   }
 
-  / Helper to get ALL active checkboxes (static and dynamic)
+  /// Helper to get ALL active checkboxes (static and dynamic)
   function getActiveCheckboxes() {
     return {
       ambits: document.querySelectorAll('#ambits-container input[type="checkbox"]'),
@@ -33,12 +33,12 @@
     };
   }
 
-  / --- ESTAT ---
+  // --- ESTAT ---
   let todosEventos = [];
   let diaActivo = null;
   let homeDiaActivo = null;
 
-  / --- HELPERS ---
+  // --- HELPERS ---
   const AMBIT_CLASS = {
     'Activitat familiar':  'ambit--familiar',
     'Música':              'ambit--musica',
@@ -78,7 +78,7 @@
     return ambits.map(a => a.name).filter(Boolean);
   }
 
-  / --- CARGA DE DADES ---
+  // --- CARGA DE DADES ---
   function init() {
     base = window.LES_SANTES_BASE || '';
     DETAIL_URL = base + '../ol/pages/diada/Diada.html';
@@ -100,7 +100,7 @@
           dateLabel:   e.date_to_ca_detail || '',
         }));
         
-        renderFilters(); / Generate dynamic filters
+        renderFilters(); // Generate dynamic filters
         
         const el = getElements();
         if (el.resultsGrid) renderCards(todosEventos);
@@ -116,7 +116,7 @@
     const el = getElements();
     if (!el.ubicacioContainer) return;
 
-    / Extract unique locations
+    // Extract unique locations
     const locations = [...new Set(todosEventos.map(e => e.ubicacio))].filter(Boolean).sort();
     
     el.ubicacioContainer.innerHTML = locations.map(loc => `
@@ -175,7 +175,7 @@
       });
     });
 
-    / Re-bind checkboxes after generation
+    // Re-bind checkboxes after generation
     const cbs = getActiveCheckboxes();
     cbs.ambits.forEach(cb => cb.addEventListener('change', () => filtrarEventos(el)));
     cbs.ubicacions.forEach(cb => cb.addEventListener('change', () => filtrarEventos(el)));
@@ -190,7 +190,7 @@
       });
     });
 
-    / Auto-open from URL param
+    // Auto-open from URL param
     const params = new URLSearchParams(window.location.search);
     if (params.has('search')) {
       setTimeout(() => abrirOverlay(el), 100);
@@ -306,7 +306,7 @@
       </div>`).join('');
   }
 
-  / Wait for dynamic elements to be in DOM
+  // Wait for dynamic elements to be in DOM
   document.addEventListener('components-loaded', init);
 
 })();
