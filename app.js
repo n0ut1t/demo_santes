@@ -81,8 +81,8 @@
   // --- CARGA DE DADES ---
   function init() {
     base = window.LES_SANTES_BASE || '';
-    DETAIL_URL = base + '../ol/pages/diada/Diada.html';
-    JSON_URL = base + 'actes_santes_2025_pia.json';
+    DETAIL_URL = "/ol/pages/diada/Diada.html";
+    JSON_URL = "/actes_santes_2025_pia.json";
 
     fetch(JSON_URL)
       .then(res => res.json())

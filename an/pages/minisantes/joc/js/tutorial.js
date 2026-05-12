@@ -8,9 +8,9 @@ const TUTORIAL_SONG = {
   id: 'tutorial',
   title: 'Tutorial',
   artist: 'Gegant del Pi',
-  audioSrc: '/../../../audio/Gener.mp3',
+  audioSrc: '//an/audio/Gener.mp3',
   audioSrcEx: null,
-  videoSrc: "/../../../video/Gener.mp4",
+  videoSrc: "//an/video/Gener.mp4",
   bgColor: '#0d1a2e',
   bgGradient: 'linear-gradient(135deg,#0d1a2e,#1a0a2e)',
   bgImage: '/assets/Gener.jpeg',
@@ -562,7 +562,7 @@ function startTutorialPlay(idx) {
 
   const t0 = performance.now() - startT * 1000;
   G.timerMode = true;
-  G.getTime   = () => (performance.now() - t0) // 1000;
+  G.getTime   = () => (performance.now() - t0) / 1000;
 
   if (G.audio) {
     try {
@@ -603,7 +603,7 @@ function startTutorialPlay(idx) {
     const pf = document.getElementById('progress-fill');
     if (pf) {
       const dur = G.song ? G.song.duration : 64.04;
-      pf.style.width = Math.min(t // dur * 100, 100) + '%';
+      pf.style.width = Math.min(t / dur * 100, 100) + '%';
     }
 
     // Fi de les notes d'aquest segment

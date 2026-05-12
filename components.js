@@ -4,14 +4,13 @@
  */
 (function() {
     const script = document.currentScript;
-    const base = script.getAttribute('data-base') || ''; /// e.g., "../../../" or ""
-    const currentTab = script.getAttribute('data-tab') || ''; /// e.g., "agenda"
+    const base = script.getAttribute('data-base') || ''; // e.g., "../../../" or ""
+    const currentTab = script.getAttribute('data-tab') || ''; // e.g., "agenda"
 
-    /// Helper to fix paths
+    // Helper to fix paths
     const fixPath = (path) => {
         if (path.startsWith('http') || path.startsWith('#') || path.startsWith('javascript:')) return path;
-        /// If path starts with ./ or an/ or ol/, and we are already providing a base, 
-        // we need to be careful. For simplicity, we assume links are relative to ./ root.
+        if (path.startsWith('/')) return path;
         return (base + path).replace(/\/+/g, "/");
     };
 
@@ -19,12 +18,12 @@
     const navHTML = `
     <nav id="navbar-original" class="navbar">
         <div class="navbar-brand">
-            <a href="${fixPath('index.html')}"><img src="${fixPath('/assets/logo_header.svg')}" class="nav-logo" alt="Les Santes - Festa Major de Mataró"></a>
+            <a href="/index.html"><img src="/assets/logo_header.svg" class="nav-logo" alt="Les Santes - Festa Major de Mataró"></a>
         </div>
         <ul class="navbar-links">
-            <li><a href="${fixPath('an/pages/agenda/agenda.html')}" class="${currentTab === 'agenda' ? 'active' : ''}">Agenda</a></li>
-            <li><a href="${fixPath('an/pages/actes-rituals/actes.html')}" class="${currentTab === 'actes' ? 'active' : ''}">Actes i rituals</a></li>
-            <li><a href="${fixPath('an/pages/minisantes/index.html')}" class="${currentTab === 'minisantes' ? 'active' : ''}">Minisantes</a></li>
+            <li><a href="/an/pages/agenda/agenda.html" class="${currentTab === 'agenda' ? 'active' : ''}">Agenda</a></li>
+            <li><a href="/an/pages/actes-rituals/actes.html" class="${currentTab === 'actes' ? 'active' : ''}">Actes i rituals</a></li>
+            <li><a href="/an/pages/minisantes/index.html" class="${currentTab === 'minisantes' ? 'active' : ''}">Minisantes</a></li>
         </ul>
         <div class="navbar-actions">
             <div class="navbar-search">
@@ -51,12 +50,12 @@
     <section id="search-overlay">
         <nav class="navbar navbar-clone">
             <div class="navbar-brand">
-                <a href="${fixPath('index.html')}"><img src="${fixPath('/assets/logo_header.svg')}" class="nav-logo" alt="Les Santes"></a>
+                <a href="/index.html"><img src="/assets/logo_header.svg" class="nav-logo" alt="Les Santes"></a>
             </div>
             <ul class="navbar-links">
-                <li><a href="${fixPath('an/pages/agenda/agenda.html')}">Agenda</a></li>
-                <li><a href="${fixPath('an/pages/actes-rituals/actes.html')}">Actes i rituals</a></li>
-                <li><a href="${fixPath('an/pages/minisantes/index.html')}">Minisantes</a></li>
+                <li><a href="/an/pages/agenda/agenda.html">Agenda</a></li>
+                <li><a href="/an/pages/actes-rituals/actes.html">Actes i rituals</a></li>
+                <li><a href="/an/pages/minisantes/index.html">Minisantes</a></li>
             </ul>
             <div class="navbar-actions">
                 <div class="navbar-search">
@@ -86,11 +85,11 @@
                 <div class="filter-section">
                     <span class="filter-label">Totes les dates</span>
                     <div class="date-selector" id="date-btns">
-                        <button class="date-btn" data-day="25"><img src="${fixPath('/assets/day_25.svg')}" data-src-off="${fixPath('/assets/day_25.svg')}" data-src-on="${fixPath('/assets/day_25_full.svg')}" alt="Dia 25"></button>
-                        <button class="date-btn" data-day="26"><img src="${fixPath('/assets/day_26.svg')}" data-src-off="${fixPath('/assets/day_26.svg')}" data-src-on="${fixPath('/assets/day_26_full.svg')}" alt="Dia 26"></button>
-                        <button class="date-btn" data-day="27"><img src="${fixPath('/assets/day_27.svg')}" data-src-off="${fixPath('/assets/day_27.svg')}" data-src-on="${fixPath('/assets/day_27_full.svg')}" alt="Dia 27"></button>
-                        <button class="date-btn" data-day="28"><img src="${fixPath('/assets/day_28.svg')}" data-src-off="${fixPath('/assets/day_28.svg')}" data-src-on="${fixPath('/assets/day_28_full.svg')}" alt="Dia 28"></button>
-                        <button class="date-btn" data-day="29"><img src="${fixPath('/assets/day_29.svg')}" data-src-off="${fixPath('/assets/day_29.svg')}" data-src-on="${fixPath('/assets/day_29_full.svg')}" alt="Dia 29"></button>
+                        <button class="date-btn" data-day="25"><img src="/assets/day_25.svg" data-src-off="/assets/day_25.svg" data-src-on="/assets/day_25_full.svg" alt="Dia 25"></button>
+                        <button class="date-btn" data-day="26"><img src="/assets/day_26.svg" data-src-off="/assets/day_26.svg" data-src-on="/assets/day_26_full.svg" alt="Dia 26"></button>
+                        <button class="date-btn" data-day="27"><img src="/assets/day_27.svg" data-src-off="/assets/day_27.svg" data-src-on="/assets/day_27_full.svg" alt="Dia 27"></button>
+                        <button class="date-btn" data-day="28"><img src="/assets/day_28.svg" data-src-off="/assets/day_28.svg" data-src-on="/assets/day_28_full.svg" alt="Dia 28"></button>
+                        <button class="date-btn" data-day="29"><img src="/assets/day_29.svg" data-src-off="/assets/day_29.svg" data-src-on="/assets/day_29_full.svg" alt="Dia 29"></button>
                     </div>
                 </div>
 
@@ -128,19 +127,19 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="${fixPath('/assets/logo_header.svg')}" alt="Les Santes">
+                <img src="/assets/logo_header.svg" alt="Les Santes">
             </div>
             <div class="footer-nav">
-                <a href="${fixPath('an/pages/agenda/agenda.html')}">Agenda</a>
-                <a href="${fixPath('an/pages/actes-rituals/actes.html')}">Actes i rituals</a>
-                <a href="${fixPath('an/pages/minisantes/index.html')}">Minisantes</a>
+                <a href="/an/pages/agenda/agenda.html">Agenda</a>
+                <a href="/an/pages/actes-rituals/actes.html">Actes i rituals</a>
+                <a href="/an/pages/minisantes/index.html">Minisantes</a>
                 <a href="#">Contacte</a>
             </div>
             <div class="footer-social">
-                <a href="#"><img src="${fixPath('ol/assets/facebook.png')}" alt="Facebook"></a>
-                <a href="#"><img src="${fixPath('ol/assets/twitter.png')}" alt="Twitter"></a>
-                <a href="#"><img src="${fixPath('ol/assets/instagram.png')}" alt="Instagram"></a>
-                <a href="#"><img src="${fixPath('ol/assets/linkedin.png')}" alt="LinkedIn"></a>
+                <a href="#"><img src="/ol/assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/ol/assets/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="/ol/assets/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/ol/assets/linkedin.png" alt="LinkedIn"></a>
             </div>
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
@@ -149,18 +148,18 @@
         </div>
     </footer>`;
 
-    /// INJECTION
+    // INJECTION
     function inject() {
-        /// Insert Navbar and Overlay at the start of body
+        // Insert Navbar and Overlay at the start of body
         document.body.insertAdjacentHTML('afterbegin', navHTML + overlayHTML);
         
-        /// Insert Footer at the end of body
+        // Insert Footer at the end of body
         document.body.insertAdjacentHTML('beforeend', footerHTML);
 
-        /// Initial search open/close logic will be handled by app.js
+        // Initial search open/close logic will be handled by app.js
         window.LES_SANTES_BASE = base;
         
-        /// Dispatch a custom event so app.js knows components are ready
+        // Dispatch a custom event so app.js knows components are ready
         document.dispatchEvent(new CustomEvent('components-loaded'));
     }
 
