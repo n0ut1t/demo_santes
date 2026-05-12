@@ -1,9 +1,10 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/codigo santas/ik/$1"
-    }
+    { "source": "/", "destination": "/codigo santas/ik/index.html" },
+    { "source": "/an/(.*)", "destination": "/codigo santas/an/$1" },
+    { "source": "/ol/(.*)", "destination": "/codigo santas/ol/$1" },
+    { "source": "/ik/(.*)", "destination": "/codigo santas/ik/$1" },
+    { "source": "/(.*)", "destination": "/codigo santas/ik/$1" }
   ]
 }
