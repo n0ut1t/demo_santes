@@ -4,7 +4,7 @@
  */
 (function() {
     const script = document.currentScript;
-    const base = script.getAttribute('data-base') || ''; // e.g., "../../.././" or ""
+    const base = script.getAttribute('data-base') || ''; // e.g., "../../../" or ""
     const currentTab = script.getAttribute('data-tab') || ''; // e.g., "agenda"
 
     // Helper to fix paths
