@@ -55,7 +55,7 @@ body {
 
 .banner-minisantes {
     margin-top: -15px;
-    background-image: url('../../../public/portadaMinisantes.png');
+    background-image: url('../../../assets/portadaMinisantes.png');
     background-size: cover;        /* 🔥 clave */
     background-position: center;
     background-repeat: no-repeat;

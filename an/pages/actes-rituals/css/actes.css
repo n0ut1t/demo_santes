@@ -24,7 +24,7 @@ body {
         border-radius: 12px;
         overflow: hidden;
         height: 400px;
-        background: url('../../../public/actes-banner.png') center/cover no-repeat;
+        background: url('../../../assets/actes-banner.png') center/cover no-repeat;
         display: flex;
         align-items: flex-end;
         padding: 20px;

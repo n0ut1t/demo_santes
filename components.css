@@ -280,7 +280,7 @@
 .img-box {
   width: 22px !important;
   height: 22px !important;
-  background-image: url('public/diable_uncheck.svg') !important;
+  background-image: url('assets/diable_uncheck.svg') !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
   transition: transform 0.2s ease !important;
@@ -288,7 +288,7 @@
 }
 
 .checkbox-item input:checked+label .img-box {
-  background-image: url('public/diable_check.svg') !important;
+  background-image: url('assets/diable_check.svg') !important;
   transform: scale(1.1) !important;
 }
 

@@ -13,7 +13,7 @@ const TUTORIAL_SONG = {
   videoSrc: "/../../../video/Gener.mp4",
   bgColor: '#0d1a2e',
   bgGradient: 'linear-gradient(135deg,#0d1a2e,#1a0a2e)',
-  bgImage: '/../../../public/Gener.jpeg',
+  bgImage: '/../../../assets/Gener.jpeg',
   duration: 64.04,
   dificultad: 'Fàcil',
   categoria: 'Tutorial',

@@ -68,7 +68,7 @@
 
   function getImageUrl(images) {
     const currentBase = window.LES_SANTES_BASE || '';
-    if (!images || !images.load_url) return currentBase + 'public/portada-santes01.webp';
+    if (!images || !images.load_url) return currentBase + 'assets/portada-santes01.webp';
     const url = images.load_url;
     return url.startsWith('//') ? 'https:' + url : url;
   }
