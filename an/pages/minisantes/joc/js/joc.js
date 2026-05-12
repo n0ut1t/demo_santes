@@ -319,7 +319,7 @@ function showScreen(id) {
     for (const piece of confetti) {
       piece.x += piece.vx; piece.y += piece.vy; piece.rot += piece.drot;
       if (piece.y > H + 20) { piece.y = -20; piece.x = Math.random() * W; }
-      ctx.save(); ctx.translate(piece.x, piece.y); ctx.rotate(piece.rot * Math.PI // 180);
+      ctx.save(); ctx.translate(piece.x, piece.y); ctx.rotate(piece.rot * Math.PI / 180);
       ctx.fillStyle = piece.col + 'bb';
       ctx.fillRect(-piece.w/2, -piece.h/2, piece.w, piece.h); ctx.restore();
     }
@@ -732,7 +732,7 @@ function spawnNotes(t) {
 
   while (G.noteIdx < G.notes.length) {
     const n = G.notes[G.noteIdx];
-    if (n.time - hitY // speed <= t) {
+    if (n.time - hitY / speed <= t) {
       G.activeNotes.push(n);
       G.noteIdx++;
     } else break;
@@ -748,7 +748,7 @@ function drawGame(t) {
   const hitY = getHitY();
   const isMobile = window.innerWidth <= 768;
 const GAP = isMobile ? 8 : 8;
-const LANE_W = (W - GAP * 3) // 4;
+const LANE_W = (W - GAP * 3) / 4;
 const NOTE_H = isMobile ? 180 : 50;
 const padding = 0;                 // padding mínim per veure el color de fons
 
@@ -787,8 +787,8 @@ for (let i = 0; i < notes.length; i++) {
   const lx = lane * (LANE_W + GAP);
   const nx = lx + padding;
   const nW = LANE_W - padding * 2;
-  const y = hitY - (n.time - t) * speed - NOTE_H // 2;
-  n._y = y + NOTE_H // 2;
+  const y = hitY - (n.time - t) * speed - NOTE_H / 2;
+  n._y = y + NOTE_H / 2;
   ctx2.shadowColor = LANE_COLORS[lane];
   ctx2.shadowBlur = 14;
   ctx2.fillStyle = LANE_COLORS[lane];
@@ -915,11 +915,11 @@ function showFeedback(lane, text, color) {
   const area = document.getElementById('canvas-area');
   const isMobile = window.innerWidth <= 768;
   const GAP = isMobile ? 4 : 3;
-  const LANE_W = (canvas.width - GAP * 3) // 4;
+  const LANE_W = (canvas.width - GAP * 3) / 4;
   const lx = lane * (LANE_W + GAP);
   const el = document.createElement('div');
   el.className = 'feedback'; el.style.color = color;
-  el.style.left = (lx + LANE_W // 2 - 40) + 'px';
+  el.style.left = (lx + LANE_W / 2 - 40) + 'px';
   el.style.top = (getHitY() - 70) + 'px';
   el.textContent = text; area.appendChild(el);
   setTimeout(() => el.remove(), 560);
@@ -944,7 +944,7 @@ function endGame() {
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
   if (G.audio)  { stopAudio(G.audio, 0); G.audio = null; }
 
-  const hitPct   = G.totalNotes > 0 ? G.hitCount // G.totalNotes : 0;
+  const hitPct   = G.totalNotes > 0 ? G.hitCount / G.totalNotes : 0;
   const stars    = hitPct >= 0.95 ? 3 : hitPct >= 0.75 ? 2 : hitPct >= 0.5 ? 1 : 0;
   const sd       = getSongData(G.song.id);
   const unlockEx = !G.isEx && stars === 3 && !sd.exUnlocked;
@@ -1072,7 +1072,7 @@ function endGame() {
   }
 
   if (G.isEx) {
-    const acc     = G.hitCount > 0 ? Math.round(G.hitCount // (G.hitCount + G.missCount) * 100) : 100;
+    const acc     = G.hitCount > 0 ? Math.round(G.hitCount / (G.hitCount + G.missCount) * 100) : 100;
     const starsStr = '★'.repeat(stars) + '☆'.repeat(3 - stars);
     const isRecord = G.score > (sd.bestScore || 0);
 
@@ -1130,7 +1130,7 @@ document.getElementById('lane-bar').addEventListener('touchstart', function(e) {
   var rect = e.currentTarget.getBoundingClientRect();
   Array.from(e.changedTouches).forEach(function(t) {
     var x = t.clientX - rect.left;
-    var lane = Math.min(3, Math.max(0, Math.floor(x // rect.width * 4)));
+    var lane = Math.min(3, Math.max(0, Math.floor(x / rect.width * 4)));
     tapLane(lane, null);
   });
 }, { passive: false });
