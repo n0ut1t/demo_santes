@@ -1,9 +1,9 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/an/:path*", "destination": "/codigo santas/an/:path*" },
-    { "source": "/ol/:path*", "destination": "/codigo santas/ol/:path*" },
-    { "source": "/ik/:path*", "destination": "/codigo santas/ik/:path*" },
-    { "source": "/:path*", "destination": "/codigo santas/ik/:path*" }
+    { "source": "/an/(.*)", "destination": "/codigo%20santas/an/$1" },
+    { "source": "/ol/(.*)", "destination": "/codigo%20santas/ol/$1" },
+    { "source": "/ik/(.*)", "destination": "/codigo%20santas/ik/$1" },
+    { "source": "/(.*)", "destination": "/codigo%20santas/ik/$1" }
   ]
 }
