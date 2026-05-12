@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Santes 2026 - Festa Major de Mataró</title>
+    <meta name="description"
+        content="Programa d'actes de la Festa Major de Les Santes 2026 a Mataró. Cerca i filtra els esdeveniments.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+
+<body>
+
+    <!-- Components (Navbar, Search Overlay, Footer) will be injected by components.js -->
+    <script src="components.js" data-base=""></script>
+
+    <!-- ============ HOME CONTENT ============ -->
+    <main id="home-content">
+
+        <!-- HERO -->
+        <section class="hero-section">
+            <img class="hero-img" src="public/santes_2026.webp" alt="Cartell Les Santes 2026">
+            <div class="hero-gradient"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Tradició, foc i música en estat pur.</p>
+                <h1 class="hero-title">Les Santes</h1>
+                <p class="hero-subtitle">La Festa Major de Mataró</p>
+                <p class="hero-dates">25 – 29 de juliol 2026</p>
+                <button class="hero-cta" id="hero-cta-btn">Descobreix el programa</button>
+            </div>
+        </section>
+
+        <!-- CONNECTA'T A LA FESTA -->
+        <section class="connect-section">
+            <div class="section-container">
+                <h2 class="section-title">Connecta't a la Festa en temps real</h2>
+                <div class="connect-grid">
+                    <div class="map-wrapper">
+                        <iframe class="map-frame"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=2.4200%2C41.5170%2C2.4700%2C41.5490&layer=mapnik"
+                            title="Mapa de Mataró" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="events-panel">
+                        <div class="day-tabs" id="home-day-tabs">
+                            <button class="day-tab active" data-day="all">ARA MATEIX</button>
+                            <button class="day-tab" data-day="25">25/07</button>
+                            <button class="day-tab" data-day="26">26/07</button>
+                            <button class="day-tab" data-day="27">27/07</button>
+                            <button class="day-tab" data-day="28">28/07</button>
+                            <button class="day-tab" data-day="29">29/07</button>
+                        </div>
+                        <div class="home-event-list" id="home-event-list">
+                            <p class="home-loading">Carregant actes…</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LES SANTES - ABOUT -->
+        <section class="about-section">
+            <div class="section-container about-inner">
+                <p class="about-tag">Tradició, foc i música en estat pur.</p>
+                <h2 class="about-title">Les Santes</h2>
+                <p class="about-subtitle">La Festa Major de Mataró</p>
+                <p class="about-text">Les Santes són la Festa Major de Mataró, celebrada cada any a finals de juliol en
+                    honor a les patrona de la ciutat, Santa Juliana i Santa Semproniana. Durant diversos dies, la ciutat
+                    s'omple de cultura popular, música, foc i tradicions amb actes emblemàtics com cercaviles, gegants,
+                    correfocs i concerts, convertint-se en una de les festes més destacades de Catalunya.</p>
+            </div>
+        </section>
+
+        <!-- VIU-LES - GALLERY -->
+        <section class="gallery-section">
+            <div class="section-container">
+                <h2 class="gallery-title">Viu-les</h2>
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
