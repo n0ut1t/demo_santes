@@ -1,10 +1,9 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/codigo santas/ik/index.html" },
-    { "source": "/an/(.*)", "destination": "/codigo santas/an/$1" },
-    { "source": "/ol/(.*)", "destination": "/codigo santas/ol/$1" },
-    { "source": "/ik/(.*)", "destination": "/codigo santas/ik/$1" },
-    { "source": "/(.*)", "destination": "/codigo santas/ik/$1" }
+    { "source": "/an/:path*", "destination": "/codigo santas/an/:path*" },
+    { "source": "/ol/:path*", "destination": "/codigo santas/ol/:path*" },
+    { "source": "/ik/:path*", "destination": "/codigo santas/ik/:path*" },
+    { "source": "/:path*", "destination": "/codigo santas/ik/:path*" }
   ]
 }
