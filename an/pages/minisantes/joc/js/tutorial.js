@@ -1,9 +1,9 @@
-// ═══════════════════════════════════════════════════════════════
-// TUTORIAL.JS — Santes Tiles · Tutorial interactiu pas a pas
-// Usa el joc real però amb superposicions explicatives
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ TUTORIAL.JS — Santes Tiles · Tutorial interactiu pas a pas
+/ Usa el joc real però amb superposicions explicatives
+/ ═══════════════════════════════════════════════════════════════
 
-// ── Cançó de tutorial (Gegant del Pi, easy, notes manuals) ──
+/ ── Cançó de tutorial (Gegant del Pi, easy, notes manuals) ──
 const TUTORIAL_SONG = {
   id: 'tutorial',
   title: 'Tutorial',
@@ -13,7 +13,7 @@ const TUTORIAL_SONG = {
   videoSrc: "/../../../video/Gener.mp4",
   bgColor: '#0d1a2e',
   bgGradient: 'linear-gradient(135deg,#0d1a2e,#1a0a2e)',
-  bgImage: '/../../../assets/Gener.jpeg',
+  bgImage: '/assets/Gener.jpeg',
   duration: 64.04,
   dificultad: 'Fàcil',
   categoria: 'Tutorial',
@@ -22,9 +22,9 @@ const TUTORIAL_SONG = {
   notesHard: []
 };
 
-// ═══════════════════════════════════════════════════════════════
-// DEFINICIÓ DELS PASSOS
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ DEFINICIÓ DELS PASSOS
+/ ═══════════════════════════════════════════════════════════════
 const TUTORIAL_STEPS = [
   {
     id: 'welcome',
@@ -141,9 +141,9 @@ const TUTORIAL_STEPS = [
   },
 ];
 
-// ═══════════════════════════════════════════════════════════════
-// ESTAT DEL TUTORIAL
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ ESTAT DEL TUTORIAL
+/ ═══════════════════════════════════════════════════════════════
 let TUT = {
   active: false,
   stepIdx: 0,
@@ -153,9 +153,9 @@ let TUT = {
   audioOffset: 0,
 };
 
-// ═══════════════════════════════════════════════════════════════
-// INJECCIÓ CSS DEL TUTORIAL
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ INJECCIÓ CSS DEL TUTORIAL
+/ ═══════════════════════════════════════════════════════════════
 (function injectTutorialCSS() {
   const style = document.createElement('style');
   style.textContent = `
@@ -361,9 +361,9 @@ let TUT = {
   document.head.appendChild(style);
 })();
 
-// ═══════════════════════════════════════════════════════════════
-// CONSTRUCCIÓ DEL DOM DEL TUTORIAL
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ CONSTRUCCIÓ DEL DOM DEL TUTORIAL
+/ ═══════════════════════════════════════════════════════════════
 (function buildTutorialDOM() {
   const overlay = document.createElement('div');
   overlay.id = 'tut-overlay';
@@ -427,10 +427,10 @@ let TUT = {
   }
 })();
 
-// ═══════════════════════════════════════════════════════════════
-// HOOK endGame — s'instal·la quan el fitxer principal ja ha
-// definit la funció (600 ms de marge)
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ HOOK endGame — s'instal·la quan el fitxer principal ja ha
+/ definit la funció (600 ms de marge)
+/ ═══════════════════════════════════════════════════════════════
 setTimeout(() => {
   const _origEndGame = window.endGame;
 
@@ -438,7 +438,7 @@ setTimeout(() => {
     window._tutEndGamePatched = true;
 
     window.endGame = function () {
-      // ── Tutorial actiu → interceptem ──
+      / ── Tutorial actiu → interceptem ──
       if (TUT.active) {
         TUT.active = false;
 
@@ -450,15 +450,15 @@ setTimeout(() => {
         return;
       }
 
-      // ── Tutorial NO actiu → comportament 100 % original ──
+      / ── Tutorial NO actiu → comportament 100 % original ──
       return _origEndGame.apply(this, arguments);
     };
   }
 }, 600);
 
-// ═══════════════════════════════════════════════════════════════
-// FUNCIONS PRINCIPALS
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ FUNCIONS PRINCIPALS
+/ ═══════════════════════════════════════════════════════════════
 
 function startTutorial() {
   TUT.active      = true;
@@ -473,7 +473,7 @@ function startTutorial() {
     startSong(TUTORIAL_SONG, false);
   }
 
-  // Esperem que startSong hagi iniciat l'àudio i llavors pausem
+  / Esperem que startSong hagi iniciat l'àudio i llavors pausem
   setTimeout(() => {
     if (typeof G !== 'undefined') {
       G.running = false;
@@ -538,7 +538,7 @@ function onTutorialBtn(idx) {
   }
 }
 
-// ── Inicia o reprèn el joc per a un pas de gameplay ──
+/ ── Inicia o reprèn el joc per a un pas de gameplay ──
 function startTutorialPlay(idx) {
   const step = TUTORIAL_STEPS[idx];
 
@@ -579,7 +579,7 @@ function startTutorialPlay(idx) {
 
     const t = G.getTime();
 
-    // Comprovació de pausa automàtica
+    / Comprovació de pausa automàtica
     if (TUT.pauseAt !== null && t >= TUT.pauseAt) {
       G.running = false;
       cancelAnimationFrame(G.animId);
@@ -606,7 +606,7 @@ function startTutorialPlay(idx) {
       pf.style.width = Math.min(t / dur * 100, 100) + '%';
     }
 
-    // Fi de les notes d'aquest segment
+    / Fi de les notes d'aquest segment
     if (G.noteIdx >= G.notes.length && G.activeNotes.every(n => n.hit || n.missed)) {
       G.running = false;
       cancelAnimationFrame(G.animId);
@@ -625,10 +625,10 @@ function startTutorialPlay(idx) {
   });
 }
 
-// tutGameLoop conservat com a no-op per compatibilitat
+/ tutGameLoop conservat com a no-op per compatibilitat
 function tutGameLoop() {}
 
-// ── Pantalla de fi del tutorial ──
+/ ── Pantalla de fi del tutorial ──
 function showTutorialComplete() {
   const exitBtnEl = document.getElementById('tut-exit-btn');
   if (exitBtnEl) exitBtnEl.style.display = 'none';
@@ -649,7 +649,7 @@ function showTutorialComplete() {
   btn.textContent = '🎵 Escull una cançó';
   btn.style.display = 'block';
   btn.onclick = () => {
-    TUT.active = false;   // ← assegura que el flag queda net
+    TUT.active = false;   / ← assegura que el flag queda net
     hideOverlay();
     if (typeof buildSongGrid === 'function') buildSongGrid();
     if (typeof showScreen    === 'function') showScreen('select');
@@ -659,9 +659,9 @@ function showTutorialComplete() {
   TUT.overlayVisible = true;
 }
 
-// ═══════════════════════════════════════════════════════════════
-// SORTIR DEL TUTORIAL
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ SORTIR DEL TUTORIAL
+/ ═══════════════════════════════════════════════════════════════
 
 function showExitConfirm() {
   const c = document.getElementById('tut-exit-confirm');
@@ -705,9 +705,9 @@ function endTutorial() {
   showTutorialComplete();
 }
 
-// ═══════════════════════════════════════════════════════════════
-// UTILITATS UI
-// ═══════════════════════════════════════════════════════════════
+/ ═══════════════════════════════════════════════════════════════
+/ UTILITATS UI
+/ ═══════════════════════════════════════════════════════════════
 
 function hideOverlay() {
   const overlay = document.getElementById('tut-overlay');
@@ -755,7 +755,7 @@ function hideHighlight() {
   if (ring) ring.style.display = 'none';
 }
 
-// ── Caixa petita durant gameplay (cantonada inferior) ──
+/ ── Caixa petita durant gameplay (cantonada inferior) ──
 let _playHintEl = null;
 function showPlayHint(title, body) {
   if (_playHintEl) _playHintEl.remove();
@@ -785,7 +785,7 @@ function hidePlayHint() {
   if (_playHintEl) { _playHintEl.remove(); _playHintEl = null; }
 }
 
-// ── Reposiciona el ring en resize ──
+/ ── Reposiciona el ring en resize ──
 window.addEventListener('resize', () => {
   if (TUT.active && TUTORIAL_STEPS[TUT.stepIdx]) {
     const h = TUTORIAL_STEPS[TUT.stepIdx].highlight;

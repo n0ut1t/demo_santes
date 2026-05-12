@@ -1,19 +1,19 @@
-// ═══════════════════════════════════
-// ICON MAP — png paths
-// ═══════════════════════════════════
+/ ═══════════════════════════════════
+/ ICON MAP — png paths
+/ ═══════════════════════════════════
 const ICON_MAP = {
-  "🔔": "../../assets/icons/campana.png",
-  "🎭": "../../assets/icons/teatre.png",
-  "⭐": "../../assets/icons/estrella.png",
-  "🎵": "../../assets/icons/music.png"
+  "🔔": "/assets/icons/campana.png",
+  "🎭": "/assets/icons/teatre.png",
+  "⭐": "/assets/icons/estrella.png",
+  "🎵": "/assets/icons/music.png"
 };
 
-// ... inside AGENDA object, replace image paths ...
-// (I will use AllowMultiple or just replace the whole block if needed)
+/ ... inside AGENDA object, replace image paths ...
+/ (I will use AllowMultiple or just replace the whole block if needed)
 
-// ═══════════════════════════════════
-// DADES DE L'AGENDA
-// ═══════════════════════════════════
+/ ═══════════════════════════════════
+/ DADES DE L'AGENDA
+/ ═══════════════════════════════════
 const AGENDA = {
   "25": {
     label: "DJ",
@@ -27,7 +27,7 @@ const AGENDA = {
         location: "Ajuntament de Mataró",
         description: "Acte que dona inici oficial a la Festa Major amb la lectura i ambient festiu. Els mataronins i mataronines es reuneixen per donar el tret de sortida. Comença l’esperit de Les Santes.",
         tags: ["Tradició", "Familiar"],
-        image: "../../assets/actes/acte1.png"
+        image: "/assets/actes/acte1.png"
       },
       {
         time: "19:00 H",
@@ -36,7 +36,7 @@ const AGENDA = {
         location: "Carrers del Centre",
         description: "Recorregut amb comparses i figures festives pels carrers principals. Música, balls i molta participació popular. Ambient festiu des del primer dia.",
         tags: ["Cultura", "Familiar"],
-        image: "../../assets/actes/acte2.png"
+        image: "/assets/actes/acte2.png"
       },
       {
         time: "23:00 H",
@@ -45,7 +45,7 @@ const AGENDA = {
         location: "Parc Central",
         description: "Primera gran nit musical amb grups en directe. Ambient jove i festiu per començar amb energia. Un clàssic de l'inici de festa.",
         tags: ["Música", "Juvenil"],
-        image: "../../assets/actes/acte3.png"
+        image: "/assets/actes/acte3.png"
       }
     ]
   },
@@ -62,7 +62,7 @@ const AGENDA = {
         location: "Carrers del Centre",
         description: "Cercavila nocturna amb figures i música tradicional. Anuncia l’arribada del dia gran de Les Santes. Gran participació i ambient als carrers.",
         tags: ["Tradició", "Familiar"],
-        image: "../../assets/actes/acte4.png"
+        image: "/assets/actes/acte4.png"
       },
       {
         time: "23:30 H",
@@ -71,7 +71,7 @@ const AGENDA = {
         location: "Espai Firal",
         description: "Concerts i DJ fins a la matinada. Punt de trobada del públic més jove. Música actual i festa assegurada.",
         tags: ["Musica", "Juvenil", "DJ"],
-        image: "../../assets/actes/acte5.png"
+        image: "/assets/actes/acte5.png"
       },
       {
         time: "00:30 H",
@@ -80,7 +80,7 @@ const AGENDA = {
         location: "Carrers del centre",
         description: "Recorregut nocturn amb música, foc i figures que omplen els carrers de festa. Centenars de persones ballen sense parar fins a la matinada. Un dels actes més emblemàtics de Les Santes.",
         tags: ["Musica", "Juvenil", "Mitic"],
-        image: "../../assets/actes/acte6.png"
+        image: "/assets/actes/acte6.png"
       },
     ]
   },
@@ -97,7 +97,7 @@ const AGENDA = {
         location: "Campanar de Santa Maria",
         description: "Inici oficial del dia gran with el repic de campanes i trets de trabucaires. El so s’estén per tota la ciutat creant un ambient únic. Un dels moments més emblemàtics.",
         tags: ["Tradicio", "Cultura"],
-        image: "../../assets/actes/acte7.png"
+        image: "/assets/actes/acte7.png"
       },
       {
         time: "10:00 H",
@@ -106,7 +106,7 @@ const AGENDA = {
         location: "Basilica de Santa Maria",
         description: "L’acte central religios amb la interpretacio de la Missa de Glòria de Mossèn Manuel Blanc per part del Cor Madrigalista.",
         tags: ["Cultura", "Tradició"],
-        image: "../../assets/actes/acte8.png"
+        image: "/assets/actes/acte8.png"
       },
       {
         time: "13:00 H",
@@ -115,7 +115,7 @@ const AGENDA = {
         location: "Plaça de l'Ajuntament",
         description: "Robafaves i la seva família surten a ballar pels carrers. Un dels actes més estimats i seguits. Tradició viva per a totes les edats.",
         tags: ["Imperdible", "Familiar", "Popular"],
-        image: "../../assets/actes/acte9.png"
+        image: "/assets/actes/acte9.png"
       },
       {
         time: "19:00 H",
@@ -124,7 +124,7 @@ const AGENDA = {
         location: "Carrers del centre",
         description: "Gran cercavila amb totes les figures festives. Recorregut pels carrers més emblemàtics de Mataró. Un dels actes més espectaculars.",
         tags: ["Tradicio", "Familiar"],
-        image: "../../assets/actes/acte10.png"
+        image: "/assets/actes/acte10.png"
       },
       {
         time: "23:00 H",
@@ -133,7 +133,7 @@ const AGENDA = {
         location: "Platja del varador",
         description: "L’espectacular castell de focs artificials des de la platja que il·lumina tot el litoral mataroni i tanca el dia gran. Gran afluència de públic.",
         tags: ["Espectacle", "Exterior", "Familiar"],
-        image: "../../assets/actes/acte11.png"
+        image: "/assets/actes/acte11.png"
       }
     ]
   },
@@ -150,7 +150,7 @@ const AGENDA = {
         location: "Parc Central",
         description: "Tallers, jocs i espectacles per als més petits. Espai pensat per gaudir en família. Ambient relaxat i participatiu.",
         tags: ["Infantil", "Familiar"],
-        image: "../../assets/actes/acte12.png"
+        image: "/assets/actes/acte12.png"
       },
       {
         time: "18:30 H",
@@ -159,7 +159,7 @@ const AGENDA = {
         location: "Carrers del Centre",
         description: "Colles geganteres d’arreu participen en una gran trobada. Exhibicions i balls tradicionals. Molt visual i cultural.",
         tags: ["Cultura", "Familiar"],
-        image: "../../assets/actes/acte13.png"
+        image: "/assets/actes/acte13.png"
       },
       {
         time: "22:30 H",
@@ -168,7 +168,7 @@ const AGENDA = {
         location: "Plaça Santa Anna",
         description: "Música en directe i ball popular. Ambient festiu i obert a tothom. Ideal per acabar el dia.",
         tags: ["Música", "Adult"],
-        image: "../../assets/actes/acte14.png"
+        image: "/assets/actes/acte14.png"
       }
     ]
   },
@@ -185,7 +185,7 @@ const AGENDA = {
         location: "Carrers del centre",
         description: "Diables i foc recorren els carrers amb ritme i intensitat. Un dels actes més espectaculars de la festa. Cal seguir les mesures de seguretat.",
         tags: ["Tradicio", "Espectacle"],
-        image: "../../assets/actes/acte15.png"
+        image: "/assets/actes/acte15.png"
       },
       {
         time: "23:00 H",
@@ -194,7 +194,7 @@ const AGENDA = {
         location: "Platja del verador",
         description: "Acte final que posa punt i final a Les Santes. Ambient festiu i emotiu entre els assistents. Comiat fins l’any vinent.",
         tags: ["Espectacle", "Familiar"],
-        image: "../../assets/actes/acte16.png"
+        image: "/assets/actes/acte16.png"
       }
     ]
   }
@@ -248,7 +248,7 @@ function renderTimeline() {
       return `<span class="tag" style="background:${color}22;color:${color};border-color:${color}55">${t}</span>`;
     }).join("");
 
-    const iconPath = ICON_MAP[ev.icon] || "../../../../assets/icons/default.png";
+    const iconPath = ICON_MAP[ev.icon] || "/assets/icons/default.png";
 
     const item = document.createElement("div");
     item.className = "timeline-item";
@@ -265,7 +265,7 @@ function renderTimeline() {
         <div class="event-img" style="background-image:url('${ev.image}')"></div>
         <div class="event-body">
          <div class="event-location">
-          <img class="location-icon" src="../../assets/ubi.png" alt="Ubicación">
+          <img class="location-icon" src="/assets/ubi.png" alt="Ubicación">
           <span>${ev.location.toUpperCase()}</span>
         </div>
           <h3 class="event-title">${ev.title}</h3>
