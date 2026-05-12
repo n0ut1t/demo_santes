@@ -4,14 +4,14 @@
  */
 (function() {
     const script = document.currentScript;
-    const base = script.getAttribute('data-base') || ''; // e.g., "../../../ik/" or ""
+    const base = script.getAttribute('data-base') || ''; // e.g., "../../.././" or ""
     const currentTab = script.getAttribute('data-tab') || ''; // e.g., "agenda"
 
     // Helper to fix paths
     const fixPath = (path) => {
         if (path.startsWith('http') || path.startsWith('#') || path.startsWith('javascript:')) return path;
-        // If path starts with ik/ or an/ or ol/, and we are already providing a base, 
-        // we need to be careful. For simplicity, we assume links are relative to ik/ root.
+        // If path starts with ./ or an/ or ol/, and we are already providing a base, 
+        // we need to be careful. For simplicity, we assume links are relative to ./ root.
         return base + path;
     };
 
@@ -22,9 +22,9 @@
             <a href="${fixPath('index.html')}"><img src="${fixPath('assets/logo_header.svg')}" class="nav-logo" alt="Les Santes - Festa Major de Mataró"></a>
         </div>
         <ul class="navbar-links">
-            <li><a href="${fixPath('../an/pages/agenda/agenda.html')}" class="${currentTab === 'agenda' ? 'active' : ''}">Agenda</a></li>
-            <li><a href="${fixPath('../an/pages/actes-rituals/actes.html')}" class="${currentTab === 'actes' ? 'active' : ''}">Actes i rituals</a></li>
-            <li><a href="${fixPath('../an/pages/minisantes/index.html')}" class="${currentTab === 'minisantes' ? 'active' : ''}">Minisantes</a></li>
+            <li><a href="${fixPath('an/pages/agenda/agenda.html')}" class="${currentTab === 'agenda' ? 'active' : ''}">Agenda</a></li>
+            <li><a href="${fixPath('an/pages/actes-rituals/actes.html')}" class="${currentTab === 'actes' ? 'active' : ''}">Actes i rituals</a></li>
+            <li><a href="${fixPath('an/pages/minisantes/index.html')}" class="${currentTab === 'minisantes' ? 'active' : ''}">Minisantes</a></li>
         </ul>
         <div class="navbar-actions">
             <div class="navbar-search">
@@ -54,9 +54,9 @@
                 <a href="${fixPath('index.html')}"><img src="${fixPath('assets/logo_header.svg')}" class="nav-logo" alt="Les Santes"></a>
             </div>
             <ul class="navbar-links">
-                <li><a href="${fixPath('../an/pages/agenda/agenda.html')}">Agenda</a></li>
-                <li><a href="${fixPath('../an/pages/actes-rituals/actes.html')}">Actes i rituals</a></li>
-                <li><a href="${fixPath('../an/pages/minisantes/index.html')}">Minisantes</a></li>
+                <li><a href="${fixPath('an/pages/agenda/agenda.html')}">Agenda</a></li>
+                <li><a href="${fixPath('an/pages/actes-rituals/actes.html')}">Actes i rituals</a></li>
+                <li><a href="${fixPath('an/pages/minisantes/index.html')}">Minisantes</a></li>
             </ul>
             <div class="navbar-actions">
                 <div class="navbar-search">
@@ -131,16 +131,16 @@
                 <img src="${fixPath('assets/logo_header.svg')}" alt="Les Santes">
             </div>
             <div class="footer-nav">
-                <a href="${fixPath('../an/pages/agenda/agenda.html')}">Agenda</a>
-                <a href="${fixPath('../an/pages/actes-rituals/actes.html')}">Actes i rituals</a>
-                <a href="${fixPath('../an/pages/minisantes/index.html')}">Minisantes</a>
+                <a href="${fixPath('an/pages/agenda/agenda.html')}">Agenda</a>
+                <a href="${fixPath('an/pages/actes-rituals/actes.html')}">Actes i rituals</a>
+                <a href="${fixPath('an/pages/minisantes/index.html')}">Minisantes</a>
                 <a href="#">Contacte</a>
             </div>
             <div class="footer-social">
-                <a href="#"><img src="${fixPath('../ol/assets/facebook.png')}" alt="Facebook"></a>
-                <a href="#"><img src="${fixPath('../ol/assets/twitter.png')}" alt="Twitter"></a>
-                <a href="#"><img src="${fixPath('../ol/assets/instagram.png')}" alt="Instagram"></a>
-                <a href="#"><img src="${fixPath('../ol/assets/linkedin.png')}" alt="LinkedIn"></a>
+                <a href="#"><img src="${fixPath('ol/assets/facebook.png')}" alt="Facebook"></a>
+                <a href="#"><img src="${fixPath('ol/assets/twitter.png')}" alt="Twitter"></a>
+                <a href="#"><img src="${fixPath('ol/assets/instagram.png')}" alt="Instagram"></a>
+                <a href="#"><img src="${fixPath('ol/assets/linkedin.png')}" alt="LinkedIn"></a>
             </div>
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
