@@ -14,9 +14,9 @@ body {
 
 .festival-layout {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1700px;
   margin: auto;
-  padding: 40px 70px 100px;
+  padding: 40px 0 100px;
 }
 
 /* HERO */
@@ -123,6 +123,62 @@ body {
 .history-highlight {
   font-weight: 700;
 }
+.card{
+    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-left: 4px solid #7c4dff;
+
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* TITOL MÉS GRAN */
+.card h2{
+    margin: 0 0 14px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 0.3px;
+}
+
+/* PARÀGRAFS MÉS LLEGIBLES */
+.card p{
+    margin: 0 0 14px;
+    line-height: 1.7;
+    color: #444;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* SUBTÍTOL */
+.card .subtitle{
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+/* TAGS */
+.tags{
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag{
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #645bc6;
+    color: #ffffff;
+    font-weight: 600;
+}
+
 
 /* BOTTOM */
 
@@ -251,22 +307,20 @@ DIADA SCENE
 ========================================= */
 
 .diada-scene {
-
+  margin-top: 50px;
   position: relative;
-  width: 100%;
-  height: 1400px !important;
-
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 1400px;
   overflow: hidden;
-
   padding-top: 120px;
 }
 
 .diada-scene img {
-    top: 50px;
-    width: 1300px !important;
-    height: 1200px;
+  width: 83%;
+  height: 1500px;
+  max-width: none;
 }
-
 /* FONDO */
 
 .diada-background {

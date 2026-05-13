@@ -6,12 +6,12 @@ const SONGS = [
     id: 'bequetero',
     title: 'El Bequetero',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Bequetero.mp3',
-    audioSrcEx: '/../../../audio/BequeteroX2.mp3',
-    videoSrc: '/../../../video/Bequetero.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Bequetero.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/BequeteroX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Bequetero.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Bequetero.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/bequetero.png',
     duration: 119.85,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -23,12 +23,12 @@ const SONGS = [
     id: 'drac',
     title: 'El Drac',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Drac.mp3',
-    audioSrcEx: '/../../../audio/DracX2.mp3',
-    videoSrc: '/../../../video/Drac.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Drac.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/DracX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Drac.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Drac.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/Drac.png',
     duration: 136.70,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -40,12 +40,12 @@ const SONGS = [
     id: 'dragalio',
     title: 'El Dragalio',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Dragalio.mp3',
-    audioSrcEx: '/../../../audio/DragalioX2.mp3',
-    videoSrc: '/../../../video/Dragalio.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Dragalio.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/DragalioX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Dragalio.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Dragalio.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Dragalio.jpg',
     duration: 111.34,
     dificultad: "Fàcil",
     categoria: "Les Santes",
@@ -57,12 +57,12 @@ const SONGS = [
     id: 'momerota',
     title: 'La Momerota',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Momerota.mp3',
-    audioSrcEx: '/../../../audio/MomerotaX2.mp3',
-    videoSrc: '/../../../video/Momerota.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Momerota.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/MomerotaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Momerota.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Momerota.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Momerota.jpg',
     duration: 93.53,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -74,12 +74,12 @@ const SONGS = [
     id: 'momeroteta',
     title: 'La Momeroteta',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Momeroteta.mp3',
-    audioSrcEx: '/../../../audio/MomerotetaX2.mp3',
-    videoSrc: '/../../../video/Momeroteta.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Momeroteta.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/MomerotetaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Momeroteta.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Momeroteta.jpg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Momeroteta.jpg',
     duration: 103.82,
     dificultad: "Difícil",
     categoria: "Les Santes",
@@ -91,12 +91,12 @@ const SONGS = [
     id: 'aguila',
     title: 'L\'Àliga',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/Àliga.mp3',
-    audioSrcEx: '/../../../audio/ÀligaX2.mp3',
-    videoSrc: '/../../../video/Àliga.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/%C3%80ligaX2.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/%C3%80ligaX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Àliga.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/Àliga.jpeg',
+    bgImage: 'https://drakefistfire.github.io/web/images/Àliga.jpeg',
     duration: 151.86,
     dificultad: "Dificil",
     categoria: "Les Santes",
@@ -108,12 +108,12 @@ const SONGS = [
     id: 'no_hi_ha_prou',
     title: 'No Hi Ha Prou',
     artist: 'Les Santes de Mataró',
-    audioSrc: '/../../../audio/No-hi-ha-prou.mp3',
-    audioSrcEx: '/../../../audio/No-hi-ha-prouX2.mp3',
-    videoSrc: '/../../../video/Prou.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/No-hi-ha-prou.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/No-hi-ha-prouX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Prou.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/No-hi-ha-prou.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/No-hi-ha-prou.png',
     duration: 174.52,
     dificultad: "Mitjana",
     categoria: "Les Santes",
@@ -125,12 +125,12 @@ const SONGS = [
     id: 'fogonades',
     title: 'Fogonades',
     artist: 'Sant Jordi de Mataró',
-    audioSrc: '/../../../audio/Fogonades.mp3',
-    audioSrcEx: '/../../../audio/FogonadesX2.mp3',
-    videoSrc: '/../../../video/Fogonada.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Fogonades.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/FogonadesX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Fogonada.mp4',
     bgColor: '#1a0a2e',
     bgGradient: 'linear-gradient(135deg,#1a0a2e,#0d1a0a)',
-    bgImage: '/../../../public/fogonades.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/fogonades.png',
     duration: 276.82,
     dificultad: "Dificil",
     categoria: "Sant Jordi",
@@ -142,12 +142,12 @@ const SONGS = [
     id: 'gener',
     title: 'Gener',
     artist: 'Tradicional',
-    audioSrc: '/../../../audio/Gener.mp3',
-    audioSrcEx: '/../../../audio/Gener.mp3',
-    videoSrc: '/../../../video/Gener.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Gener.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/GenerX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Gener.mp4',
     bgColor: '#2e1a0a',
     bgGradient: 'linear-gradient(135deg,#2e1a0a,#0a1a2e)',
-    bgImage: '/../../../public/Gener.png',
+    bgImage: 'https://drakefistfire.github.io/web/images/Gener.png',
     duration: 120,
     dificultad: "Fàcil",
     categoria: "Generals",
@@ -159,21 +159,31 @@ const SONGS = [
     id: 'amigo',
     title: 'L\'Amigó',
     artist: 'Tradicional',
-    audioSrc: '/../../../audio/Amigo.mp3',
-    audioSrcEx: '/../../../audio/AmigoX2.mp3',
-    videoSrc: '/../../../video/Amigo.mp4',
+    audioSrc: 'https://drakefistfire.github.io/web/audio/Amigo.mp3',
+    audioSrcEx: 'https://drakefistfire.github.io/web/audio/AmigoX2.mp3',
+    videoSrc: 'https://drakefistfire.github.io/web/video/Amigo.mp4',
     bgColor: '#0a2e1a',
     bgGradient: 'linear-gradient(135deg,#0a2e1a,#2e0a1a)',
-    bgImage: '/../../../public/Amigo.jpg',
-    duration: 9443,  // actualizado: 94.43s → 9443
+    bgImage: 'https://drakefistfire.github.io/web/images/Amigo.jpg',
+    duration: 400,
     dificultad: "Mitjana",
     categoria: "Generals",
     vidas: 6,
-    notesEasy: [[3.44,0],[3.97,1],[4.46,3],[4.92,0],[5.39,2],[5.85,0],[6.32,1],[6.8,3],[7.27,1],[7.76,3],[8.22,0],[8.71,2],[9.17,0],[9.61,1],[10.08,3],[10.54,1],[11.03,2],[11.54,0],[12.03,2],[12.49,1],[12.98,3],[13.44,1],[13.93,2],[14.4,0],[14.86,1],[15.35,3],[15.84,2],[16.28,1],[16.74,3],[17.23,0],[17.74,2],[18.23,1],[18.72,3],[19.2,0],[19.67,2],[20.13,1],[20.6,3],[21.08,2],[21.57,1],[22.06,0],[22.55,3],[23.03,1],[23.5,2],[23.99,0],[24.45,1],[24.89,3],[25.38,2],[25.84,1],[26.33,0],[26.82,3],[27.28,1],[27.75,2],[28.21,0],[28.68,1],[29.16,3],[29.65,2],[30.12,1],[30.6,0],[31.07,3],[31.53,1],[32.0,2],[32.48,0],[33.02,1],[33.48,3],[33.97,2],[34.44,1],[34.88,0],[35.36,3],[35.85,1],[36.34,2],[36.83,0],[37.31,1],[37.76,3],[38.22,2],[38.68,1],[39.17,0],[39.68,3],[40.15,1],[40.61,2],[41.1,0],[41.59,1],[42.03,3],[42.47,2],[42.96,1],[43.44,0],[43.91,3],[44.4,1],[44.91,2],[45.4,0],[45.84,1],[46.3,3],[46.81,2],[47.32,1],[47.79,0],[48.3,3],[48.74,1],[49.23,2],[49.69,0],[50.16,1],[50.62,3],[51.08,0],[51.57,1],[52.04,3],[52.52,0],[52.99,2],[53.45,0],[53.89,1],[54.36,3],[54.85,1],[55.31,3],[55.8,0],[56.31,2],[56.8,0],[57.26,1],[57.75,3],[58.19,1],[58.68,2],[59.16,0],[59.63,2],[60.12,1],[60.6,3],[61.05,1],[61.51,2],[62.0,0],[62.51,1],[63.0,3],[63.46,2],[63.95,1],[64.44,3],[64.9,0],[65.36,2],[65.85,1],[66.32,3],[66.8,0],[67.31,2],[67.8,1],[68.27,3],[68.75,2],[69.22,1],[69.66,0],[70.15,3],[70.61,1],[71.1,2],[71.59,0],[72.05,1],[72.52,3],[72.96,2],[73.44,1],[73.93,0],[74.42,3],[74.88,1],[75.37,2],[75.84,0],[76.3,1],[76.77,3],[77.25,2],[77.74,1],[78.25,0],[78.74,3],[79.2,1],[79.64,2],[80.13,0],[80.62,1],[81.11,3],[81.59,2],[82.06,1],[82.5,0],[82.99,3],[83.45,1],[83.94,2],[84.45,0],[84.92,1],[85.38,3],[85.87,2],[86.36,1],[86.8,0],[87.24,3],[87.72,1],[88.21,2],[88.65,0],[89.16,1],[89.68,3],[90.16,2],[90.6,1],[91.07,0],[91.58,3],[92.09,1],[92.55,2]],
-    notesHard: [[3.44,0],[3.68,2],[3.97,0],[4.21,3],[4.46,1],[4.7,2],[4.92,1],[5.16,0],[5.39,1],[5.63,2],[5.85,0],[6.09,3],[6.32,1],[6.56,2],[6.8,3],[7.04,0],[7.27,2],[7.51,3],[7.76,1],[8.0,2],[8.22,0],[8.46,3],[8.71,1],[8.95,2],[9.17,0],[9.41,3],[9.61,1],[9.85,2],[10.08,0],[10.32,3],[10.54,1],[10.78,2],[11.03,0],[11.27,3],[11.54,1],[11.78,2],[12.03,0],[12.27,3],[12.49,1],[12.73,2],[12.98,0],[13.22,3],[13.44,1],[13.68,2],[13.93,0],[14.17,3],[14.4,1],[14.64,2],[14.86,0],[15.1,3],[15.35,1],[15.59,2],[15.84,0],[16.08,3],[16.28,1],[16.52,2],[16.74,0],[16.98,3],[17.23,1],[17.47,2],[17.74,0],[17.98,3],[18.23,1],[18.47,2],[18.72,0],[18.96,3],[19.2,1],[19.44,2],[19.67,0],[19.91,3],[20.13,1],[20.37,2],[20.6,0],[20.84,3],[21.08,1],[21.32,2],[21.57,0],[21.81,3],[22.06,1],[22.3,2],[22.55,0],[22.79,3],[23.03,1],[23.27,2],[23.5,0],[23.74,3],[23.99,1],[24.23,2],[24.45,0],[24.69,3],[24.89,1],[25.13,2],[25.38,0],[25.62,3],[25.84,1],[26.08,2],[26.33,0],[26.57,3],[26.82,1],[27.06,2],[27.28,0],[27.52,2],[27.75,0],[27.99,3],[28.21,1],[28.45,2],[28.68,1],[28.92,0],[29.16,1],[29.4,2],[29.65,0],[29.89,3],[30.12,1],[30.36,2],[30.6,3],[30.84,0],[31.07,2],[31.31,3],[31.53,1],[31.77,2],[32.0,0],[32.24,3],[32.48,1],[32.72,2],[33.02,0],[33.26,3],[33.48,1],[33.72,2],[33.97,0],[34.21,3],[34.44,1],[34.68,2],[34.88,0],[35.12,3],[35.36,1],[35.6,2],[35.85,0],[36.09,3],[36.34,1],[36.58,2],[36.83,0],[37.07,3],[37.31,1],[37.55,2],[37.76,0],[38.0,3],[38.22,1],[38.46,2],[38.68,0],[38.92,3],[39.17,1],[39.41,2],[39.68,0],[39.92,3],[40.15,1],[40.39,2],[40.61,0],[40.85,3],[41.1,1],[41.34,2],[41.59,0],[41.83,3],[42.03,1],[42.27,2],[42.47,0],[42.71,3],[42.96,1],[43.2,2],[43.44,0],[43.68,3],[43.91,1],[44.15,2],[44.4,0],[44.64,3],[44.91,1],[45.15,2],[45.4,0],[45.64,3],[45.84,1],[46.08,2],[46.3,0],[46.54,3],[46.81,1],[47.05,2],[47.32,0],[47.56,3],[47.79,1],[48.03,2],[48.3,0],[48.54,3],[48.74,1],[48.98,2],[49.23,0],[49.47,3],[49.69,1],[49.93,2],[50.16,0],[50.4,3],[50.62,1],[50.86,2],[51.08,0],[51.32,2],[51.57,0],[51.81,3],[52.04,1],[52.28,2],[52.52,1],[52.76,0],[52.99,1],[53.23,2],[53.45,0],[53.69,3],[53.89,1],[54.13,2],[54.36,3],[54.6,0],[54.85,2],[55.09,3],[55.31,1],[55.55,2],[55.8,0],[56.04,3],[56.31,1],[56.55,2],[56.8,0],[57.04,3],[57.26,1],[57.5,2],[57.75,0],[57.99,3],[58.19,1],[58.43,2],[58.68,0],[58.92,3],[59.16,1],[59.4,2],[59.63,0],[59.87,3],[60.12,1],[60.36,2],[60.6,0],[60.84,3],[61.05,1],[61.29,2],[61.51,0],[61.75,3],[62.0,1],[62.24,2],[62.51,0],[62.75,3],[63.0,1],[63.24,2],[63.46,0],[63.7,3],[63.95,1],[64.19,2],[64.44,0],[64.68,3],[64.9,1],[65.14,2],[65.36,0],[65.6,3],[65.85,1],[66.09,2],[66.32,0],[66.56,3],[66.8,1],[67.04,2],[67.31,0],[67.55,3],[67.8,1],[68.04,2],[68.27,0],[68.51,3],[68.75,1],[68.99,2],[69.22,0],[69.46,3],[69.66,1],[69.9,2],[70.15,0],[70.39,3],[70.61,1],[70.85,2],[71.1,0],[71.34,3],[71.59,1],[71.83,2],[72.05,0],[72.29,3],[72.52,1],[72.76,2],[72.96,0],[73.2,3],[73.44,1],[73.68,2],[73.93,0],[74.17,3],[74.42,1],[74.66,2],[74.88,0],[75.12,2],[75.37,0],[75.61,3],[75.84,1],[76.08,2],[76.3,1],[76.54,0],[76.77,1],[77.01,2],[77.25,0],[77.49,3],[77.74,1],[77.98,2],[78.25,3],[78.49,0],[78.74,2],[78.98,3],[79.2,1],[79.44,2],[79.64,0],[79.88,3],[80.13,1],[80.37,2],[80.62,0],[80.86,3],[81.11,1],[81.35,2],[81.59,0],[81.83,3],[82.06,1],[82.3,2],[82.5,0],[82.74,3],[82.99,1],[83.23,2],[83.45,0],[83.69,3],[83.94,1],[84.18,2],[84.45,0],[84.69,3],[84.92,1],[85.16,2],[85.38,0],[85.62,3],[85.87,1],[86.11,2],[86.36,0],[86.6,3],[86.8,1],[87.04,2],[87.24,0],[87.48,3],[87.72,1],[87.96,2],[88.21,0],[88.45,3],[88.65,1],[88.89,2],[89.16,0],[89.4,3],[89.68,1],[89.92,2],[90.16,0],[90.4,3],[90.6,1],[90.84,2],[91.07,0],[91.31,3],[91.58,1],[91.82,2],[92.09,0],[92.33,3],[92.55,1]],
-}
+    notesEasy: [[3.76,0],[3.97,1],[4.26,3],[5.09,0],[5.33,2],[6.95,0],[7.25,1],[7.44,3],[7.67,1],[8.1,3],[8.38,0],[8.77,2],[9.21,0],[9.52,1],[9.85,3],[10.28,1],[10.62,2],[11.03,0],[11.41,2],[11.8,1],[12.18,3],[12.59,1],[13.02,2],[13.44,0],[13.85,1],[14.22,3],[14.63,2],[15.05,1],[15.42,3],[15.88,0],[16.31,2],[16.74,1],[17.18,3],[17.55,0],[17.97,2],[18.35,1],[18.74,3],[19.12,2],[19.53,1],[19.91,0],[20.33,3],[20.75,1],[21.18,2],[21.6,0],[22.03,1],[22.47,3],[22.88,2],[23.31,1],[23.74,0],[24.16,3],[24.58,1],[25.01,2],[25.44,0],[25.86,1],[26.29,3],[26.71,2],[27.14,1],[27.56,0],[27.99,3],[28.42,1],[28.85,2],[29.27,0],[29.7,1],[30.12,3],[30.55,2],[30.97,1],[31.4,0],[31.83,3],[32.25,1],[32.68,2],[33.1,0],[33.53,1],[33.95,3],[34.38,2],[34.8,1],[35.23,0],[35.66,3],[36.08,1],[36.51,2],[36.93,0],[37.36,1],[37.79,3],[38.21,2],[38.64,1],[39.06,0],[39.49,3],[39.91,1],[40.34,2],[40.76,0],[41.19,1],[41.62,3],[42.04,2],[42.47,1],[42.89,0],[43.32,3],[43.74,1],[44.17,2],[44.59,0],[45.02,1],[45.45,3]],
+    notesHard: [[3.76,0],[3.89,2],[3.95,0],[3.97,3],[4.02,1],[4.17,2],[4.26,1],[4.61,0],[4.84,1],[5.09,2],[5.12,0],[5.2,3],[5.33,1],[5.44,2],[6.72,3],[6.95,0],[7.15,2],[7.18,3],[7.25,1],[7.28,0],
+[7.44,2],[7.52,3],[7.67,1],[7.8,2],[8.1,0],[8.22,3],[8.38,1],[8.55,2],[8.77,0],[8.9,3],
+[9.21,1],[9.33,2],[9.52,0],[9.66,3],[9.85,1],[10.02,2],[10.28,0],[10.44,3],[10.62,1],[10.78,2],
+[11.03,0],[11.19,3],[11.41,1],[11.55,2],[11.8,0],[11.94,3],[12.18,1],[12.33,2],[12.59,0],[12.74,3],
+[13.02,1],[13.17,2],[13.44,0],[13.61,3],[13.85,1],[14.01,2],[14.22,0],[14.38,3],[14.63,1],[14.8,2],
+[15.05,0],[15.2,3],[15.42,1],[15.58,2],[15.88,0],[16.03,3],[16.31,1],[16.47,2],[16.74,0],[16.89,3],
+[17.18,1],[17.33,2],[17.55,0],[17.7,3],[17.97,1],[18.12,2],[18.35,0],[18.5,3],[18.74,1],[18.89,2],
+[19.12,0],[19.28,3],[19.53,1],[19.68,2],[19.91,0],[20.07,3],[20.33,1],[20.49,2],[20.75,0],[20.9,3],
+[21.18,1],[21.34,2],[21.6,0],[21.75,3],[22.03,1],[22.18,2],[22.47,0],[22.63,3],[22.88,1],[23.03,2],
+[23.31,0],[23.47,3],[23.74,1],[23.89,2],[24.16,0],[24.31,3],[24.58,1],[24.74,2],[25.01,0],[25.16,3],
+[25.44,1],[25.6,2],[25.86,0],[26.02,3],[26.29,1],[26.45,2],[26.71,0],[26.87,3],[27.14,1],[27.29,2],
+[27.56,0],[27.72,3],[27.99,1],[28.15,2],[28.42,0],[28.58,3],[28.85,1],[29.01,2],[29.27,0],[29.43,3]]
+  }
 ];
-
 
 
 const LANE_COLORS   = ['#e8002d','#1a8fff','#00cc55','#ff8800'];
@@ -196,14 +206,10 @@ const DEFAULT_SPEEDS = {
   hard: 420
 };
 
-// ═══════════════════════════════════
-// SPEED
-// ═══════════════════════════════════
 function loadSpeed() {
   try {
-    const data = JSON.parse(localStorage.getItem('santes_speed'));
-    return data || DEFAULT_SPEEDS;
-  } catch {
+    return JSON.parse(localStorage.getItem('santes_speed') || 'null') || DEFAULT_SPEEDS;
+  } catch (e) {
     return DEFAULT_SPEEDS;
   }
 }
@@ -211,30 +217,21 @@ function loadSpeed() {
 function saveSpeed(cfg) {
   try {
     localStorage.setItem('santes_speed', JSON.stringify(cfg));
-  } catch {}
+  } catch (e) {}
 }
 
 let SPEEDS = loadSpeed();
 
-// ═══════════════════════════════════
-// KEYS
-// ═══════════════════════════════════
 function loadKeyConfig() {
   try {
-    const saved = JSON.parse(localStorage.getItem('santes_keys'));
-    if (saved?.lane0 && saved?.lane1 && saved?.lane2 && saved?.lane3) {
-      return saved;
-    }
-  } catch {}
+    const saved = JSON.parse(localStorage.getItem('santes_keys') || 'null');
+    if (saved && saved.lane0 && saved.lane1 && saved.lane2 && saved.lane3) return saved;
+  } catch(e) {}
   return JSON.parse(JSON.stringify(DEFAULT_KEYS));
 }
 
 function saveKeyConfig(cfg) {
-  try {
-    localStorage.setItem('santes_keys', JSON.stringify(cfg));
-  } catch {
-    console.log("Error al obtenir les dades");
-  }
+  try { localStorage.setItem('santes_keys', JSON.stringify(cfg)); } catch(e) {}
 }
 
 let keyConfig = loadKeyConfig();
@@ -244,44 +241,30 @@ function buildKeyMap() {
   const map = {};
   for (let lane = 0; lane < 4; lane++) {
     const keys = keyConfig['lane' + lane];
-    if (!Array.isArray(keys)) continue;
-
-    for (let k of keys) {
-      if (k) map[k] = lane;
+    if (Array.isArray(keys)) {
+      keys.forEach(k => { if (k) map[k] = lane; });
     }
   }
   return map;
 }
-
 let KEY_MAP = buildKeyMap();
 
 // ═══════════════════════════════════
 // PROGRESS
 // ═══════════════════════════════════
 let _memProgress = {};
-
 function getProgress() {
-  try {
-    return JSON.parse(localStorage.getItem('santes_progress')) || {};
-  } catch {
-    return _memProgress;
-  }
+  try { return JSON.parse(localStorage.getItem('santes_progress') || '{}'); } catch(e) { return _memProgress; }
 }
-
 function saveProgress(data) {
   _memProgress = data;
-  try {
-    localStorage.setItem('santes_progress', JSON.stringify(data));
-  } catch {
-    console.log("Eror al obtenir les dades");
-  }
+  try { localStorage.setItem('santes_progress', JSON.stringify(data)); } catch(e) {}
 }
 
 function getSongData(id) {
   const p = getProgress();
   return p[id] || { stars: 0, bestScore: 0, exUnlocked: false };
 }
-
 function setSongData(id, data) {
   const p = getProgress();
   p[id] = { ...getSongData(id), ...data };
@@ -292,11 +275,58 @@ function setSongData(id, data) {
 // SCREENS
 // ═══════════════════════════════════
 function showScreen(id) {
-  const target = 'screen-' + id;
-  document.querySelectorAll('.screen').forEach(s => {
-    s.classList.toggle('active', s.id === target);
-  });
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
 }
+
+// ═══════════════════════════════════
+// TITLE SCREEN — PARTICLES + CONFETTI
+// ═══════════════════════════════════
+(function initParticles() {
+  const c = document.getElementById('title-particles');
+  const ctx = c.getContext('2d');
+  let W, H, pts = [], confetti = [];
+  const CONFETTI_COLORS = ['#c8a84b','#e8002d','#1a3a6e','#006633','#fff','#ff8800'];
+
+  function resize() {
+    W = c.width  = c.offsetWidth  || 680;
+    H = c.height = c.offsetHeight || 620;
+    pts = Array.from({length: 50}, () => ({
+      x: Math.random()*W, y: Math.random()*H,
+      vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35,
+      r: Math.random()*1.5+0.5, a: Math.random()*0.6+0.1
+    }));
+    confetti = Array.from({length: 35}, () => ({
+      x: Math.random()*W, y: Math.random()*H - H,
+      vx: (Math.random()-0.5)*1.2, vy: Math.random()*1.8+0.8,
+      rot: Math.random()*360, drot: (Math.random()-0.5)*4,
+      col: CONFETTI_COLORS[Math.floor(Math.random()*CONFETTI_COLORS.length)],
+      w: 5 + Math.random()*8, h: 3 + Math.random()*5
+    }));
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(200,168,75,${p.a})`; ctx.fill();
+    }
+    for (const piece of confetti) {
+      piece.x += piece.vx; piece.y += piece.vy; piece.rot += piece.drot;
+      if (piece.y > H + 20) { piece.y = -20; piece.x = Math.random() * W; }
+      ctx.save(); ctx.translate(piece.x, piece.y); ctx.rotate(piece.rot * Math.PI / 180);
+      ctx.fillStyle = piece.col + 'bb';
+      ctx.fillRect(-piece.w/2, -piece.h/2, piece.w, piece.h); ctx.restore();
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
 
 // ═══════════════════════════════════
 // CONFIG SCREEN — KEY BINDING
@@ -581,8 +611,7 @@ function startSong(song, exMode) {
   running: false, audio: null, animId: null, t0: null,
   gameOverPending: false
 };
-
-
+// 🔥 SPEED SEGÚN DIFICULTAD + LOCALSTORAGE
 const difficulty = document.getElementById('difficulty')?.value || 'normal';
 
 // si no existe aún, usa fallback seguro
@@ -630,6 +659,9 @@ if (song.audioSrc) {
 
   G.audio = aud;
 
+  // 🔁 CONTROL DE REPETICIÓN MANUAL
+  const maxLoops = song.id === 'amigo' ? 1 : 0; // 0 = 1 vez, 1 = 2 veces
+  G.loops = 0;
 
   function playAudio() {
     const p = aud.play();
@@ -640,15 +672,13 @@ if (song.audioSrc) {
   }
 
   aud.onended = () => {
-  G.loops++;
+    G.loops++;
 
-  if (G.loops < G.maxLoops && G.running) {
-    aud.currentTime = 0;
-    playAudio();
-  } else {
-    _startTimer(isEx); // o aquí tu función de fin de nivel
-  }
-};
+    if (G.loops <= maxLoops && G.running) {
+      aud.currentTime = 0;
+      playAudio();
+    }
+  };
 
   playAudio();
 
@@ -803,6 +833,74 @@ for (let i = 0; i < notes.length; i++) {
   }
 }
 
+function togglePause() {
+  if (!G.running && !G.paused) return; // juego no iniciado
+
+  G.paused = !G.paused;
+  const overlay = document.getElementById('pause-overlay');
+  const btn = document.getElementById('btn-pause');
+
+  if (G.paused) {
+    G.running = false;
+    if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+    if (G.audio) {
+      G._pauseTime = G.audio.currentTime;
+      G.audio.pause();
+    }
+    if (G.timerMode) {
+      G._pausedAt = performance.now();
+    }
+    const vid = document.getElementById('game-video-bg');
+    if (vid) vid.pause();
+    overlay.classList.add('active');
+    if (btn) btn.textContent = '▶';
+  } else {
+    overlay.classList.remove('active');
+    if (btn) btn.textContent = '⏸';
+    if (G.audio) {
+      G.audio.play().catch(() => {});
+    }
+    if (G.timerMode && G._pausedAt) {
+      // Compensar el tiempo pausado
+      G.t0 += performance.now() - G._pausedAt;
+      G._pausedAt = null;
+    }
+    const vid = document.getElementById('game-video-bg');
+    if (vid) vid.play().catch(() => {});
+    G.running = true;
+    G.animId = requestAnimationFrame(gameLoop);
+  }
+}
+
+function exitGame() {
+  G.running = false;
+  G.paused = false;
+  if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
+  if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
+  const vid = document.getElementById('game-video-bg');
+  if (vid) { try { vid.pause(); vid.src = ''; } catch(e) {} }
+  document.getElementById('pause-overlay').classList.remove('active');
+  buildSongGrid();
+  showScreen('select');
+}
+
+document.addEventListener('keydown', (e) => {
+  // Evita repetir si se mantiene la tecla presionada
+  if (e.repeat) return;
+
+  // ESPACIO = pause
+  if (e.code === 'Space') {
+    e.preventDefault(); // evita scroll de la página
+    togglePause();
+  }
+
+  // ESC = salir
+  if (e.code === 'Escape') {
+    e.preventDefault();
+    exitGame();
+  }
+});
+
 
 function roundRect(ctx,x,y,w,h,r) {
   ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
@@ -905,44 +1003,187 @@ function updateHUD() {
   document.getElementById('hud-acc').textContent = acc+'%';
 }
 
+// ═══════════════════════════════════════════════════════════════
+// SUBSTITUEIX la funció endGame() existent al fitxer principal
+// ═══════════════════════════════════════════════════════════════
+
 function endGame() {
   G.running = false;
   if (G.animId) { cancelAnimationFrame(G.animId); G.animId = null; }
-  if (G.audio) { stopAudio(G.audio, 0); G.audio = null; }
+  if (G.audio)  { stopAudio(G.audio, 0); G.audio = null; }
 
-  const hitPct   = G.totalNotes > 0 ? G.hitCount/G.totalNotes : 0;
-  const stars    = hitPct>=0.95?3:hitPct>=0.75?2:hitPct>=0.5?1:0;
+  const hitPct   = G.totalNotes > 0 ? G.hitCount / G.totalNotes : 0;
+  const stars    = hitPct >= 0.95 ? 3 : hitPct >= 0.75 ? 2 : hitPct >= 0.5 ? 1 : 0;
   const sd       = getSongData(G.song.id);
-  const unlockEx = !G.isEx && stars===3 && !sd.exUnlocked;
+  const unlockEx = !G.isEx && stars === 3 && !sd.exUnlocked;
 
   setSongData(G.song.id, {
-    stars: Math.max(sd.stars,stars), bestScore: Math.max(sd.bestScore,G.score),
-    exUnlocked: sd.exUnlocked||unlockEx
+    stars:      Math.max(sd.stars, stars),
+    bestScore:  Math.max(sd.bestScore, G.score),
+    exUnlocked: sd.exUnlocked || unlockEx,
   });
 
-  document.getElementById('res-song').textContent    = G.song.title.toUpperCase();
+  // ── Contingut bàsic ──
+  document.getElementById('res-song').textContent    = G.song.title.toUpperCase() + (G.isEx ? ' · EX 2×' : '');
   document.getElementById('res-score').textContent   = G.score.toLocaleString();
   document.getElementById('res-perfect').textContent = G.perfectCount;
   document.getElementById('res-great').textContent   = G.greatCount;
   document.getElementById('res-miss').textContent    = G.missCount;
 
-  const starsEl = document.getElementById('res-stars'); starsEl.textContent='';
-  for (let i=1;i<=3;i++) {
-    const s=document.createElement('span');
-    s.style.color=stars>=i?'#c8a84b':'#2a2a2a'; s.textContent='★'; starsEl.appendChild(s);
+  // ── Estrelles ──
+  const starsEl = document.getElementById('res-stars');
+  starsEl.textContent = '';
+  for (let i = 1; i <= 3; i++) {
+    const s = document.createElement('span');
+    s.style.color  = stars >= i ? '#c8a84b' : '#2a2a2a';
+    s.textContent  = '★';
+    starsEl.appendChild(s);
   }
 
+  // ── Banner desbloqueig mode normal ──
   const banner = document.getElementById('unlock-banner');
-  if (unlockEx) { banner.textContent='✦ Has desbloquejat el MODE EX 2×!'; banner.classList.add('show'); }
-  else banner.classList.remove('show');
-
-  const retryBtn = document.getElementById('btn-res-retry');
-  const newSd = getSongData(G.song.id);
-  if (newSd.exUnlocked && !G.isEx) {
-    retryBtn.textContent='MODE EX 2× ▶'; retryBtn.onclick=()=>startSong(G.song,true);
+  if (unlockEx) {
+    banner.textContent = '✦ Has desbloquejat el MODE EX 2×!';
+    banner.classList.add('show');
   } else {
-    retryBtn.textContent='TORNAR A JUGAR'; retryBtn.onclick=()=>startSong(G.song,G.isEx);
+    banner.classList.remove('show');
   }
+
+  // ── Banner especial MODE EX ──────────────────────────────────
+  // Obtenim o creem el banner EX (persisteix entre partides)
+  let exBanner = document.getElementById('ex-clear-banner');
+  if (!exBanner) {
+    exBanner = document.createElement('div');
+    exBanner.id = 'ex-clear-banner';
+
+    // Injectem l'estil si no existeix
+    if (!document.getElementById('ex-banner-style')) {
+      const style = document.createElement('style');
+      style.id = 'ex-banner-style';
+      style.textContent = `
+        #ex-clear-banner {
+          display: none;
+          margin: 14px auto 0;
+          max-width: 360px;
+          padding: 14px 20px 12px;
+          background: linear-gradient(135deg, rgba(200,168,75,0.12), rgba(255,200,50,0.06));
+          border: 1.5px solid rgba(200,168,75,0.55);
+          border-radius: 12px;
+          text-align: center;
+          animation: exBannerIn .45s cubic-bezier(.22,1,.36,1);
+        }
+        #ex-clear-banner.show { display: block; }
+        @keyframes exBannerIn {
+          from { opacity:0; transform: scale(.92) translateY(10px); }
+          to   { opacity:1; transform: none; }
+        }
+        #ex-clear-banner .ex-label {
+          font-family: 'Cinzel Decorative', 'Cinzel', serif;
+          font-size: .72rem;
+          letter-spacing: .18em;
+          color: #c8a84b;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+        }
+        #ex-clear-banner .ex-score-line {
+          font-family: 'Titillium Web', sans-serif;
+          font-size: 1.45rem;
+          font-weight: 700;
+          color: #fff;
+          letter-spacing: .04em;
+          line-height: 1.15;
+        }
+        #ex-clear-banner .ex-score-line span {
+          color: #f5d06a;
+        }
+        #ex-clear-banner .ex-sub {
+          font-family: 'Titillium Web', sans-serif;
+          font-size: .78rem;
+          color: rgba(255,255,255,0.55);
+          margin-top: 5px;
+        }
+        #ex-clear-banner .ex-acc {
+          display: inline-block;
+          margin-top: 8px;
+          padding: 3px 12px;
+          background: rgba(200,168,75,0.15);
+          border: 1px solid rgba(200,168,75,0.3);
+          border-radius: 20px;
+          font-family: 'Titillium Web', sans-serif;
+          font-size: .8rem;
+          color: #c8a84b;
+          letter-spacing: .06em;
+        }
+        /* Estrella EX daurada animada */
+        #ex-clear-banner .ex-stars {
+          font-size: 1.1rem;
+          margin-bottom: 4px;
+          animation: exStarsPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes exStarsPulse {
+          0%,100% { text-shadow: 0 0 8px rgba(200,168,75,0.4); }
+          50%      { text-shadow: 0 0 20px rgba(200,168,75,0.9); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Inserim el banner just sota el banner d'unlock existent
+    const unlockBanner = document.getElementById('unlock-banner');
+    if (unlockBanner && unlockBanner.parentNode) {
+      unlockBanner.parentNode.insertBefore(exBanner, unlockBanner.nextSibling);
+    } else {
+      // Fallback: afegim a la pantalla de resultat
+      const resScreen = document.getElementById('screen-result');
+      if (resScreen) resScreen.appendChild(exBanner);
+    }
+  }
+
+  if (G.isEx) {
+    const acc     = G.hitCount > 0 ? Math.round(G.hitCount / (G.hitCount + G.missCount) * 100) : 100;
+    const starsStr = '★'.repeat(stars) + '☆'.repeat(3 - stars);
+    const isRecord = G.score > (sd.bestScore || 0);
+
+    // Missatge personalitzat segons rendiment
+    let headline, sub;
+    if (acc === 100) {
+      headline = '⚡ FULL COMBO EX!';
+      sub      = 'Perfecció absoluta al doble de velocitat. Increïble.';
+    } else if (stars === 3) {
+      headline = '⚡ EX CLEARED — 3 ESTRELLES!';
+      sub      = isRecord ? '🏆 Nova puntuació rècord!' : 'Excel·lent execució en mode EX 2×.';
+    } else if (stars >= 1) {
+      headline = '⚡ EX COMPLETAT';
+      sub      = 'Has superat el mode al doble de velocitat. Bona feina!';
+    } else {
+      headline = '⚡ MODE EX 2× INTENTAT';
+      sub      = 'El doble de velocitat no perdona. Torna-ho a intentar!';
+    }
+
+    exBanner.innerHTML = `
+      <div class="ex-stars">${starsStr}</div>
+      <div class="ex-label">Mode EX · 2× Velocitat</div>
+      <div class="ex-score-line">${headline}</div>
+      <div class="ex-sub">${sub}</div>
+      <div class="ex-acc">Precisió: ${acc}% · ${G.hitCount}/${G.totalNotes} notes</div>
+    `;
+    exBanner.classList.add('show');
+  } else {
+    exBanner.classList.remove('show');
+  }
+  // ─────────────────────────────────────────────────────────────
+
+  // ── Botó de reintent ──
+  const retryBtn = document.getElementById('btn-res-retry');
+  const newSd    = getSongData(G.song.id);
+  if (newSd.exUnlocked && !G.isEx) {
+    retryBtn.textContent = 'MODE EX 2× ▶';
+    retryBtn.onclick     = () => startSong(G.song, true);
+  } else {
+    retryBtn.textContent = 'TORNAR A JUGAR';
+    retryBtn.onclick     = () => startSong(G.song, G.isEx);
+  }
+
   showScreen('result');
 }
 
@@ -952,8 +1193,15 @@ function endGame() {
 const keysHeld = new Set();
 // keydown is defined above (after CONFIG SCREEN section) to handle config first
 document.addEventListener('keyup', e => keysHeld.delete(e.key));
-document.getElementById('lane-bar').addEventListener('touchstart', e=>e.preventDefault(), {passive:false});
-
+document.getElementById('lane-bar').addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  var rect = e.currentTarget.getBoundingClientRect();
+  Array.from(e.changedTouches).forEach(function(t) {
+    var x = t.clientX - rect.left;
+    var lane = Math.min(3, Math.max(0, Math.floor(x / rect.width * 4)));
+    tapLane(lane, null);
+  });
+}, { passive: false });
 // ═══════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════
@@ -985,3 +1233,4 @@ window.addEventListener('resize', ()=>{ if(document.getElementById('screen-game'
 
 // Initialize lane bar labels on load
 updateLaneBarLabels();
+
